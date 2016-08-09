@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="106"
+   height="30">
+<path d="M0,0h106v30H0z" fill="#0471ce"/>
+<path d="M20.2,0v30h30.3v0h6v0h30.2V0z" fill="#59b1fc"/>
+<path d="M24.2,0v30h22.3V0h14v30h22.3V0z" fill="#b9defc"/>
+<path d="M28.2,0v30h14.2V0h22.2v30h14.2V0z" fill="#fcfcfc"/>
+<path d="M50.5,0v30h6V0z" fill="#2c2c2c"/>
+<path d="m53,1v29" stroke="#000" stroke-width="106" stroke-dasharray="1" opacity=".25"/>
+</svg>

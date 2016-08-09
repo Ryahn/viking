@@ -1,0 +1,669 @@
+<?php
+// Deutsch 
+
+// Main translation
+$titles = array("login.php" => "Login", "install.php" => "Installation", "settings.php" => "Einstellungen", "register.php" => "Register", "profile.php" => "Profile", "controlpanel.php" => "Systemsteuerung", "documentation.php" => "Documentation", "doc-online.php" => "Dokumentation", "social.php" => "Anmeldung über soziales Netzwerk");
+$m['username'] = "Benutzername";
+$m['email'] = "E-Mail";
+$m['password'] = "Passwort";
+$m['password2'] = "Passwort wiederholen";
+$m['menu'] = "Menü";
+$m['url_example'] = "http://www.yourdomain.com/index.php";
+$m['email_example'] = "no-reply@yourdomain.com";
+$m['enable'] = "Aktivieren";
+$m['edit'] = "Editieren";
+$m['up'] = "Nach Oben";
+$m['down'] = "Nach Unten";
+$m['delete'] = "Löschen";
+$m['warning'] = "Achtung!";
+$m['close'] = "Schließen";
+$m['create'] = "Erstellen";
+$m['add'] = "Hinzufügen";
+$m['editing'] = "Editieren:";
+$m['recaptcha'] = "reCAPTCHA";
+$m['recaptcha_invalid'] = "Bitte tragen Sie die richtige reCAPTCHA ein";
+$m['security'] = "Sicherheit";
+$m['security_title'] = "Sicherheitseinstellungen";
+$m['level'] = "Ebene";
+$m['name'] = "Name";
+$m['users'] = "Benutzer";
+$m['actions'] = "Aktion(en)";
+$m['type'] = "Typ";
+$m['placeholder'] = "Platzhalter";
+$m['required'] = "Erforderlich";
+$m['account'] = "Konto";
+$m['welcome'] = "Willkommen";
+$m['settings'] = "Einstellungen";
+$m['control_panel'] = "Systemsteuerung";
+$m['profile'] = "Profil";
+$m['statistics'] = "Statistik";
+$m['tools'] = "Werkzeuge";
+$m['logs'] = "Logs";
+$m['blocked_ip'] = "Gesperrte IPs";
+$m['id'] = "ID";
+$m['move'] = "Bewegen";
+$m['show'] = "Zeige&nbsp;";
+$m['records'] = "&nbsp;Datensätze pro Seite";
+$m['next'] = "Vor";
+$m['previous'] = "Zurück";
+$m['ip'] = "IP";
+$m['date'] = "Datum";
+$m['yes'] = "Ja";
+$m['no'] = "Nein";
+$m['status'] = "Status";
+$m['active'] = "Aktiv";
+$m['change'] = "Wechseln";
+$m['info'] = "Info";
+$m['answer'] = "Antwort";
+$m['send'] = "Senden";
+$m['at'] = "at";
+$m['search'] = "Suche:";
+$m['everyone'] = "Jeder";
+$m['place'] = "Place";
+$m['registration_of'] = "Anmeldung von";
+$m['back_to'] = "Zurück zur Hauptseite";
+$m['never'] = "Niemals";
+$m['blocked_until'] = "Blockiert bis";
+$m['minimum'] = "Minimum";
+$m['maximum'] = "Maximum";
+$m['admin_panel'] = "Admin Steuerung";
+$m['logout_title'] = "Logout";
+$m['logout'] = "Logout";
+$m['documentation'] = "Dokumentation (English)";
+$m['click_documentation'] = "<a href='http://www.effeiets.nl/login/doc-online.php' target='_blank'>Zur Dokumentation</a>";
+$m['clicking_here'] = "hier klicken";
+$m['value'] = "Wert";
+$m['add_option'] = "Option hinzufügen";
+$m['register_method'] = "Registrierungsmethode";
+$m['enabled'] = "Freigegeben";
+$m['disabled'] = "Behindert";
+$m['price'] = "Preis";
+
+
+// Messages translation
+$m['token_mismatch'] = "Zeichenfehler";
+$m['success'] = "Erfolgreich";
+$m['up_success'] = "Freigabe eine Ebene höher";
+$m['down_success'] = "Freigabe eine Ebene niedriger";
+$m['create_success'] = "Freigabe erfolgreich erstellt";
+$m['settings_saved'] = "Einstellung erfolgreich gespeichert";
+$m['successful_login'] = "Login erfolgreich";
+$m['password_changed'] = "Ihr Passwort wurde geändert";
+$m['password_set'] = "Ihr Passwort wurde erstellt, Sie können sich jetzt auch anmelden ohne den Zugang über soziale Netzwerke zu benutzen"; 
+$m['profile_saved'] = "Einstellungen wurden erfolgreich gespeichert";
+$m['users_moved'] = " Besitzer wurde(n) erfolgreich verschoben user(s) have successfully been moved to ";//überprüfen
+$m['register_success'] = "Registrierung erfolgreich, bitte melden Sie sich jetzt an";
+$m['logout_success'] = "Sie wurden erfolgreich abgemeldet";
+$m['blocks_deleted'] = "Block(s) erfolgreich gelöscht deleted successfully";//überprüfen
+$m['block_added'] = "Block added successfully";
+$m['users_banned'] = "Benutzer erfolgreich gesperrt";
+$m['users_unbanned'] = "Benutzer erfolgreich entsperrt";
+$m['users_activated'] = "Benutzer erfolgreich aktiviert";
+$m['users_deactivated'] = "Benutzer erfolgreich deaktiviert";
+$m['users_deleted'] = "Benutzer erfolgreich gelöscht";
+$m['messages_opened'] = "Nachricht geöffnet";
+$m['messages_deleted'] = "Nachricht gelöscht";
+$m['message_send'] = "Nachricht gesendet";
+$m['messages_cleaned'] = "Nachricht erfolgreich gelöscht";
+$m['logs_cleaned'] = " Logs erfolgreich gelöscht";
+$m['users_cleaned'] = " Benutzer erfolgreich gelöscht";
+$m['file_saved'] = "Neues Avatar gespeichert";
+$m['payment_success'] = "Zahlung erfolgreich, wenn die Anmeldung nicht funktioniert, überprüfen Sie Ihren Posteingang nach einer Aktivierungs-E-Mail Payment successful, if you still can't login check your email for an activation mail";//überprüfen
+$m['deleted_all_inactive'] = "Alle inaktiven Benutzer gelöscht";
+$m['deleted_never_loggedin'] = "Alle Benutzer gelöscht, die nie angemeldet waren.";
+$m['reset_mail_send'] = "Passwort erfolgreich geändert, bitte überprüfen Sie Ihre E-Mails";
+$m['activation_success'] = "Ihr Benutzerkonto wurde aktiviert";
+$m['stripe_paid'] = "Ihre Zahlung wurde empfangen, Sie können sich jetzt <a href='login.php'>anmelden</a>";
+$m['activation_resended'] = "Aktivierungs-E-Mail wurde gesendet";
+$m['user_created'] = "Benutzer erfolgreich erstellt";
+
+
+// Error translation
+$m['unknown_error'] = "Unbekannter Fehler";
+$m['id_not_found'] = "ID nicht gefunden";
+$m['not_higher'] = "Berechtigung konnte nicht erhöht werden";
+$m['not_lower'] = "Berechtigung konnte nicht beschränkt werden";
+$m['fill_in_name'] = "Sie haben vergessen Ihren Namen einzutragen";
+$m['fill_in_level'] = "Sie haben vergessen Ihre Berechtigung einzutragen";
+$m['level_warning'] = "Nicht die Berechtigungen in der Datenbank durcheinanderbringen!";
+$m['cant_del_default'] = "Sie können nicht voreingestellte Berechtigungen löschen";
+$m['cant_del_admin'] = "Sie können einen Admin nicht löschen";
+$m['cant_move_admin'] = "Sie können einen Admin nicht verschieben";
+$m['fill_in_url'] = "Sie können die URL nicht eingeben, wenn Sie diese aktivieren wollen.";
+$m['fill_in'] = "Bitte eingeben";
+$m['fill_in_publickey'] = "Sie können reCAPTCHA nicht ohne den öffentlichen Schlüssels aktivieren You can not enable reCAPTCHA without entering the public key";//überprüfen
+$m['fill_in_privatekey'] = "Sie können reCAPTCHA nicht ohne den privaten Schlüssel aktivieren You can not enable reCAPTCHA without entering the private key";//überprüfen
+$m['fill_in_username'] = "Bitte tragen Sie Ihren Benutzernamen ein";
+$m['fill_in_email'] = "Bitte tragen Sie Ihre E-Mail-Adresse ein";
+$m['fill_in_password'] = "Bitte tragen Sie Ihr Password ein";
+$m['fill_in_password2'] = "Bitte wiederholen Sie Ihre Passworteingabe";
+$m['password_dont_match'] = "Your passwords do not match";
+$m['username_min'] = "Ihr Benutzername muss mindestens";
+$m['username_max'] = "Ihr Benutzername darf nicht länger sein als";
+$m['password_min'] = "Ihr Passwort beinhaltet mindestens";
+$m['password_max'] = "Ihr Passwort darf nicht länger sein als";
+$m['characters'] = " Zeichen";
+$m['invalid_email'] = "Bitte tragen Sie eine gültige E-Mail-Adresse ein";
+$m['username_taken'] = "Dieser Benutzername wird schon verwendet";
+$m['email_taken'] = "Diese E-Mail-Adresse ist schon vergeben";
+$m['page_disabled_default'] = "Diese Seite ist abgeschaltet";
+$m['fill_in_input_name'] = "Sie haben vergessen den Namen einzugeben";
+$m['fill_in_input_public_name'] = "Sie haben vergessen, in der Öffentlichkeit Eingang Namen zu füllen";
+$m['fill_in_input_type'] = "Sie haben vergessen die Art der Eingabe auszufüllen You forgot to fill in the input type";//Überprüfen
+$m['incorrect_credentials'] = "Login fehlgeschlagen, falsche Dateneingabe";
+$m['no_inputs_found'] = "Keine Eingabe gefunden";
+$m['enable_log'] = "Sie müssen die ... aktivieren bis ... You need to enable <strong><em>log failed logins</em></strong> if you want the <strong><em>max. logins attempts</em></strong> to work";//überprüfen
+$m['enable_javascript'] = "Bitte aktivieren Sie JavaScript in Ihrem Browser";
+$m['blocked'] = "Sie haben sich zu oft den Login falsch eingeben, Ihre IP wurde gesperrt.";
+$m['fill_in_type'] = "Sie haben vergessen die Art der Eingabe einzugeben";
+$m['max_accounts'] = "Sie haben die maximale Kontenanzahl auf Ihrer IP erreicht";
+$m['not_logged_in'] = "Sie müssen angemeldet sein, um dies zu tun";
+$m['no_permission'] = "Sie sind nicht berechtigt, um die Seite zu sehen";
+$m['fill_in_notloggedin'] = "Bitte füllen Sie die url aus um <em>Not logged in</em>";
+$m['old_password_incorrect'] = "Das Passwort ist nicht richtig";
+$m['fill_in_oldpass'] = "Bitte tragen Sie Ihr altes Passwort ein";
+$m['fill_in_newpass'] = "Bitte tragen Sie Ihr neues Passwort ein";
+$m['fill_in_newpass2'] = "Bitte wiederholen Sie Ihr neues Passwort";
+$m['nothing_found'] = "Kein Eintrag gefunden";
+$m['no_users_selected'] = "Keine Benutzer wurden zum verschieben ausgewählt";
+$m['no_logs_found'] = "Keine Einträge gefunden";
+$m['no_blocks_found'] = "Keine Blöcke gefunden";
+$m['unknown_username'] = "Unbekannter Benutzer";
+$m['failed'] = "Fehlgeschlagen";
+$m['fill_in_permission'] = "Bitte Berechtigung eintragen";
+$m['no_blocks_selected'] = "Sie haben keine Block ausgewählt";
+$m['fill_in_ip'] = "Bitte IP eintragen";
+$m['fill_in_valid_ip'] = "Bitte gültige IP eintragen";
+$m['fill_in_reason'] = "Bitte Grund eintragen";
+$m['ip_already_blocked'] = "Dies IP ist blockiert";
+$m['letters_and_numbers_only'] = "Nur Zahlen und Buchstaben benutzen";
+$m['fill_in_smtp_hostname'] = "Bitte SMTP Hostname eintragen";
+$m['fill_in_smtp_username'] = "Bitte SMTP Benutzername eintragen";
+$m['fill_in_smtp_password'] = "Bitte SMTP Passwort eintragen";
+$m['fill_in_smtp_port'] = "Bitte SMTP eintragen";
+$m['smtp_connect_failed'] = "SMTP Verbindung fehlgeschlagen. Bitte überprüfen ob Ihre Eingabe korrekt und Ihr Server online ist";
+$m['action_not_found'] = "Prozess nicht gefunden";
+$m['no_user_selected'] = "Es wurden keine Benutzer ausgewählt";
+$m['need_email_activation'] = "Ihr Benutzerkonto wurde noch nicht aktiviert. Bitte zur Freischaltung Aktivierungsmail bestätigen oder neue Aktivierungsmail anfordern";
+$m['need_paypal_activation'] = "Ihr Benutzerkonto wurde noch nicht aktiviert. Bitte Paypal Zahlung abschließen";
+$m['need_stripe_activation'] = "Ihr Benutzerkonto wurde noch nicht aktiviert. Bitte Stripe Zahlung abschließen";
+$m['need_manual_activation'] = "Ihr Benutzerkonto wurde noch nicht aktiviert. Bitte warten Aktivierung folgt in Kürze";
+$m['you_are_banned'] = "Sie dürfen sich nicht anmelden, da Ihr Benutzer gesperrt wurden";
+$m['user_not_found'] = "Benutzer nicht gefunden";
+$m['no_messages_found'] = "Keine Nachricht gefunden";
+$m['message_not_found'] = "Nachricht nicht gefunden";
+$m['fill_in_sendto'] = "Bitte Person auswählen, an die Sie die Nachricht senden wollen";
+$m['fill_in_subject'] = "Bitte Betreff der Nachricht eintragen";
+$m['fill_in_message'] = "Bitte Nachricht schreiben";
+$m['message_cooldown1'] = "Sie müssen warten";
+$m['message_cooldown2'] = "Sekunden warten, bevor Sie eine weitere Nachricht senden können";
+$m['ip_not_found'] = "IP nicht gefunden";
+$m['fill_in_from'] = "Bitte Datum eintragen";
+$m['fill_in_based_on'] = "Bitte Grundlage der Aktion eintragen";
+$m['fill_in_admin_pass'] = "Bitte bestätigen Sie die Aktion, durch Eingabe Ihres Passworts";
+$m['wrong_admin_pass'] = "Bitte richtiges Passwort eingeben, um die Aktion zu bestätigen";
+$m['fill_in_file'] = "Bitte Datei zum Hochladen auswählen";
+$m['invalid_file'] = "Ungültige Datei. Entweder ist die Datei zu groß oder die Erweiterung wird nicht akzeptiert Invalid file, either the file is too large or the extension is not allowed";// überprüfen
+$m['already_saved'] = "Die Datei wurde schon gespeichert";
+$m['fill_in_input_error'] = "Bitte Eingabefehler eingeben";
+$m['fill_in_paypal_email'] = "Bitte Paypal E-Mail-Adresse eintragen";
+$m['invalid_paypal_email'] = "Diese E-Mail-Adresse ist ungültig, bitte geben Sie eine gültige ein";
+if(!empty($_GET['uid'])) {
+	$m['payment_wrong'] = "Sie haben Ihre Zahlung storniert. <a href='?retry&uid=". $_GET['uid'] ."'>Hier</a> klicken zur Wiederholung";
+} else {
+	$m['payment_wrong'] = "Sie haben die Zahlung storniert";
+}
+$m['you_are_banned'] = "<b>Sie wurden gesperrt, da:</b>";
+$m['block_expires'] = "<b>Ihre Sperrung wird aufgehoben in:</b>";
+$m['code_not_found'] = "Passwort nicht gefunden";
+$m['code_expired'] = "Dies Passwort ist abgelaufen, bitte fordern Sie ein neues ein";
+$m['code_used'] = "Dieses Passwort wird schon benutzt";
+$m['activate_code_not_found'] = "Aktivierungspasswort nicht gefunden";
+$m['already_active'] = "Ihr Benutzerkonto wurde bereits aktiviert";
+$m['fill_in_cart'] = "Bitte Kreditkartennummer eingeben";
+$m['fill_in_month'] = "Bitte Gültigkeits-Monat eingeben";
+$m['fill_in_year'] = "Bitte Gültigkeits-Jahr eingeben";
+$m['fill_in_cvc'] = "Bitte CVC eingeben";
+$m['fill_in_stripe_key'] = "Bitte Live Secret Key von Stripe eingeben";
+$m['stripe_error'] = "Ein Fehler ist aufgetreten, bitte versuchen Sie es später noch einmal";
+$m['stripe_error_num1'] = "Die Kreditkartennummer ist nicht korrekt";
+$m['stripe_error_num2'] = "Die Kreditkartennummer ist ungültig";
+$m['stripe_error_month'] = "Der Gültigkeits-Monat stimmt nicht";
+$m['stripe_error_year'] = "Das Gültigkeits-Jahr stimmt nicht";
+$m['stripe_error_cvc1'] = "Der CVC stimmt nicht";
+$m['stripe_error_card'] = "Die Kreditkarte ist abgelaufen";
+$m['stripe_error_cvc2'] = "Der CVC ist ungültig";
+$m['stripe_error_zip'] = "Der Kreditkarten zip Kode konnte nicht bestätigt werden";
+$m['stripe_error_declined'] = "Die Kreditkarte wurde nicht akzeptiert";
+$m['stripe_error_missing'] = "Der Kreditkarteneigentümer konnte nicht gefunden werden";
+$m['stripe_not_paid'] = "Ihre Zahlung ist nicht bei uns eingegangen, bitte versuchen Sie es noch einmal.";
+$m['fill_in_option'] = "Bitte mindestens eine der Vorgaben auswählen";
+$m['fill_in_fb_appid'] = "Bitte Facebook Benutzerkennung eingeben, wenn Sie Facebook freischalten wollen";
+$m['fill_in_fb_appsecret'] = "Bitte Facebook Passwort eingeben, wenn Sie Facebook freischalten wollen";
+$m['fill_in_consumer_key'] = "Bitte Twitter Benutzerkennung eingeben, wenn Sie Twitter freischalten wollen";
+$m['fill_in_consumer_secret'] = "Bitte Twitter Passwort eingeben, wenn Sie Twitter freischalten wollen";
+$m['fill_in_client_id'] = "Bitte Google Benutzerkennung eingeben, wenn Sie Google+ freischalten wollen";
+$m['fill_in_client_secret'] = "Bitte Google Passwort eingeben, wenn Sie Google+ freischalten wollen";
+$m['fill_in_api_key'] = "Bitte Google API Schlüssel eingeben, wenn Sie Google+ freischalten wollen";
+$m['already_logged_in'] = "Sie sind schon angemeldet";
+$m['unknown_social_login'] = "Unbekannter Login ins Soziale Netzwerk";
+$m['sid_not_found'] = "Die Benutzerkennung für das Soziale Netzwerk wurde nicht gefunden, bitte erneut versuchen";
+$m['social_error'] = "Ein Fehler ist aufgetreten, bitte erneut versuchen";
+$m['account_not_found'] = "Kein Benutzerkonto gefunden";
+$m['fill_in_legit_date'] = "Bitte geben Sie ein legit Datum";
+$m['ip_blocked'] = "Ihre IP ist gesperrt";
+
+
+// Translation install.php
+$m['install'] = "Installation";
+$m['step'] = "Schritt";
+$m['nextstep'] = "Nächster Schritt";
+$m['cantconnect'] = "Verbindung zum MySQL kann nicht hergestellt werden, überprüfen Sie, ob Sie die richtigen Infos eingetragen haben";
+$m['canconnect'] = "MySQL ist verbunden aber Datenbasis kann nicht gefunden werden, bitte erstellen Sie eine neue";
+$m['connected'] = "MySQL ist verbunden und Datenbasis wurde gefunden";
+$m['checkconnection'] = "Verbindung überprüfen";
+$m['mysql_host'] = "MySQL Host";
+$m['mysql_user'] = "MySQL Benutzername";
+$m['mysql_password'] = "MySQL Passwort";
+$m['mysql_database'] = "MySQL Datenbasis";
+$m['fill_in_mysql_host'] = "Bitte Ihren MySQL Host eintragen";
+$m['fill_in_mysql_user'] = "Bitte Ihren MySQL Benutzername eintragen";
+$m['fill_in_mysql_password'] = "Bitte Ihr MySQL Passwort eintragen";
+$m['fill_in_mysql_database'] = "Bitte Ihr MySQL Datenbasis eintragen";
+$m['config_writable'] = "Die Datei <strong><em>config.php</em></strong> ist editierbar";
+$m['config_not_writable'] = "Die Datei <strong><em>config.php</em></strong> ist nicht editierbar, please chmod it to permission 777";//überprüfen
+$m['uploads_writable'] = "Das Verzeichnis <strong><em>uploads</em></strong> ist editierbar";
+$m['uploads_not_writable'] = "Das Verzeichnis <strong><em>uploads</em></strong> ist nicht editierbar, please chmod it to permission 777";
+$m['cant_edit'] = "Es scheint, dass die Datei_put_contents nicht funktioniert. Bitte fügen Sie den Code unten selbst ein <strong><em>config.php</em></strong>";
+$m['cant_get'] = "Es scheint, dass die Datei_get-contents nicht funktioniert, importieren Sie <strong><em>database.sql</em></strong> selbst in die Datenbasis";
+$m['config_still_writable'] = "Die Datei <strong><em>config.php</em></strong> ist editierbar, bitte chmod es zu Berechtigung 644";
+$m['delete_database'] = "Bitte löschen Sie die Datei <strong><em>database.sql</em></strong>";
+$m['delete_install'] = "Bitte löschen Sie die Datei <strong><em>install.php</em></strong>";
+$m['install_complete'] = "<h4>Installation erfolgreich!</h4> Sie können <a href='/login/login.php'>login</a> sich jetzt anmelden mit: <br> Benutzername: Admin <br> Passwort: Admin <br> <strong>Sie müssen das Passwort in Ihrem Profil ändern </strong> <br><br> Vor der nächsten Anmeldung müssen Sie die folgenden Dinge tun: <br>";
+
+
+// Translation social.php
+$m['social_register_title'] = "Soziales Netzwerk Login";
+$m['social_register_info'] = "Bitte das Feld/ die Felder unten befüllen vor Abschluss der Registrierung";
+
+
+// Translation register.php
+$m['register_title'] = "Anmeldung";
+$m['register_info'] = "Sie können Ihr Benutzerkonto hier anlegen, um sich anzumelden";
+$m['register'] = "Registrierung";
+$m['already_registered'] = "Schon registriert? Hier Klicken um sich anzumelden";
+$m['payment_method'] = "Zahlungsmethode";
+
+
+// Translation login.php
+$m['login_title'] = "Anmeldung";
+$m['login_info'] = "Bitte geben Sie Ihre Zugangsdaten ein";
+$m['login'] = "Anmeldung";
+$m['forgot_password'] = "Haben Sie Ihr Passwort vergessen?";
+$m['dont_have_account'] = "Sie haben noch kein Benutzerkonto? Klicken Sie hier um sich zu registrieren";
+$m['activate_title'] = "Aktivierung";
+$m['or_login'] = "Oder melden Sie sich an mit:";
+
+$m['forgot_title'] = "Passwort vergessen";
+$m['forgot_info'] = "Bitte tragen Sie Ihren Benutzernamen und E-Mail-Adresse unten ein";
+$m['enter_new_password'] = "Tragen Sie Ihr Passwort unten ein";
+$m['back_to_login'] = "Zurück zur Anmeldung";
+$m['request_password_change'] = "Fordern Sie Passwortänderung an";
+$m['not_found'] = "Den Benutzernamen und E-Mail-Adresse, die Sie eingegeben haben wurden nicht gefunden oder passen nicht zusammen";
+$m['forgot_wait'] = "Bitte warten Sie 1 Minute bis zur nächsten Anfrage";
+
+$m['stripe_title'] = "Stripe Zahlung";
+$m['stripe_info'] = "Bitte die Felder unten befüllen";
+$m['stripe_card'] = "Kreditkartennummer";
+$m['stripe_month'] = "Ablauf Monat";
+$m['stripe_year'] = "Ablauf Jahr";
+$m['stripe_cvc'] = "CVC";
+$m['stripe_pay'] = "Zahlung abgeschlossen";
+
+
+// Translation profile.php
+$m['profile_title'] = "Profil";
+$m['oldpass'] = "Altes Passwort";
+$m['newpass'] = "Neues Passwort";
+$m['newpass2'] = "Neues Passwort wiederholen";
+$m['change_password'] = "Passwort verändern";
+$m['set_password'] = "Passwort vergeben";
+$m['set_password_info'] = "Wenn Sie ein Passwort für Ihr Benutzerkonto vergeben, können Sie auf den Zugang über soziale Netzwerke verzichten";
+$m['new_message'] = "Neue Nachricht";
+$m['from'] = "Von";
+$m['to'] = "An";
+$m['subject'] = "Betreff";
+$m['message'] = "Nachricht";
+$m['mark_opened'] = "Als gelesen markieren";
+$m['back_to_messages'] = "Zurück zu den Nachrichten";
+$m['send_message'] = "Nachrichten senden";
+$m['delete_messages'] = "Nachrichten löschen";
+
+
+// Translation settings.php
+$m['settings_menu'] = "Einstellungen";
+$m['main_menu'] = "Hauptmenü";
+$m['login_menu'] = "Einstieg";
+$m['registration_menu'] = "Registrierung";
+$m['permissions_menu'] = "Rechte";
+$m['mails_menu'] = "E-Mails";
+$m['links_menu'] = "Links";
+$m['messages_menu'] = "Nachrichten";
+$m['coupons_menu'] = "Gutscheine";
+$m['social_menu'] = "Zugang über soziale Netzwerke";
+$m['plans_menu'] = "Pläne";
+
+$m['main_settings'] = "Hauptmenü";
+$m['main_settings_info'] = "Mindest Einstellung, um Ihre Webseite zu editieren.";
+$m['save'] = "Speichern";
+$m['disable'] = "Sperren";
+$m['disable_title'] = "Sollten irgendwelche Seiten gesperrt werden?";
+$m['disable_register'] = "Register sperren";
+$m['disable_login'] = "Login sperren";
+$m['disable_profile'] = "Profil sperren";
+$m['page_disabled_message'] = "Diese Nachricht erscheint, wenn Seite gesperrt ist";
+$m['timezone'] = "Zeitzone";
+$m['timezone_title'] = "Wählen Sie die Zeitzone, wo Sie leben";
+$m['online_time'] = "Online-Zeit";
+$m['online_time_title'] = "Wie viele Minuten nach der letzten Aktivität ist ein Benutzer als Online gezählt?";
+$m['admin_email'] = "Admin E-Mail";
+$m['admin_email_title'] = "Email that will be used to send all mails";//überprüfen
+$m['email_name'] = "E-Mail Name";
+$m['email_name_title'] = "Name of the sender from all mails";//überprüfen
+$m['login_with'] = "Anmelden mit";
+$m['login_with_title'] = "Zum Anmelden E-Mail oder Benutzername benutzen";
+$m['default_permission'] = "Voreingestellte Berechtigung";
+$m['default_permission_title'] = "Voreingestelltes Berechtigungslevel für Registrierung";
+$m['allow'] = "Genehmigung";
+$m['allow_title'] = "Was darf der Benutzer tun?";
+$m['public_profiles'] = "Benutzer darf andere Profile sehen (öffentliche Profile)";
+$m['username_change'] = "Benutzern erlauben Ihren Benutzername zu ändern";
+$m['email_change'] = "Benutzern erlauben Ihre E-Mail-Adresse zu ändern";
+$m['password_change'] = "Benutzern erlauben Ihr Passwort zu ändern";
+$m['send_messages'] = "Benutzern erlauben E-Mails zu lesen und senden";
+$m['require_recaptcha'] = "reCAPTCHA benötigt zur Registrierung";
+$m['send_welcome_mail'] = "Nach Registrierung Willkommens Mail senden";
+$m['mailtype'] = "E-Mail Typ";
+$m['mailtype_title'] = "Wie sollen die E-Mails versendet werden?";
+$m['smtp_hostname'] = "SMTP Hostname";
+$m['smtp_hostname_title'] = "Hostname des SMTP Servers (z.B. smtp.yourdomain.com)";
+$m['smtp_username'] = "SMTP Benutzername";
+$m['smtp_password'] = "SMTP Passwort";
+$m['smtp_port'] = "SMTP Anschluss";
+$m['smtp_port_title'] = "Mail Server Anschluss";
+$m['smtp_ssl'] = "SMTP aktiviert SSL";
+$m['use_ssl'] = "Benutze SSL";
+
+$m['login_settings'] = "Anmeldeeinstellungen";
+$m['login_settings_info'] = "Einstellungen zur Anmeldung";
+$m['log'] = "Protokoll";
+$m['login_log'] = "Welche Aktionen werden protokolliert?";
+$m['log_successful_logins'] = "Protokolliere erfolgreiche Anmeldungen";
+$m['log_failed_logins'] = "Protokolliere fehlgeschlagene Anmeldungen";
+$m['max_failed_attempts'] = "Maximale Anmeldeversuche ";
+$m['max_failed_attempts_title'] = "Nach wie vielen fehlgeschlagenen Anmeldeversuchen soll IP gesperrt werden? 0 kein Limit.";
+$m['redirect_last_page'] = "Letzte Seite merken";
+$m['redirect_last_page_title'] = "Wenn Benutzer nicht angemeldet ist und eine Seite besucht, für die eine Anmeldung notwendig ist, wird sich diese Seite gemerkt. Wenn der Benutzer sich dann anmeldet, wird er zu der gemerkten Seite weitergeleitet. ";
+$m['blocked_time'] = "Sperrzeit";
+$m['blocked_time_title'] = "Wie lange soll die IP gesperrt sein, wenn die maximalen Anmeldeversuche erreicht sind?";
+$m['case_sensitive'] = "Groß- und Kleinschreibung beachten";
+$m['case_sensitive_title'] = "Soll die Anmeldeüberprüfung Groß- und Kleinschreibung beachten?";
+
+$m['registration_settings'] = "Registrierungseinstellungen";
+$m['registration_settings_info'] = "Einstellungen zur Registrierung";
+$m['on_registration'] = "On registration";
+$m['on_registration_title'] = "Grundlegende Registrierungs Einstellungen";
+$m['max_ip'] = "Registrierungs-Limit";
+$m['max_ip_title'] = "Definiere wie viele Registrierungen pro IP erlaubt sind, 0 entspricht unbegrenzt";
+$m['extra_inputs'] = "Extra Eintrag";
+$m['add_input'] = "Eintrag hinzufügen"; 
+$m['name_title'] = "Name des Eintrags";
+$m['public_name'] = "Öffentlicher Name";
+$m['public_name_title'] = "Name der Eingabe, die in den Formen dargestellt werden";
+$m['type_title'] = "Art des Eintrags, einige der HTML5 Einträge funktionieren nicht in allen Browsern";
+$m['placeholder_title'] = "Platzhalter für die Eingabe";
+$m['required_title'] = "Eintrag wird für die Registrierung gebraucht";
+$m['delete_input'] = "Sind Sie sicher, dass Sie diese Eintrag löschen wollen? <br> Alle Benutzerdaten des Eintrags werden gelöscht<br> Dies kann nicht rückgängig gemacht werden. <br><br>";
+$m['no_spaces_allowed'] = "Keine Leerzeichen erlaubt";
+$m['input_exists'] = "Dieser Name existiert bereits";
+$m['input_error'] = "Eingabefehler";
+$m['input_error_title'] = "Diese Fehlermeldung erscheint, wenn eine Eingabe erforderlich ist und der Benutzer vergessen hat diese einzutragen";
+$m['select_options'] = "Optionen wählen";
+$m['select_options_title'] = "Hier die Optionen Ihrer Auswahl eingeben";
+$m['input_value'] = "Wert";
+$m['value_title'] = "Voreingestellter Wert für die Eingabe";
+$m['input_maxlength'] = "Maximale Länge";
+$m['maxlength_title'] = "Die maximale Länge für die Eingabe, benutzen Sie 0 für unbeschränkte";
+$m['input_rows'] = "Zeilen";
+$m['rows_title'] = "Anzahl der Zeilen im Textfeld, je größer die Anzahl desto großer das Textfeld";
+$m['input_min'] = "Min";
+$m['min_title'] = "Kleinster Wert der Eingabe";
+$m['input_max'] = "Max";
+$m['max_title'] = "Größter Wert der Eingabe";
+$m['input_step'] = "Schritt";
+$m['step_title'] = "Anzahl der Schritte für";
+$m['input_checked'] = "ausgewählt";
+$m['checked_title'] = "Voreinstellungen in die Checkbox übernehmen? Should the checkbox be checked by default?";//überprüfen
+$m['input_public'] = "Öffentliche Eingabe";//überprüfen
+$m['input_public_title'] = "Soll die Eingabe im öffentlichen Profil angezeigt werden?";
+$m['activation'] = "Aktivierung";
+$m['activation_title'] = "Aktivierungsmethode auswählen";
+$m['no_activation'] = "Keine Aktivierung notwendig, Benutzer wird automatisch aktiviert.";
+$m['email_activation'] = "Aktivierungs-E-Mail wird an Benutzer gesendet";
+$m['manual_activation'] = "Admin muss Benutzer manuell freischalten";
+$m['username_length'] = "Länge Benutzername";
+$m['username_length_title'] = "Definieren Sie die Minimum und Maximum Länge für einen Benutzernamen, 0 bedeutet kein Limit";
+$m['password_length'] = "Passwort Länge";
+$m['password_length_title'] = "Definieren Sie die Minimum und Maximum Länge für ein Passwort, 0 bedeutet kein Limit";
+
+$m['links'] = "Redirect settings";// überprüfen
+$m['link_info'] = "Berechtigung wird diese Einstellungen überschreiben. Ist die Funktion nicht aktiviert erscheint eine Nachricht Permissions will override these settings. If not enabled, a <a href='?page=messages'>message</a> will be shown.";//überprüfen
+$m['redirect_login'] = "On login";
+$m['redirect_logout'] = "On logout";
+$m['redirect_nopermission'] = "Keine Berechtigung";
+$m['redirect_notloggedin'] = "Nicht angemeldet";
+$m['redirect_login_title'] = "Wo soll der Benutzer nach Anmeldung hingeleitet werden?";
+$m['redirect_logout_title'] = "Wo soll der Benutzer nach Abmeldung hingeleitet werden? ";
+$m['redirect_nopermission_title'] = "Wo soll der Benutzer hingeleitet werden, wenn er keine ausreichende Berechtigung besitzt? ";
+$m['redirect_notloggedin_title'] = "Wo soll der Benutzer hingeleitet werden, wenn er nicht angemeldet ist? ";
+$m['need_redirect'] = "Needs redirect";
+$m['on_login_warning'] = "Keinen Link benutzen, der zurück zur Anmeldeseite führt";
+
+$m['mails'] = "E-Mail Einstellungen";
+$m['mails_info'] = "Sie können einige Mails anpassen und die Einstellungen editieren. <br> HTML darf ohne Einschränkungen benutzt werden, seine Sie vorsichtig was Sie schreiben. <br> Ein Eintrag, der URL beinhaltet ist schon in HTML formatiert.";
+$m['welcome_mail'] = "Begrüßungs-E-Mail";
+$m['welcome_mail_title'] = "Diese Mail wird gesendet nach Registrierung oder Aktivierung (, wenn Funktion aktiviert ist) ";
+$m['welcome_tags'] = "Kennzeichen:<br> {Name} für Benutzername <br> {E-Mail} für E-Mail <br> {Datum} Registrierungs-Datum <br> {IP} Registrierungs-IP <br> {Perm} Berechtigungsname";
+$m['validation_mail'] = "Freischaltungs-E-Mail";
+$m['validation_mail_title'] = "Diese Mail wird versendet, um einen Benutzer freizuschalten (, wenn Funktion aktiviert ist) ";
+$m['validation_tags'] = "Kennzeichen:<br> {val_url} Freischaltung url <br> {name} für Benutzername <br> {email} für E-Mail <br> {date} Registrierungs-Datum";
+$m['reset_mail'] = "Reset E-Mail";
+$m['reset_mail_title'] = "Diese Mail wird versendet zu einem Benutzer, wenn das Passwort vergessen wurde ";
+$m['reset_tags'] = "Kennzeichen:<br> {reset_url} url um das Passwort zurückzusetzen <br> {name} für Benutzername <br> {email} für E-Mail <br> {date} Datum des Zurücksetzungsanfrage <br> {ip} IP der Zurücksetzungsanfrage";
+
+$m['messages'] = "Nachrichten";
+$m['messages_info'] = "Diese Nachricht wird nicht angezeigt, wenn der Benutzer umgeleitet wird.";
+$m['message_login'] = "Anmelde Nachricht";
+$m['message_logout'] = "Abmelde Nachricht";
+$m['message_nopermission'] = "Keine Berechtigungs-Nachricht";
+$m['message_notloggedin'] = "Nicht Angemeldet Nachricht";
+$m['message_login_title'] = "Welche Nachricht soll erscheinen, wenn der Benutzer sich anmeldet?";
+$m['message_logout_title'] = "Welche Nachricht soll erscheinen, wenn der Benutzer sich abmeldet? ";
+$m['message_nopermission_title'] = "Welche Nachricht soll erscheinen, wenn ein Benutzer sich nicht genügend Rechte hat? ";
+$m['message_notloggedin_title'] = "Welche Nachricht soll erscheinen, wenn ein Benutzer nicht eingeloggt ist? ";
+
+$m['coupons'] = "Coupons";
+$m['coupons_info'] = "You can create coupon codes for your plans here.";
+
+$m['social'] = "Anmeldung in das soziales Netzwerk";
+$m['social_info'] = "Hier können Sie die Anmeldung in das soziale Netzwerk konfigurieren.";
+$m['social_main'] = "Hauptmenü";
+$m['social_main_title'] = "Hauptmenü für Anmeldung in das soziale Netzwerk";
+$m['social_verification'] = "Sollen Benutzer ihr Benutzerkonto aktivieren, wenn Sie sich über ein soziales Netzwerk anmelden? (nur wenn diese Funktion in den Registrierungseinstellungen aktiviert wurde)";
+$m['social_pay'] = "Sollen Benutzer für die Anmeldung für die Anmeldung bezahlen, wenn Sie sich über ein soziales Netzwerk anmelden? (nur wenn Sie einen Zahlungszugang aktiviert haben) ";
+
+$m['enable_google'] = "Google+ freischalten";
+$m['enable_google_title'] = "Google+ freischalten, um Benutzer Anmeldung mit Google+ zu erlauben.";
+$m['client_id'] = "Kunden NR";
+$m['client_id_title'] = "Die Kunden NR von Google OAuth";
+$m['client_secret'] = "Kunden Passwort";
+$m['client_secret_title'] = "Kunden Passwort von Google OAuth";
+$m['api_key'] = "Öffentlicher API Schlüssel";
+$m['api_key_title'] = "Der API Schlüssel von Google Public API Zugang";
+$m['google_redirect'] = "URL Umleiten";
+$m['google_redirect_title'] = "Die URL, die Sie zur Autorisierung hinzufügen, leitet URIs in Google um";
+
+$m['enable_facebook'] = "Facebook Berechtigen";
+$m['enable_facebook_title'] = "Facebook berechtigen, um Benutzer die Anmeldung über Facebook zu erlauben";
+$m['fb_appid'] = "App ID";
+$m['fb_appid_title'] = "Bitte App ID von Facebook eingeben";
+$m['fb_appsecret'] = "App Geheimnummer";
+$m['fb_appsecret_title'] = "Geben Sie die App Geheimnummer von Facebook ein";
+
+$m['enable_twitter'] = "Twitter berechtigen";
+$m['enable_twitter_title'] = "Twitter berechtigen, um Benutzer die Anmeldung über Twitter zu erlauben";
+$m['consumer_key'] = "Benutzer Schlüssel";
+$m['consumer_key_title'] = "Ihr Benutzer Schlüssel von Twitter";
+$m['consumer_secret'] = "Benutzer Geheimnummer";
+$m['consumer_secret_title'] = "Ihre Benutzer Geheimnummer von Twitter";
+$m['twitter_callback'] = "Twitter Rückruf URL";
+$m['twitter_callback_title'] = "Benutzen Sie diese Rückruf URL in Ihrer Twitter Anwendung";
+
+$m['plans'] = "Pläne";
+$m['plans_info'] = "Hier können Sie erstellen und Ihre Pläne zu verwalten, so dass Sie Benutzer für bestimmte Berechtigungsstufen aufladen";
+$m['plans_not_finished'] = "Die Pläne Update wird in Kürze veröffentlicht";
+$m['payment_gateways'] = "Zahlungs-Gateways";
+$m['back_to_plans'] = "Zurück zu Pläne";
+
+$m['paypal'] = "Paypal";
+$m['paypal_info'] = "Hier können Sie Paypal berechtigen, sodass Sie Benutzer für die Registrierung belasten können.";
+$m['enable_paypal'] = "Paypal berechtigen";
+$m['paypal_title'] = "Paypal berechtigen, sodass Sie Benutzer für die Registrierung belasten können.";
+$m['paypal_email'] = "Paypal E-Mail";
+$m['paypal_email_title'] = "Ihre E-Mail-Adresse von Paypal Your email address from Paypal where the payments should go to";//überprüfen
+$m['paypal_cost'] = "Kosten";
+$m['paypal_cost_title'] = "Regristrierungskosten";
+
+$m['stripe'] = "Stripe";
+$m['stripe_settings_info'] = "Hier können Sie Stripe berechtigen und konfigurieren, sodass Sie Benutzer für die Registrierung belasten können. <a href='https://dashboard.stripe.com/register' target='_blank'>Click here</a> to register an account on Stripe.com";
+$m['enable_stripe'] = "Stripe berechtigen";
+$m['enable_stripe_title'] = "Stripe berechtigen, sodass Sie Benutzer für die Registrierung belasten können.";
+$m['stripe_key'] = "Stripe Passwort";
+$m['stripe_key_title'] = "Geben Sie hier Ihren Live Secret Key von Stripe ein";
+$m['stripe_cost'] = "Kosten";
+$m['stripe_cost_title'] = "Registrierungskosten";
+
+$m['permissions'] = "Berechtigung";
+$m['permissions_info'] = "Berechtigungsstufen Management";
+$m['delete_permission'] = "Sind Sie sicher, dass Sie diese Berechtigung löschen wollen? <br> Es wird alle Benutzer von dieser Berechtigungsstufe zur Standardberechtigungsstufe herabstufen.<br><br>";
+$m['create_permission'] = "Berechtigung erstellen";
+$m['perm_name'] = "Name";
+$m['perm_name_title'] = "Name der Berechtigung";
+$m['perm_level'] = "Berechtigungsstufe";
+$m['perm_level_title'] = "Nach welcher Berechtigungsstufe soll diese eingefügt werden?";
+$m['admin_info'] = "Verändern Sie von dieser Berechtigung nur die änderbaren Einstellungen.";
+$m['edit_permission'] = "Berechtigungen verändern";
+$m['leave_empty'] = "Nicht befüllen, um Voreinstellungen zu benutzen.";
+$m['users_perm'] = "Benutzer mit dieser Berechtigung";
+$m['no_users_found'] = "Keine Benutzer gefunden";
+$m['move_users'] = "Ausgewählte Benutzer verschieben nach:";
+
+
+// Translation controlpanel.php
+$m['control_menu'] = "Systemsteuerung";
+
+$m['registered_on'] = "Angemeldet";
+$m['permission'] = "Berechtigung";
+$m['ip_info'] = "Wenn eine IP rot ist, ist sie gesperrt";
+$m['num_logs'] = "Anzahl der Anmeldungen";
+$m['remove_block'] = "Datenblock entfernen";
+$m['log_and_block'] = "Anmeldung & Datenblöcke";
+$m['users_registration'] = "Benutzer Anmeldung";
+$m['last_login'] = "Letzte Anmeldung";
+$m['user_logins'] = "Anzahl der Anmeldungen";
+$m['reason'] = "Begründung";
+$m['no_reason'] = "Keine Begründung";
+$m['blocked_on'] = "Blocked on";//überprüfen
+$m['add_block'] = "Datenblock hinzufügen";
+$m['delete_blocks'] = "Ausgewählte Datenblöcke löschen";
+$m['users_info'] = "Hier können Sie Ihre Benutzer verwalten";
+$m['blocked_ip_info'] = "Hier können Sie IP Datenblöcke auf Ihrer Seite hinzufügen oder löschen";
+$m['logs_info'] = "Hier können sie die Registrierungen sehen";
+$m['tools_info'] = "Einige Instrumente Sie zu unterstützen";
+$m['statistics_info'] = "Einige Statistiken, um die Aktivitäten auf Ihrer Seite zu überprüfen";
+$m['info_user'] = "Beispiel Benutzer";
+$m['edit_user'] = "Benutzer bearbeiten";
+$m['graph_users_registered'] = "Benutzer angemeldet";
+$m['graph_messages_send'] = "Nachricht(en) gesendet";
+$m['graph_logins'] = "Anmeldung";
+$m['graph_blocks'] = "Datenblöcke";
+$m['graph_users'] = "Benutzer";
+$m['ipstats'] = "IP Statistik";
+$m['search_another_ip'] = "Andere IP suchen";
+$m['users_on_this_ip'] = "Auf dieser IP registrierte Benutzer: ";
+$m['good_logs'] = "Anzahl der erfolgreichen Anmeldungen: ";
+$m['bad_logs'] = "Anzahl von fehlgeschlagenen Anmeldungen: ";
+$m['more_info'] = "Mehr Informationen";
+$m['search_ip'] = "Suche IP";
+$m['add_user'] = "Benutzer hinzufügen";
+
+$m['options_for_selected'] = "Optionen für ausgewählte Benutzer:";
+$m['options_for_selected_info'] = "Diese Maßnahmen wirken sich nicht auf Benutzer mit der Berechtigung Admin, mit Ausnahme der Änderung Erlaubnis";
+$m['change_permission'] = "Berechtigung verändern";
+$m['activate_user'] = "Benutzer aktivieren";
+$m['deactivate_user'] = "Benutzer deaktivieren";
+$m['unban_user'] = "Benutzer entsperren";
+$m['ban_user'] = "Benutzer sperren";
+$m['delete_user'] = "Benutzer löschen";
+$m['change_to'] = "Wechsel zu";
+$m['are_you_sure'] = "Wollen Sie dies wirklich tun?";
+$m['are_you_sure_delete'] = "Wollen Sie diesen Benutzer wirklich löschen? <br> Dies kann nicht rückgängig gemacht werden";
+
+$m['mass_message'] = "Massen Nachricht";
+$m['clean_tools'] = "Säuberungsinstrumente";
+$m['backup'] = "Backup";
+$m['create_backup'] = "Backup erzeugen";
+$m['save_backup'] = "<h5> Text unten in .squ Dateidatei speichern und speichern sie diese an einem sicheren Ort.</h5>";
+$m['clean_messages'] = "Nachrichten aufräumen";
+$m['clean_messages_info'] = "Löscht alle Nachrichten älter als";
+$m['clean_logs'] = "Anmeldungen aufräumen";
+$m['clean_logs_info'] = "Löscht alle Anmeldungen älter als";
+$m['clean_users'] = "Benutzer aufräumen";
+$m['clean_users_info'] = "Löscht alle Benutzer älter als ";
+$m['based_on'] = "Based on";
+$m['based_on_activity'] = "Letzte Anmeldung des Benutzers";
+$m['based_on_registration'] = "Registration date of the user";
+$m['admin_pass'] = "Bitte bestätigen Sie diese Aktion durch Eingabe des Passworts";
+$m['date_info'] = "Bitte in diesem Format eingeben: JJJJ-MM-TT oder wenn ihr Browser dies unterstützt nutzen Sie die Datumsfunktion";
+$m['clean_warning'] = "<b>Warnung:</b> <br> Überprüfen Sie Ihre Aktion, diese kann nicht rückgängig gemacht werden";
+$m['this_will_delete'] = "Dieses wird alles löschen";
+$m['delete_inactive_users'] = "Löscht alle inaktiven Benutzer";
+$m['inactive_users'] = "Inaktive Benutzer";
+$m['delete_users_never_logged_in'] = "Löscht alle Benutzer, die nie angemeldet waren";
+$m['never_loggedin_users'] = "Benutzer, die nie angemeldet waren";
+
+$m['minutes'] = "Minute(n)";
+$m['hours'] = "Stunde(n)";
+$m['days'] = "Tag(e)";
+$m['weeks'] = "Woche(s)";
+$m['months'] = "Monat(e)";
+$m['years'] = "Jahr(e)";
+$m['forever'] = "Immer";
+
+$m['users_today'] = "Benutzer heute";
+$m['users_yesterday'] = "Benutzer gestern";
+$m['users_this_month'] = "Benutzer in diesem Monat";
+$m['users_this_year'] = "Benutzer in diesem Jahr";
+$m['users_total'] = "Benutzer Gesamtbewertung";
+
+$m['logins_today'] = "Logins heute";
+$m['logins_total'] = "Logins total";
+$m['blocks_today'] = "Bausteine heute";
+$m['blocks_total'] = "Bausteine total";
+
+$m['messages_today'] = "Nachrichten heute";
+$m['messages_yesterday'] = "Nachrichten gestern";
+$m['messages_this_month'] = "Nachrichten in diesem Monat";
+$m['messages_this_year'] = "Nachrichten in diesem Jahr";
+$m['messages_total'] = "Nachrichten insgesamt";
+?>
