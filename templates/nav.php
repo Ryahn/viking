@@ -244,7 +244,26 @@ if ( mysqli_num_rows($results) > 0 )
             $dateString = $date->format($dateFormat);
             $laterDate->add($laterInterval);
 
-                if ( $date > $laterDate )
+                
+                if ( $row['is_approved'] == 1 )
+                    {
+                    ?>
+                    <form action='attended.php' method='post' role='form'>
+                        <div class='attend-form form-group'>
+                            <div class='attend-form col-xs-1'>
+                                <select class='form-control' name='type'>
+                                    <option value="present">Present</option>
+                                    <option value="training">Training</option>
+                                </select>
+
+                            </div>
+                                <input type="hidden" value="<?php echo $auid; ?>" name="id1"/>
+                                <input type="hidden" value="<?php echo $platoon; ?>" name="platoon1"/>
+                                <input type='submit' value='Submit' name='submit' class='btn btn-primary attend-submit'/>
+                         </div>
+                          </form>
+                          <?php
+                } elseif ( $date > $laterDate )
                 {
                     ?>
                     <form action='attended.php' method='post' role='form'>
@@ -262,8 +281,7 @@ if ( mysqli_num_rows($results) > 0 )
                          </div>
                           </form>
                           <?php
-                }
-                else
+                } else
                 {
                     echo "<div class='attend-no'><a type='button' class='btn btn-primary btn-lg disabled attend-no-button'>" . $createdDate->diff($date)->format('%hH %iM') . "</a></div>";
                 }

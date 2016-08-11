@@ -12,6 +12,36 @@ $timestamp = strtotime($dateString);
 $rsql = "SELECT * FROM rosters";
 $results = mysqli_query($con, $bsql);
 ?>
+ <div class="navbar-default sidebar roster-legend-sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                    
+                        <div class="col-md-12 roster-legend">Legend for Date of Event</div> 
+                                                  
+                    
+                        <div class="col-md-10 roster-legend-element roster-training">Training Day</div><div class="col-xs-1 roster-training">T</div>
+                    
+                    
+                        <div class="col-md-10 roster-legend-element roster-present">Offical Op</div><div class="col-xs-1 roster-present">P</div>
+                    
+                    
+                        <div class="col-md-10 roster-legend-element roster-openplay">Open Play</div><div class="col-xs-1 roster-openplay">P</div>
+                    
+                    
+                        <div class="col-md-10 roster-legend-element roster-rasp">RASP</div><div class="col-xs-1 roster-rasp">P</div>
+                    
+                    
+                        <div class="col-md-10 roster-legend-element roster-ranger">Ranger School</div><div class="col-xs-1 roster-ranger">P</div>
+                    
+                    
+                        <div class="col-md-10 roster-legend-element roster-devday">Dev Day/No Event/Holidy</div><div class="col-xs-1 roster-devday">/</div>
+                    
+                    
+                        <div class="col-md-10 roster-legend-element roster-loa">Leave of Absense</div><div class="col-xs-1 roster-loa">-</div>
+                    
+                    </ul>
+                </div>
+            </div>
 <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">

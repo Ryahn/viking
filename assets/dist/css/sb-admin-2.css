@@ -397,7 +397,7 @@ a {
     z-index: 1;
     position: absolute;
     width: 250px;
-    margin-top: 8px;
+    margin-top: 1px;
 }
 .sidebar ul li {
     border-bottom: 1px solid rgba(231, 231, 231, 0.16);
@@ -552,5 +552,5 @@ th.center {
     color: white;
 }
 .roster-legend-sidebar {
-
+    margin-top: 295px;
 }
