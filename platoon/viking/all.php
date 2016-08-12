@@ -23,10 +23,11 @@ $month = date('m', $timestamp2);
 $year = date('Y', $timestamp2);
 
 //select username ane id
-$sql = "SELECT *,ranks.name from login_users,attendances,rosters,ranks 
-inner join user_ranks on user_ranks.rank_id=ranks.id 
-where login_users.id = user_ranks.user_id AND login_users.id = attendances.user_id AND login_users.id = rosters.ruser_id 
-GROUP BY rosters.rname ORDER BY ranks.id ";
+$sql = "SELECT * from rosters,ranks
+inner join user_ranks on user_ranks.rank_id=ranks.id
+where rosters.ruser_id = user_ranks.user_id
+GROUP BY rosters.rname 
+ORDER BY ranks.id";
 
 $results = mysqli_query($con, $sql);
 if(!$results and $mysqliDebug) {
@@ -48,46 +49,73 @@ if(!$results and $mysqliDebug) {
 		</tr>
 	</thead>
 <tbody>
-                               
+                       
 <?php
-$rows = array();
-while( $row = mysqli_fetch_array($results) )
+// $rows = array();
+while( $row = mysqli_fetch_assoc($results) )
+{
+    echo "<tr>";
+    echo "<td>" . $row['rname'] . "</td>";
+    echo "<td>N/A</td>";
+
+    $userid1 = $row['ruser_id'];
+    // $rows[] = $row;
+    $attendsql = "SELECT * from attendances where user_id=$userid1";
+    $attendresults = mysqli_query($con, $attendsql);
+    $arows = array();
+
+    while( $arow = mysqli_fetch_array($attendresults) )
     {
-        $rows[] = $row;
+        $arows[] = $arow;
     }
-    	
 
-
-    $mostRecent = 0;
-    foreach( $rows as $row ) 
+    foreach($daterange as $date1)
     {
-        echo '<tr>';
-        echo "<td><img height='25px' src='".$row['base64'] . "'/> " .$row['rname'] ."</td>";
-        echo "<td>no</td>";
-        $createdDateString = $row['created_on'];
-        $row['created_on'] = new DateTime( $createdDateString );
-        $pDate = $row['created_on']->format('d');
-            foreach($daterange as $date1)
-                // echo $date1->format('Y-m-d') . '<br>';
-                // echo 'Pdate: ' . $pDate . '<br>';
-            if ( $date1->format('d') == $pDate)
+        $attendance = "A";
+    
+        foreach ( $arows as $arow ) 
+        {
+            $date1String = $date1->format('Y-m-d');
+            $createdOnDate = $arow['created_on'];
+            $createdDate = new DateTime( $createdOnDate );
+            $attendanceDateString = $createdDate->format('Y-m-d');
+
+            $isPresent = $arow['is_present'];
+            $isTraining = $arow['is_training'];
+
+            if ( $attendanceDateString == $date1String )
             {
-                if ($row['is_present'] == true) 
+                if ( $isPresent && $isTraining )
                 {
-                    echo "<td style='text-align: center;'>P</td>";
+                    $attendance = "⚠︎";
+                }
+                elseif ( $isPresent )
+                {
+                    $attendance = "P";
+                }
+                elseif ( $isTraining )
+                {
+                    $attendance = "T";
                 }
                 else
                 {
-                    echo "<td style='text-align: center;'>A</td>";
+                    $attendance = "⚠︎";
                 }
-            } 
-            else 
-            {
-                echo "<td style='text-align: center;'>A</td>";
-            }
 
+                $attended = TRUE;
+            }
+        }
+    
+       echo '<td style="text-align:center;">' . $attendance . '</td>';
     }
+
+    echo "</tr>";
+}
+    	 
+
+
+
+
 ?>
-        </tr>
     </tbody>
 </table>
