@@ -6,8 +6,8 @@ include('../../templates/sidebar.php');
 $uid1 = userValue(null, "id");
 $loasql = "SELECT * from rosters,ranks
 inner join user_ranks on user_ranks.rank_id=ranks.id
-where rosters.ruser_id = '$uid1'
-GROUP BY rosters.ruser_id";
+where user_ranks.user_id = $uid1
+GROUP BY user_ranks.user_id";
 
 $results = mysqli_query($con, $loasql);
 if(!$results and $mysqliDebug) {
