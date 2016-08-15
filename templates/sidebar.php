@@ -24,6 +24,21 @@ $needApproval = mysqli_num_rows($results);
                             </div> -->
                             <!-- /input-group -->
                         </li>
+                        <?php if ( hasPermission('is_admin') )
+                        {?>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Admin<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/login/controlpanel.php">Control Panel</a>
+                                </li>
+                                <li>
+                                    <a href="/login/settings.php?page=main">Settings</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <?php } ?>
                         <li>
                             <a href="/"><i class="fa fa-dashboard fa-fw"></i>
                             <?php 
@@ -48,7 +63,7 @@ $needApproval = mysqli_num_rows($results);
                                 echo 'WDashboard';
                             }
 
-                            if (hasPermission('can_update') )
+                            if (hasPermission('can_update') && $needApproval > 0 )
                             {
                                 echo '<span class="badge" style="background-color:rgb(214, 0, 0);">'.$needApproval .'</span> <small style="font-size:75%;color:white;">Need Approved</small></a>';
                             }
@@ -58,18 +73,7 @@ $needApproval = mysqli_num_rows($results);
                             }
                             ?>
                         </li>
-                        <!-- <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="flot.html">Flot Charts</a>
-                                </li>
-                                <li>
-                                    <a href="morris.html">Morris.js Charts</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                       <!-- </li> -->
+
                        <li>
                             <a href="<?php echo '/platoon/' . $uplatoon1 .'/roster.php'; ?> "><i class="fa fa-list-alt fa-fw"></i> Roster</a>
                         </li>
