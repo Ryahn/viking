@@ -65,7 +65,7 @@ $needApproval = mysqli_num_rows($results);
 
                             if (hasPermission('can_update') && $needApproval > 0 )
                             {
-                                echo '<span class="badge" style="background-color:rgb(214, 0, 0);">'.$needApproval .'</span> <small style="font-size:75%;color:white;">Need Approved</small></a>';
+                                echo '<span class="badge" style="background-color:rgb(214, 0, 0);"> '.$needApproval .'</span> <small style="font-size:75%;color:white;">Need Approved</small></a>';
                             }
                             else
                             {

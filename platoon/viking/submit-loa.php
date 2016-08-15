@@ -43,7 +43,7 @@ if(!$results and $mysqliDebug) {
                                             while( $row = mysqli_fetch_assoc($results) )
 											{
 
-												echo $row['name'] . ' ' . $row['rname'] . ', '. $row['rplatoon'];
+												echo $uid1 . ' ' .$row['name'] . ' ' . $row['rname'] . ', '. $row['rplatoon'];
 											}
 
 
