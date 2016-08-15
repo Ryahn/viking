@@ -6,8 +6,8 @@ include('../../templates/sidebar.php');
 $uid1 = userValue(null, "id");
 $loasql = "SELECT * from rosters,ranks
 inner join user_ranks on user_ranks.rank_id=ranks.id
-where user_ranks.user_id = $uid1
-GROUP BY user_ranks.user_id";
+where rosters.ruser_id = $uid1
+GROUP BY rosters.ruser_id";
 
 $results = mysqli_query($con, $loasql);
 if(!$results and $mysqliDebug) {
@@ -36,14 +36,14 @@ if(!$results and $mysqliDebug) {
                                 <div class="col-md-10">
                                     <form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                                         <div class="form-group">
-                                            <label>Rank, Name &amp; Platoon</label>
+                                            <label>Name &amp; Platoon</label>
                                             <p class="form-control-static">
                                             <?php 
 
                                             while( $row = mysqli_fetch_assoc($results) )
 											{
 
-												echo $uid1 . ' ' .$row['name'] . ' ' . $row['rname'] . ', '. $row['rplatoon'];
+												echo $row['rname'] . ', '. $row['rplatoon'];
 											}
 
 
