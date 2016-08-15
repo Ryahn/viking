@@ -14,7 +14,7 @@ $results = mysqli_query($con, $navsql);
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{ urlFor('home') }}">VAS</a><br />
-                <h5><small id="brand-small">Viking Attendence System</small>
+                <h5><small id="brand-small">Virtual Attendence System</small>
                 </h5>
             </div>
             <!-- /.navbar-header -->
@@ -251,9 +251,13 @@ if ( mysqli_num_rows($results) > 0 )
                     <form action='attended.php' method='post' role='form'>
                         <div class='attend-form form-group'>
                             <div class='attend-form col-xs-1'>
-                                <select class='form-control' name='type'>
-                                    <option value="present">Present</option>
+                                <select class='form-control attend-select' name='type'>
+                                    <option value="official">Official OP</option>
+                                    <option value="open">Open Play</option>
+                                    <option value="rasp">RASP</option>
                                     <option value="training">Training</option>
+                                    <option value="ranger">Ranger School</option>
+                                    <option value="dev">Dev/No Event</option>
                                 </select>
 
                             </div>
@@ -269,9 +273,13 @@ if ( mysqli_num_rows($results) > 0 )
                     <form action='attended.php' method='post' role='form'>
                         <div class='attend-form form-group'>
                             <div class='attend-form col-xs-1'>
-                                <select class='form-control' name='type'>
-                                    <option value="present">Present</option>
+                                <select class='form-control attend-select' name='type'>
+                                    <option value="official">Official OP</option>
+                                    <option value="open">Open Play</option>
+                                    <option value="rasp">RASP</option>
                                     <option value="training">Training</option>
+                                    <option value="ranger">Ranger School</option>
+                                    <option value="dev">Dev/No Event</option>
                                 </select>
 
                             </div>
@@ -293,9 +301,13 @@ else
    <form action='attended.php' method='post' role='form'>
                         <div class='attend-form form-group'>
                             <div class='attend-form col-xs-1'>
-                                <select class='form-control' name='type'>
-                                    <option value="present">Present</option>
+                                <select class='form-control attend-select' name='type'>
+                                    <option value="official">Official OP</option>
+                                    <option value="open">Open Play</option>
+                                    <option value="rasp">RASP</option>
                                     <option value="training">Training</option>
+                                    <option value="ranger">Ranger School</option>
+                                    <option value="dev">Dev/No Event</option>
                                 </select>
 
                             </div>

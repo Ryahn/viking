@@ -1,0 +1,608 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"show",
+				"showbutton"
+			],
+			[
+				"pid",
+				"pid22"
+			],
+			[
+				"open",
+				"openplay	(all.php)"
+			],
+			[
+				"atte",
+				"attendance"
+			],
+			[
+				"att",
+				"attendance"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"over",
+				"overflow"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"is",
+				"is_present"
+			],
+			[
+				"too",
+				"tooltip	(sb-admin-2.css)"
+			],
+			[
+				"tooltip",
+				"tooltiptext	(sb-admin-2.css)"
+			],
+			[
+				"total",
+				"totalPresent"
+			],
+			[
+				"created",
+				"createdOnDate"
+			],
+			[
+				"create",
+				"createdDate"
+			],
+			[
+				"creat",
+				"createdOnDate"
+			],
+			[
+				"date",
+				"date1String"
+			],
+			[
+				"mysql",
+				"mysqli_fetch_array"
+			],
+			[
+				"Y",
+				"Y-m-d"
+			],
+			[
+				"mysqli_fet",
+				"mysqli_fetch_assoc	(roster.php)"
+			],
+			[
+				"cre",
+				"createdDateString"
+			],
+			[
+				"Date",
+				"DateTime"
+			],
+			[
+				"crea",
+				"created_on"
+			],
+			[
+				"login",
+				"login_users	(all.php)"
+			],
+			[
+				"ar",
+				"array	$… = array (…)"
+			],
+			[
+				"mon",
+				"month12"
+			],
+			[
+				"month",
+				"month2"
+			],
+			[
+				"ex",
+				"explode"
+			],
+			[
+				"atten",
+				"attendances	(attended.php)"
+			],
+			[
+				"re",
+				"results"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"strto",
+				"strtotime"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"dat",
+				"dateFormat"
+			],
+			[
+				"dateS",
+				"dateSubTime"
+			],
+			[
+				"n",
+				"ncreated"
+			],
+			[
+				"par",
+				"parseDate"
+			],
+			[
+				"prin",
+				"printf"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 219.0,
+		"selected_items":
+		[
+			[
+				"git pu",
+				"Git: Pull"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git comm",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"git",
+				"Git: Push"
+			],
+			[
+				"git com",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"git commit ",
+				"Git: Quick Commit (repo)"
+			],
+			[
+				"git ad",
+				"Git: Add All"
+			],
+			[
+				"git ",
+				"Git: Commit"
+			],
+			[
+				"syntax php",
+				"Set Syntax: PHP"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"INST",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"instl",
+				"Package Control: Install Local Dependency"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/viking/platoon/viking/index.php",
+		"/C/xampp/htdocs/viking/platoon/viking/all.php",
+		"/C/xampp/htdocs/symfony/config/app.php",
+		"/C/xampp/htdocs/symfony/.env",
+		"/C/xampp/htdocs/symfony/config/database.php",
+		"/C/xampp/htdocs/viking/platoon/viking/roster.php",
+		"/C/xampp/htdocs/viking/platoon/viking/test1.php",
+		"/C/xampp/htdocs/viking/platoon/viking/awards.php",
+		"/C/xampp/htdocs/viking/assets/dist/css/sb-admin-2.css",
+		"/C/xampp/htdocs/viking/platoon/viking/approve.php",
+		"/C/xampp/htdocs/viking/permissions.php",
+		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
+		"/C/xampp/htdocs/viking/templates/nav.php",
+		"/C/xampp/htdocs/viking/platoon/viking/attended.php",
+		"/C/xampp/htdocs/viking/config/protection.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/test1.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/config.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/db.php",
+		"/C/Users/ryanc/AppData/Roaming/Sublime Text 2/Packages/Git/Git.sublime-settings",
+		"/C/Users/ryanc/AppData/Roaming/Sublime Text 2/Packages/User/Git.sublime-settings",
+		"/C/xampp/htdocs/viking/templates/sidebar.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/config 2.php",
+		"/C/Program Files/TeamSpeak 3 Client/styles/21st_viking.qss",
+		"/C/xampp/phpMyAdmin/config.inc.php",
+		"/G/torrents/downloads/BLOODRAYNE-DEViANCE/30726.nfo",
+		"/C/xampp/htdocs/viking/config/db.new.php",
+		"/C/xampp/htdocs/viking/login/config.new.php",
+		"/C/xampp/htdocs/viking/.gitignore",
+		"/C/xampp/htdocs/viking/database.sql",
+		"/C/xampp/htdocs/viking/config/db.php",
+		"/C/xampp/htdocs/viking/templates/head.php",
+		"/C/xampp/htdocs/viking/templates/footer.php",
+		"/C/xampp/htdocs/viking/attended.php",
+		"/C/xampp/htdocs/viking/platoon/viking/test.php",
+		"/G/torrents/downloads/Sony Vegas Pro 13.0 build 310 (64 bit) (patch KHG) [ChingLiu]/ChingLiu.Install.Notes.nfo",
+		"/C/xampp/htdocs/viking/index.php",
+		"/C/xampp/htdocs/viking/app/pages/init.php",
+		"/C/xampp/htdocs/viking/public/index.php",
+		"/C/xampp/htdocs/viking/hello.php",
+		"/C/xampp/htdocs/viking/init.php",
+		"/C/xampp/htdocs/viking/bye.php",
+		"/C/xampp/htdocs/viking/front.php",
+		"/C/xampp/htdocs/oldviking/app/routes/platoon/viking.php",
+		"/C/xampp/htdocs/oldviking/app/routes/platoon/viking/attendance.php",
+		"/C/xampp/htdocs/oldviking/app/routes/platoon/viking/approved.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp28081/home/residez3/public_html/mods/db.php",
+		"/C/xampp/htdocs/viking/public/.htaccess",
+		"/C/xampp/apache/logs/error.log",
+		"/C/xampp/apache/logs/access.log",
+		"/c/xampp/php/logs/php_error_log",
+		"/C/xampp/htdocs/oldviking/app/views/templates/partials/navigation.php",
+		"/C/xampp/htdocs/oldviking/app/Codecourse/User/UserPermission.php",
+		"/C/xampp/htdocs/oldviking/app/Codecourse/User/User.php",
+		"/C/Users/ryanc/Documents/trainers/21st/guardian/styles/21st_guardian.qss",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/start.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/README.md",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/default.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/example.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/example 2.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/all 2.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/UserPermission.php",
+		"/C/Users/ryanc/Downloads/startbootstrap-sb-admin-2-gh-pages/pages/blank.html",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/register.php",
+		"/C/Users/ryanc/Downloads/startbootstrap-sb-admin-2-gh-pages/index.html",
+		"/C/Users/ryanc/Downloads/startbootstrap-sb-admin-2-gh-pages/pages/login.html",
+		"/E/multimc/php-authentication/app/views/templates/partials/navigation.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/all.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/login.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/navigation.php",
+		"/C/Users/ryanc/Documents/trainers/21st/nightmare/styles/21st_nightmare.qss",
+		"/C/Users/ryanc/Documents/trainers/21st/rrd/styles/21st_rrd.qss",
+		"/C/xampp/htdocs/viking/public/viking-jan-15.csv",
+		"/C/xampp/htdocs/viking/public/viking-feb-15.csv",
+		"/C/xampp/htdocs/viking/public/viking-mar-15.csv",
+		"/C/xampp/htdocs/viking/public/viking-apr-15.csv",
+		"/E/multimc/php-authentication/app/routes/auth/logout.php",
+		"/E/multimc/php-authentication/app/Codecourse/User/User.php",
+		"/E/multimc/php-authentication/app/filters.php",
+		"/E/multimc/php-authentication/app/routes/auth/login.php",
+		"/E/multimc/php-authentication/app/routes.php",
+		"/C/xampp/php/php.ini",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/index.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/mode.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/Config.php",
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/production.php",
+		"/C/xampp/sendmail/sendmail.ini",
+		"/C/Program Files/TeamSpeak 3 Client/styles/21st.qss",
+		"/C/Users/ryanc/Documents/trainers/21st/viking/styles/21st_viking.qss",
+		"/C/Users/ryanc/Documents/trainers/21st/whiskey/styles/21st_whiskey.qss",
+		"/C/Users/ryanc/Documents/trainers/21st_v1.0.2.2_1462841332/package.ini",
+		"/C/Program Files/TeamSpeak 3 Client/styles/21st/images/bg/soldierbg.jpg",
+		"/G/mods/login/config.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp16215/Users/admin/Public/mods/index.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp49471/home/residez3/public_html/mods/servers/index.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp02670/home/residez3/public_html/mods/login/config.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp07509/home/residez3/public_html/mods/master.json",
+		"/C/Users/ryanc/AppData/Local/Temp/scp08899/home/residez3/public_html/mods/masterupdate.php",
+		"/C/Users/ryanc/Documents/1710.sql",
+		"/C/Users/ryanc/AppData/Local/Temp/scp46773/home/residez3/public_html/mods/db.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp41766/home/residez3/public_html/mods/masterupdate.php",
+		"/G/torrents/downloads/LIGHTNING.RETURNS.FINAL.FANTASY.XIII-CODEX [NO RAR]/codex.nfo",
+		"/G/mods/db.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp13541/home/residez3/public_html/mods/1.8.9/modupdated.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp12747/home/residez3/public_html/mods/1.8.9/mcfparser.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp06928/home/residez3/public_html/mods/master.json",
+		"/C/Users/ryanc/AppData/Local/Temp/scp06633/home/residez3/public_html/mods/error_log",
+		"/C/Users/ryanc/AppData/Local/Temp/scp20720/home/residez3/public_html/mods/login/includes/functions.php",
+		"/C/Users/ryanc/Documents/Rainmeter/Skins/illustro Pulsar 1.5/GPU2/GPU2.ini",
+		"/C/Users/ryanc/Documents/Rainmeter/Skins/illustro Pulsar 1.5/Folding/Folding.ini",
+		"/C/Users/ryanc/AppData/Local/Temp/scp10419/public_html/assets/js/variable.js",
+		"/C/Users/ryanc/AppData/Local/Temp/scp26504/home/customer/musicbot2/config.ini",
+		"/C/Users/ryanc/AppData/Local/Temp/scp46156/home/customer/luke/config.ini",
+		"/G/music/discord/MusicBot/README.md",
+		"/C/Users/ryanc/AppData/Local/Temp/scp03262/home/customer/discordmusic/config/permissions.ini",
+		"/C/Users/ryanc/Documents/Dark_Matter.theme.css",
+		"/C/Users/ryanc/Documents/Discord_Reborn.theme.css",
+		"/C/Users/ryanc/AppData/Local/Temp/scp00911/home/customer/discordbot/auth.json",
+		"/C/Users/ryanc/Documents/projects/AwesomeBot/auth.json",
+		"/C/Users/ryanc/Documents/projects/AwesomeBot/data/config.json",
+		"/C/Users/ryanc/Documents/projects/AwesomeBot/package.json",
+		"/C/Users/ryanc/Downloads/MinecraftClient1.9.0/MinecraftClient.ini",
+		"/C/Users/ryanc/Documents/projects/ResonantRise/dev/config/veinminer/modSupport.cfg",
+		"/C/Users/ryanc/Documents/projects/ResonantRise/dev/config/veinminer/tools-and-blocks.json",
+		"/C/Users/ryanc/Documents/projects/ResonantRise/dev/README.md",
+		"/C/Users/ryanc/Documents/projects/ResonantRise/dev/ResonantRise4Dev.xml",
+		"/E/atl/Servers/ResonantRiseDev_DevcoV4/server.properties",
+		"/E/atl/Servers/Block19_Dev/server.properties",
+		"/E/atl/Servers/Block19_Dev/LaunchServer.sh"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"  <span class=\"tooltiptext2\"><a type=\"button\" class=\"btn btn-success\" href=\"approve.php?id=' . $pid2 . '\">Approved</a><a type=\"button\" class=\"btn btn-danger\" style=\"margin-left: 4px;\" href=\"approve.php?id=' . $pid2 . '\"&deny=1>Deny</a></span>\n",
+			"<span class=\"tooltiptext2\"><a type=\"button\" class=\"btn btn-success\" href=\"approve.php?id=' . $pid2 . '\">Approved</a><a type=\"button\" class=\"btn btn-danger\" style=\"margin-left: 4px;\" href=\"approve.php?id=' . $pid2 . '&deny=1\">Deny</a></span>",
+			"<span class=\"tooltiptext2\"><a type=\"button\" class=\"btn btn-success\" href=\"approve.php?id=' . $pid2 . '\">Approved</a><a type=\"button\" class=\"btn btn-danger\" style=\"margin-left: 4px;\">Deny</a></span>",
+			"approved.php",
+			"attended",
+			"pid",
+			"pid1",
+			"pid",
+			"rasp",
+			"ranger",
+			"present",
+			"/",
+			"devday",
+			"loa",
+			"class='form-control'",
+			"ranger",
+			"rasp",
+			"loa",
+			"training",
+			"table",
+			"row",
+			"background-color",
+			"present",
+			"prow",
+			"end",
+			"month2",
+			"is_training",
+			"is_present",
+			"row",
+			"grabPresults",
+			"th",
+			"month",
+			"end",
+			"</li>",
+			"</li>  ",
+			"<li>",
+			"\n                      ",
+			"templates",
+			"r\">	",
+			"	</th>",
+			"	<",
+			"	",
+			"$training = 1;",
+			"results2",
+			"nsql",
+			"nsql1",
+			"nsql2",
+			"nsql3",
+			"results2",
+			"results3",
+			"results2",
+			"nsql2",
+			"nsql1",
+			"nsql",
+			"'",
+			"_GET",
+			"attend",
+			"<?php echo $base;?>/",
+			"<?php echo $base;?>",
+			"assets",
+			"C:\\xampp\\htdocs\\viking/",
+			"C:\\xampp\\htdocs\\viking",
+			"assets",
+			"\"",
+			"$date",
+			"date",
+			"opens",
+			")))",
+			",TRUE,FALSE",
+			"=if",
+			")",
+			"my-gmail-id@gmail.com",
+			"rrdev",
+			"21st_p",
+			"21st",
+			"1710",
+			"ts2",
+			"ts3",
+			"\n$",
+			");\n",
+			"All",
+			"ocation",
+			"regis",
+			"password",
+			"user",
+			"musicbot3",
+			";",
+			"eoc",
+			";",
+			"X=0",
+			";",
+			"30",
+			";",
+			"<td width=\".*\" class=\".*\">.*<font color=\".*\">(.*)",
+			".png",
+			";",
+			".*<",
+			".*<td",
+			".dll",
+			"Plugins\\\\",
+			"\\",
+			"GPU2",
+			"Core4",
+			"Core4U",
+			"dummy-host2.example.com",
+			"dummy-host2.example.com-error",
+			"##",
+			"                 x",
+			"[/img]",
+			"[img]",
+			"door",
+			"to",
+			"\n",
+			"Ryahn started a new personal conversation with you	Password not accepted from the server\n535 535 Incorrect authentication data	Today, 02:17 AM	",
+			"Ryahn started a new personal conversation with you	Password not accepted from the server\n535 535 Incorrect authentication data	Today, 02:18 AM	",
+			"rd not accepted from the server\n535 535 Incorrect authentication data	Today, 02:18 AM	",
+			"\nrd not accepted from the server\n535 535 Incorrect authentication data	Today, 02:19 AM	",
+			"	Ryahn",
+			"record",
+			"server group",
+			"%apphome%",
+			"=",
+			"198.245.50.74",
+			"sudo ",
+			"    ",
+			"$guest(),",
+			"bluesky",
+			"bg__v"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 44.0
+	},
+	"output.git":
+	{
+		"height": 81.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
