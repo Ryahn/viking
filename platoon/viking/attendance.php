@@ -52,36 +52,8 @@ $('#saveall').click(function(){
 
 });
 </script>
-<div class="navbar-default sidebar roster-legend-sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                    
-                        <div class="col-md-12 roster-legend">Legend for Date of Event</div> 
-                                                  
-                    
-                        <div class="col-md-10 roster-legend-element roster-training">Training Day</div><div class="col-xs-1 roster-training">T</div>
-                    
-                    
-                        <div class="col-md-10 roster-legend-element roster-present">Offical Op</div><div class="col-xs-1 roster-present">P</div>
-                    
-                    
-                        <div class="col-md-10 roster-legend-element roster-openplay">Open Play</div><div class="col-xs-1 roster-openplay">P</div>
-                    
-                    
-                        <div class="col-md-10 roster-legend-element roster-rasp">RASP</div><div class="col-xs-1 roster-rasp">P</div>
-                    
-                    
-                        <div class="col-md-10 roster-legend-element roster-ranger">Ranger School</div><div class="col-xs-1 roster-ranger">P</div>
-                    
-                    
-                        <div class="col-md-10 roster-legend-element roster-devday">Dev Day/No Event/Holidy</div><div class="col-xs-1 roster-devday">/</div>
-                    
-                    
-                        <div class="col-md-10 roster-legend-element roster-loa">Leave of Absense</div><div class="col-xs-1 roster-loa">-</div>
-                    
-                    </ul>
-                </div>
-            </div>
+
+                        <div id="wrapper">
             <div id="page-wrapper">
                         <div class="row">
                             <div class="col-lg-12">
@@ -127,18 +99,21 @@ while( $row = mysqli_fetch_assoc($results) )
 {
   $inactive = new DateTime( $row['last_active'] );
     $inactiveDate = $inactive->format('Y-m-d');
-    echo "<tr>";
     if ( $row['is_loa'] )
     {
-      echo "<td><img height='25px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> " .$row['rname'] . " <span class='label label-default label-loa'>LOA</span></td>";
+      echo "<tr class='tr-loa'><td><img height='25px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> " .$row['rname'] . " <span class='label label-default label-loa'>LOA</span></td>";
     }
     elseif ( $oneweek->format('Y-m-d') >= $inactiveDate )
     {
-      echo "<td><img height='25px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> " .$row['rname'] . " <span class='label label-danger'>AWOL</span></td>";
+      echo "<tr class='tr-awol'><td><img height='25px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> " .$row['rname'] . " <span class='label label-danger'>AWOL</span></td>";
+    }
+    elseif ( $row['is_rrd'] )
+    {
+      echo "<tr class='tr-rrd'><td><img height='25px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> " .$row['rname'] . " <span class='label label-rrd'>RRD</span></td>";
     }
     else
     {
-    echo "<td><img height='25px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> " .$row['rname'] . "</td>";
+    echo "<tr><td><img height='25px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> " .$row['rname'] . "</td>";
   }
     echo "<td>N/A</td>";
     
@@ -179,7 +154,7 @@ while( $row = mysqli_fetch_assoc($results) )
 
             $attendType = $arow['type'];
             
-            $pid2 = $arow['attendid'];
+            // $pid2 = $arow['attendid'];
             if ( $attendanceDateString == $date1String )
             {
                 if ( !$attendType )
@@ -191,42 +166,66 @@ while( $row = mysqli_fetch_assoc($results) )
                 {
                     $attendance = "OP";
                     $approved = $arow['is_approved'];
-                    $pid = array();
-                    $pid[] = $arow['attendid'];
+                    
+                    $pid = $arow['attendid'];
 
                                         
                 }
                 elseif ( $attendType == 2 )
                 {
                     $attendance = "T";
+                    $approved = $arow['is_approved'];
+                    
+                    $pid = $arow['attendid'];
                 }
                 elseif ( $attendType == 3 )
                 {
                     $attendance = "-";
+                    $approved = $arow['is_approved'];
+                    
+                    $pid = $arow['attendid'];
                 }
                 elseif ( $attendType == 4 )
                 {
                     $attendance = "/";
+                    $approved = $arow['is_approved'];
+                    
+                    $pid = $arow['attendid'];
                 }
                 elseif ( $attendType == 5 )
                 {
                     $attendance = "A";
+                    $approved = $arow['is_approved'];
+                    
+                    $pid = $arow['attendid'];
                 }
                 elseif ( $attendType == 6 )
                 {
                     $attendance = "OO";
+                    $approved = $arow['is_approved'];
+                    
+                    $pid = $arow['attendid'];
                 }
                 elseif ( $attendType == 7 )
                 {
                     $attendance = "R";
+                    $approved = $arow['is_approved'];
+                    
+                    $pid = $arow['attendid'];
                 }
                 elseif ( $attendType == 8 )
                 {
                     $attendance = "RS";
+                    $approved = $arow['is_approved'];
+                    
+                    $pid = $arow['attendid'];
                 }
                 else
                 {
                     $attendance = "Y";
+                    $approved = $arow['is_approved'];
+                    
+                    $pid = $arow['attendid'];
                 }
 
                 $attended = TRUE;
@@ -255,13 +254,13 @@ while( $row = mysqli_fetch_assoc($results) )
         if ( $approved )
         {
             echo '<td class="roster-openplay"><div class="tooltip3">P
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid2 . '">Edit</a></td>';
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
         }
         else
         {
         echo '<td class="roster-openplay unapproved"><div class="tooltip2">P
-<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid2 . '">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid2 . '&deny=1">Deny</a></span></div>
-<input type="hidden" name="pid'.$pii++ .'" value="'.$pid2 .'"/></td>';
+<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
 
 }
        }
@@ -272,12 +271,13 @@ while( $row = mysqli_fetch_assoc($results) )
         if ( $approved )
         {
             echo '<td class="roster-training"><div class="tooltip3">T
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid2 . '">Edit</a></td>';
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
         }
         else
         {
         echo '<td class="roster-training unapproved"><div class="tooltip2">T
-<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid2 . '">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid2 . '&deny=1">Deny</a></span></div></td>';
+<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
 }
        }
        //end
@@ -287,14 +287,14 @@ while( $row = mysqli_fetch_assoc($results) )
         if ( $approved )
         {
             echo '<td class="roster-loa"><div class="tooltip3">-
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid2 . '">Edit</a></td>';
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
 
         }
         else
         {
         echo '<td class="roster-loa unapproved"><div class="tooltip2">-
-  <span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid2 . '">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid2 . '&deny=1">Deny</a></span>
-</div></td>';
+<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
 }
        }
        //end
@@ -304,12 +304,13 @@ while( $row = mysqli_fetch_assoc($results) )
         if ( $approved )
         {
             echo '<td class="roster-devday"><div class="tooltip3">/
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid2 . '">Edit</a></td>';
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
         }
         else
         {
         echo '<td class="roster-devday unapproved"><div class="tooltip2">/
-<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid2 . '">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid2 . '&deny=1">Deny</a></span></div></td>';
+<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
 }
        }
        //end
@@ -325,12 +326,13 @@ while( $row = mysqli_fetch_assoc($results) )
         if ( $approved )
         {
             echo '<td class="roster-present"><div class="tooltip3">P
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid2 . '">Edit</a></td>';
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
         }
         else
         {
         echo '<td class="roster-present unapproved"><div class="tooltip2">P
-<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid2 . '">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid2 . '&deny=1">Deny</a></span></div></td>';
+<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
 }
        }
        //end
@@ -340,12 +342,13 @@ while( $row = mysqli_fetch_assoc($results) )
         if ( $approved )
         {
             echo '<td class="roster-rasp"><div class="tooltip3">P
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid2 . '">Edit</a></td>';
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
         }
         else
         {
         echo '<td class="roster-rasp unapproved"><div class="tooltip2">P
-<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid2 . '">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid2 . '&deny=1">Deny</a></span></div></td>';
+<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
 }
        }
        //end
@@ -355,12 +358,13 @@ while( $row = mysqli_fetch_assoc($results) )
         if ( $approved )
         {
             echo '<td class="roster-ranger"><div class="tooltip3">P
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid2 . '">Edit</a></td>';
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
         }
         else
         {
         echo '<td class="roster-ranger unapproved"><div class="tooltip2">P
-<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid2 . '">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid2 . '&deny=1">Deny</a></span></div></td>';
+<span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
 }
        }
        //end
@@ -394,7 +398,7 @@ if ( hasPermission('can_update') )
 }
 ?>
 </form>
-<button type="submit" class="btn btn-success" name="saveall" form="saveall" id="saveall">Save All</button>
+
 </div>
                             <!-- /.table-responsive -->
                             
@@ -406,11 +410,43 @@ if ( hasPermission('can_update') )
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+
+            <div class="row">
+              <div class="col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                            <u>Legend for Date of Events</u>
+                  </div>
+                  <div class="panel-body">
+                    
+                    <div class="col-xs-10" style="width:88%;background-color:rgb(136, 93, 12);border-right:1px black solid;color:white;">Training Day</div>
+                    <span style="background-color:rgb(136, 93, 12);padding:2px 4px 2px 10px;color:white;">T</span>
+                    <div class="col-xs-10" style="width:88%;background-color:rgb(18, 112, 12);border-right:1px black solid;color:white;">Official OP</div>
+                    <span style="background-color:rgb(18, 112, 12);padding:2px 4px 2px 10px;color:white;">P</span>
+                    <div class="col-xs-10" style="width:88%;background-color:rgb(38, 105, 174);border-right:1px black solid;color:white;">Open Play</div>
+                    <span style="background-color:rgb(38, 105, 174);padding:2px 4px 2px 10px;color:white;">P</span>
+                    <div class="col-xs-10" style="width:88%;background-color:rgb(121, 37, 198);border-right:1px black solid;color:white;">RASP</div>
+                    <span style="background-color:rgb(121, 37, 198);padding:2px 4px 2px 10px;color:white;">P</span>
+                    <div class="col-xs-10" style="width:88%;background-color:rgb(166, 141, 3);border-right:1px black solid;color:white;">Ranger School</div>
+                    <span style="background-color:rgb(166, 141, 3);padding:2px 4px 2px 10px;color:white;">P</span>
+                    <div class="col-xs-10" style="width:88%;background-color:rgb(137, 17, 12);border-right:1px black solid;color:white;">Dev Day/No Event</div>
+                    <span style="background-color:rgb(137, 17, 12);padding:2px 5px 2px 14px;color:white;">/</span>
+                    <div class="col-xs-10" style="width:88%;background-color:rgb(171, 38, 150);border-right:1px black solid;color:white;">Leave of Absence</div>
+                    <span style="background-color:rgb(171, 38, 150);padding:2px 6px 2px 12px;color:white;">-</span>
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
             
             
             
         </div>
         <!-- /#page-wrapper -->
+      </div>
+
+    </div>
+    <!-- /#wrapper -->
 
     <?php
 include('../../templates/footer.php');

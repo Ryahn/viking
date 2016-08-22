@@ -53,6 +53,7 @@ $pst = $dateTime->setTimeZone(new DateTimeZone('America/Los_Angeles'));
  
     
 ?>
+<div id="wrapper">
  <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -94,6 +95,7 @@ $pst = $dateTime->setTimeZone(new DateTimeZone('America/Los_Angeles'));
             
         </div>
         <!-- /#page-wrapper -->
+    </div>
 
 
 

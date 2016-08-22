@@ -9,11 +9,15 @@ if(!$results and $mysqliDebug) {
     echo $con->error;
 }
 $needApproval = mysqli_num_rows($results);
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$links = explode('/', $actual_link);
+$link = $links[5];
 ?>
  <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
+
                             <!-- <div class="input-group custom-search-form">
                                 <input type="text" class="form-control" placeholder="Search...">
                                 <span class="input-group-btn">
@@ -27,16 +31,7 @@ $needApproval = mysqli_num_rows($results);
                         <?php if ( hasPermission('is_admin') )
                         {?>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Admin<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="/login/controlpanel.php">Control Panel</a>
-                                </li>
-                                <li>
-                                    <a href="/login/settings.php?page=main">Settings</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
+                            <a href="/login/controlpanel.php"><i class="fa fa-bar-chart-o fa-fw"></i> Admin</a>
                         </li>
                         <?php } ?>
                         <li>
@@ -63,7 +58,18 @@ $needApproval = mysqli_num_rows($results);
                                 echo 'WDashboard';
                             }
 
-                            if (hasPermission('can_update') && $needApproval > 0 )
+                            
+                            ?>
+                        </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo '/platoon/' . $uplatoon1 .'/roster.php'; ?> "><i class="fa fa-list-alt fa-fw"></i> Roster</a>
+                            
+                        </li>
+                        <li>
+                            <a href="<?php echo '/platoon/' . $uplatoon1 .'/attendance.php'; ?> "><i class="fa fa-table fa-fw"></i> Attendance
+                                <?php
+                                if (hasPermission('can_update') && $needApproval > 0 )
                             {
                                 echo '<span class="badge" style="background-color:rgb(214, 0, 0);"> '.$needApproval .'</span> <small style="font-size:75%;color:white;">Need Approved</small></a>';
                             }
@@ -73,18 +79,21 @@ $needApproval = mysqli_num_rows($results);
                             }
                             ?>
                         </li>
-
-                       <li>
-                            <a href="<?php echo '/platoon/' . $uplatoon1 .'/roster.php'; ?> "><i class="fa fa-list-alt fa-fw"></i> Roster</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo '/platoon/' . $uplatoon1 .'/attendance.php'; ?> "><i class="fa fa-table fa-fw"></i> Attendance</a>
-                        </li>
                         <li>
                             <a href="<?php echo '/platoon/' . $uplatoon1 .'/submit-loa.php'; ?>"><i class="fa fa-edit fa-fw"></i> Submit Leave of Absense</a>
                         </li>
                         <li>
-                            <a href="<?php echo '/platoon/' . $uplatoon1 .'/awards.php'; ?>"><i class="fa fa-trophy fa-fw"></i> Awards</a>
+                            <a href="#"><i class="fa fa-trophy fa-fw"></i> Awards</a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo '/platoon/' . $uplatoon1 .'/awards.php'; ?>"> View</a>
+                                </li>
+                                <?php if ( hasPermission('can_update') || hasPermission('is_pl') || hasPermission('is_2ic') )
+                                { ?>
+                                <li>
+                                    <a href="<?php echo '/platoon/' . $uplatoon1 .'/manage-awards.php'; ?>"> Manage</a>
+                                </li>
+                                <?php } ?>
                         </li>
                        
                         

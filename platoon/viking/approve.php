@@ -15,7 +15,7 @@ if ( isset($_POST['submit']) )
 elseif ( $_GET['deny'] )
 {
 	$id = $_GET['id'];
-	$sql = "UPDATE attendances SET is_approved=1, type=5 where id=$id";
+	$sql = "UPDATE attendances SET is_approved=0, type=5 where id=$id";
 	$results = mysqli_query($con, $sql);
 	header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
