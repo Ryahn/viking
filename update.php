@@ -1,4 +1,6 @@
 <?php 
-$output = shell_exec('git pull');
-echo "<pre>$output</pre>";
+if ($_SERVER['HTTP_X_GITHUB_EVENT'] == 'push')
+	{
+		shell_exec("./pull.sh");
+	}
 ?>
