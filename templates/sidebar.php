@@ -9,9 +9,6 @@ if(!$results and $mysqliDebug) {
     echo $con->error;
 }
 $needApproval = mysqli_num_rows($results);
-$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$links = explode('/', $actual_link);
-$link = $links[5];
 ?>
  <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
@@ -56,6 +53,10 @@ $link = $links[5];
                             elseif ( $uplatoon1 == 'whiskey' )
                             {
                                 echo 'WDashboard';
+                            }
+                            else
+                            {
+                                echo 'Dashboard';
                             }
 
                             
