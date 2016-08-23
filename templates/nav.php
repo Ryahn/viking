@@ -13,7 +13,7 @@ $results = mysqli_query($con, $navsql);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ urlFor('home') }}">VAS</a><br />
+                <a class="navbar-brand" href="/">VAS</a><br />
                 <h5><small id="brand-small">Virtual Attendence System</small>
                 </h5>
             </div>
