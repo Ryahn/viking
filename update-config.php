@@ -69,6 +69,8 @@ define('DELETE_FILES', true);
  */
 define('EXCLUDE', serialize(array(
 	'.git',
+	'config.php',
+	'db.php',
 )));
 
 /**
