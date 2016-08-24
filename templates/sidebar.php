@@ -101,7 +101,7 @@ $needApproval = mysqli_num_rows($results);
                             <a href="/register.php"><i class="fa fa-pencil fa-fw"></i> Register</a>
                         </li>
                         <li>
-                            <a href="/login/login.php"><i class="glyphicon glyphicon-log-in"></i> Register</a>
+                            <a href="/login/login.php"><i class="glyphicon glyphicon-log-in"></i> Login</a>
                         </li>
 
 
