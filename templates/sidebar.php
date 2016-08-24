@@ -29,7 +29,8 @@ $needApproval = mysqli_num_rows($results);
                         <li>
                             <a href="/"><i class="fa fa-home fa-fw"></i> Home</a>
                         </li>
-
+<?php if ( hasPermission('can_view'))
+{ ?>
                         <li>
                             
                             <?php 
@@ -95,7 +96,8 @@ $needApproval = mysqli_num_rows($results);
                                 </li>
                                 <?php } ?>
                         </li>
-                       
+                       <?php 
+                   }?>
                         
                     </ul>
                 </div>

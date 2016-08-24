@@ -41,11 +41,17 @@ LIMIT 3";
 $awardres = mysqli_query($con, $recentAwardSql);
 
 
+
+ 
+
 ?>
 <div id="wrapper">
     <div id="page-wrapper">
         <div class="row">
         <?php
+        if ( hasPermission('can_view') )
+        {
+      
             if(!$blogresults and $mysqliDebug) 
                 {
                     echo "<p>There was an error in query:". $blogresults."</p>";
@@ -223,10 +229,17 @@ $awardres = mysqli_query($con, $recentAwardSql);
             </div>
             <?php
         }
+    }
+    else
+    {
+        echo '<div class="alert alert-danger">Cannot view this</div>';
+    }
         ?>
         </div>
             
             </div>
+        
+        </div>
         </div>
         <!-- /#page-wrapper -->
 </div>
