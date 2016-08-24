@@ -70,19 +70,19 @@ $results = mysqli_query($con, $rsql);
     {
     if ( $row['is_loa'] )
     {
-      echo "<tr class='tr-loa' style='border-top: 1px solid rgba(221, 221, 221, 0.14);font-size:16px;'><td style='border-top: 0px;'><img height='34px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /><a style='color:inherit;text-decoration:none;' href='editroster.php?id=" . $row['rid']."'> " .$row['rname'] . "</a> <span class='label label-default label-loa'>LOA</span></td>";
+      echo "<tr class='tr-loa' style='border-top: 1px solid rgba(221, 221, 221, 0.14);font-size:16px;'><td style='border-top: 0px;'><img height='34px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /><a style='color:inherit;text-decoration:none;' href='editroster.php?id=" . $row['ruser_id']."'> " .$row['rname'] . "</a> <span class='label label-default label-loa'>LOA</span></td>";
     }
     elseif ( $oneweek->format('Y-m-d') >= $inactiveDate )
     {
-      echo "<tr class='tr-awol' style='border-top: 1px solid rgba(221, 221, 221, 0.14);font-size:16px;'><td style='border-top: 0px;'><img height='34px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> <a style='color:inherit;text-decoration:none;' href='editroster.php?id=" . $row['rid']."'> " .$row['rname'] . "</a><span class='label label-danger label-awol'>AWOL</span></td>";
+      echo "<tr class='tr-awol' style='border-top: 1px solid rgba(221, 221, 221, 0.14);font-size:16px;'><td style='border-top: 0px;'><img height='34px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> <a style='color:inherit;text-decoration:none;' href='editroster.php?id=" . $row['ruser_id']."'> " .$row['rname'] . "</a><span class='label label-danger label-awol'>AWOL</span></td>";
     }
     elseif ( $row['is_rrd'] )
     {
-      echo "<tr class='tr-rrd' style='border-top: 1px solid rgba(221, 221, 221, 0.14);font-size:16px;'><td style='border-top: 0px;'><img height='34px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> <a style='color:inherit;text-decoration:none;' href='editroster.php?id=" . $row['rid']."'> " .$row['rname'] . "</a><span class='label label-rrd'>RRD</span></td>";
+      echo "<tr class='tr-rrd' style='border-top: 1px solid rgba(221, 221, 221, 0.14);font-size:16px;'><td style='border-top: 0px;'><img height='34px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> <a style='color:inherit;text-decoration:none;' href='editroster.php?id=" . $row['ruser_id']."'> " .$row['rname'] . "</a><span class='label label-rrd'>RRD</span></td>";
     }
     else
     {
-    echo "<tr style='border-top: 1px solid rgba(221, 221, 221, 0.14);font-size:16px;'><td style='border-top: 0px;'><img height='34px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /><a style='color:inherit;text-decoration:none;' href='editroster.php?id=" . $row['rid']."'> " .$row['rname'] . "</a></td>";
+    echo "<tr style='border-top: 1px solid rgba(221, 221, 221, 0.14);font-size:16px;'><td style='border-top: 0px;'><img height='34px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /><a style='color:inherit;text-decoration:none;' href='editroster.php?id=" . $row['ruser_id']."'> " .$row['rname'] . "</a></td>";
   }
   }
   else
