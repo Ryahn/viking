@@ -889,6 +889,31 @@ p.fa.fa-times-circle.fa-lg {
     background-position-x: 274px;
     background-position-y: 2px;
 }
+#ground-defense {
+	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: 274px;
+    background-position-y: 2px;
+}
+#ground-defense2 {
+	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: 344px;
+}
+#pistol-ribbon2 {
+	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: 344px;
+}
+#distinguished2 {
+	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: 344px;
+}
 #award-acm {
 	background-image: url('../../../assets/images/awards/21st/army-achievement.png');
     background-repeat: no-repeat;
@@ -915,4 +940,45 @@ p.fa.fa-times-circle.fa-lg {
 }
 .awards-panel::-webkit-scrollbar {
 	width: 0 !important;
+}
+.panel-footer-post {
+	background-color: rgba(115, 115, 115, 0.31);
+}
+.label-viking {
+	font-size: 10px;
+    padding: 3px 5px 2px 6px;
+    vertical-align: text-top;
+    background-color: rgba(255, 150, 0, 0.75);
+}
+.label-guardian {
+	font-size: 10px;
+    padding: 3px 5px 2px 6px;
+    vertical-align: text-top;
+    background-color: rgba(180, 0, 255, 0.75);
+}
+.label-nightmare {
+	font-size: 12px;
+    padding: 3px 5px 2px 6px;
+    vertical-align: text-top;
+    background-color: rgba(28, 140, 0, 0.75);
+}
+.label-rrd {
+	font-size: 10px;
+    padding: 3px 5px 2px 6px;
+    vertical-align: text-top;
+    background-color: rgba(101, 101, 101, 0.75);
+}
+.label-whiskey {
+	font-size: 10px;
+    padding: 3px 5px 2px 6px;
+    vertical-align: text-top;
+    background-color: rgba(255, 0, 0, 0.75);
+}
+.post-well {
+	background-color: rgba(245, 245, 245, 0.06);
+    border: 1px solid rgba(227, 227, 227, 0.12);
+}
+.post-footer {
+	background-color: rgba(245, 245, 245, 0.06);
+    border: 1px solid rgba(227, 227, 227, 0.12);
 }

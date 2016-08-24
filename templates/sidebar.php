@@ -25,38 +25,37 @@ $needApproval = mysqli_num_rows($results);
                             </div> -->
                             <!-- /input-group -->
                         </li>
-                        <?php if ( hasPermission('is_admin') )
-                        {?>
+                       
                         <li>
-                            <a href="/login/controlpanel.php"><i class="fa fa-bar-chart-o fa-fw"></i> Admin</a>
+                            <a href="/"><i class="fa fa-home fa-fw"></i> Home</a>
                         </li>
-                        <?php } ?>
+
                         <li>
-                            <a href="/"><i class="fa fa-dashboard fa-fw"></i>
+                            
                             <?php 
                             if ( $uplatoon1 == 'viking' )
                             {
-                                echo 'VDashboard';
+                                echo '<a href="/platoon/viking"><i class="fa fa-dashboard fa-fw"></i> VDashboard</a>';
                             }
                             elseif ( $uplatoon1 == 'guardian' )
                             {
-                                echo 'GDashboard';
+                                echo '<a href="/platoon/guardian"><i class="fa fa-dashboard fa-fw"></i> GDashboard</a>';
                             }
                             elseif ( $uplatoon1 == 'nightmare' )
                             {
-                                echo 'NDashboard';
+                                echo '<a href="/platoon/nightmare"><i class="fa fa-dashboard fa-fw"></i> NDashboard</a>';
                             }
                             elseif ( $uplatoon1 == 'rrd' )
                             {
-                                echo 'RDashboard';
+                                echo '<a href="/platoon/rrd"><i class="fa fa-dashboard fa-fw"></i> RDashboard</a>';
                             }
                             elseif ( $uplatoon1 == 'whiskey' )
                             {
-                                echo 'WDashboard';
+                                echo '<a href="/platoon/whiskey"><i class="fa fa-dashboard fa-fw"></i> WDashboard</a>';
                             }
                             else
                             {
-                                echo 'Dashboard';
+                                echo '<a href="/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>';
                             }
 
                             
