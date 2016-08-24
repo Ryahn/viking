@@ -111,7 +111,7 @@ $results = mysqli_query($con, $rsql);
 <td style="border-top: 0px;" class="center"><?php echo $promotionDate; ?></td>
 <!-- <td style="border-top: 0px;" class="center"><?php //echo $row['rawards']; ?></td> -->
 <?php 
-$userid12 = $row['rid'];
+$userid12 = $row['ruser_id'];
 $awardssql = "SELECT awards.award_name FROM awards inner join user_awards on user_awards.award_id=awards.id where user_awards.user_id=$userid12";
 $awardResaults = mysqli_query($con, $awardssql);
 if(!$awardResaults and $mysqliDebug) {
