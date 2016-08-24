@@ -1,4 +1,5 @@
-<?php $auid = userValue(null, "id"); 
+<?php 
+$auid = userValue(null, "id"); 
 $platoon = userValue(null, "platoon");
 $navsql = "SELECT * FROM attendances WHERE user_id=$auid ORDER BY id DESC LIMIT 1 ";
 $results = mysqli_query($con, $navsql);
@@ -19,11 +20,19 @@ $results = mysqli_query($con, $navsql);
             </div>
             <!-- /.navbar-header -->
             <ul class="nav navbar-top-links navbar-right">
+                <?php
+                    if ( hasRank('SFC') || hasPermission('can_update') )
+                    {
+                        ?>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-cog fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
+                    
                     <ul class="dropdown-menu dropdown-messages">
+                        <?php if (hasPermission('is_admin') )
+                        {
+                            ?>
                         <li>
                             <a href="/login/controlpanel.php">
                                 <div>
@@ -36,26 +45,16 @@ $results = mysqli_query($con, $navsql);
                             </a>
                         </li>
                         <li class="divider"></li>
+                        <?php }
+                        ?>
                         <li>
-                            <a href="/platoon/#/manage-awards.php">
+                            <a href="/admin.php">
                                 <div>
-                                    <strong>Manage Awards</strong>
+                                    <strong>VAS Manager</strong>
                                     <span class="pull-right text-muted">
-                                        <em>Add new awards</em>
+                                        <em>Manage VAS</em>
                                     </span>
                                 </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <strong>Manage Permissions</strong>
-                                    <span class="pull-right text-muted">
-                                        <em>User Permissions</em>
-                                    </span>
-                                </div>
-
                             </a>
                         </li>
                         
@@ -63,6 +62,7 @@ $results = mysqli_query($con, $navsql);
                     <!-- /.dropdown-messages -->
                 </li>
                 <!-- /.dropdown -->
+                <?php } ?>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>

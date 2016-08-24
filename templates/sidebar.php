@@ -89,15 +89,13 @@ $needApproval = mysqli_num_rows($results);
                                 <li>
                                     <a href="<?php echo '/platoon/' . $uplatoon1 .'/awards.php'; ?>"> View</a>
                                 </li>
-                                <?php if ( hasPermission('can_update') || hasPermission('is_pl') || hasPermission('is_2ic') )
-                                { ?>
-                                <li>
-                                    <a href="<?php echo '/platoon/' . $uplatoon1 .'/manage-awards.php'; ?>"> Manage</a>
-                                </li>
-                                <?php } ?>
+                                
+                               
+                                
                         </li>
-                       <?php 
-                   }?>
+                       <?php
+                   }
+                       ?>
                         
                     </ul>
                 </div>

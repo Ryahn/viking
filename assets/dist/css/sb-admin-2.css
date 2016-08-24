@@ -982,3 +982,10 @@ p.fa.fa-times-circle.fa-lg {
 	background-color: rgba(245, 245, 245, 0.06);
     border: 1px solid rgba(227, 227, 227, 0.12);
 }
+.admin-well {
+	padding:20px;
+	margin-right: 108px;
+	text-align:center;
+	background-color: rgba(19, 19, 19, 0.9);
+	border: 1px solid rgba(111, 111, 111, 0.57);
+}
