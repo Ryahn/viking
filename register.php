@@ -18,8 +18,8 @@ $salt = md5($password);
 $saltedpass = pbkdf2($password,$salt);
 $activate_code1 = md5(sha1($username1 . mt_rand(100, 1000000)));
 
-$regSql = "INSERT INTO login_users (username, email, password,registered_on, permission, active, activate_code, type, platoon)
-VALUES ('$username1','$email', '$saltedpass', UNIX_TIMESTAMP(NOW()), 3,0,'$activate_code1','admin','$platoon')";
+$regSql = "INSERT INTO login_users (username, email, password,registered_on, permission, active, activate_code, type, platoon,avatar)
+VALUES ('$username1','$email', '$saltedpass', UNIX_TIMESTAMP(NOW()), 3,0,'$activate_code1','admin','$platoon',0)";
 $regRes = mysqli_query($con, $regSql);
 if(!$regRes and $mysqliDebug) 
 {
