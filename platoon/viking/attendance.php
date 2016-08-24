@@ -115,7 +115,7 @@ while( $row = mysqli_fetch_assoc($results) )
     {
     echo "<tr><td><img height='25px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> " .$row['rname'] . "</td>";
   }
-    echo "<td>N/A</td>";
+    echo "<td>" . $row['rpromoted_on'] ."</td>";
     
 
     $userid1 = $row['ruser_id'];

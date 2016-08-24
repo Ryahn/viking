@@ -55,6 +55,7 @@ include('head.php');
 					<label class='col-sm-4 control-label'><?php echo $m['username']; ?>*</label>
 					<div class='col-sm-8 row-1'>
 						<input type='text' class='form-control' name='username'>
+						<small><span style="color:red;font-weight:bold;">DO NOT INCLUDE YOUR RANK</span></small>
 					</div>
 				</div>
 				
