@@ -54,6 +54,13 @@ else
                 <h1 class="page-header">Unit News</h1>
             </div>
             <!-- /.col-lg-12 -->
+            <?php if ( is_logged_in() )
+            {
+                echo '<div class="col-md-4">You are logged in</div>';
+            }
+            else
+            {
+                ?>
              <div class="col-md-4"></div>
             <div class="col-md-4">
         <div class="panel panel-default">
@@ -119,5 +126,6 @@ else
                                 </div>
                                 </div>
 <?php
+}
 include('templates/footer.php');
 ?>
