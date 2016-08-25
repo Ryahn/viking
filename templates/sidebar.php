@@ -98,7 +98,7 @@ $needApproval = mysqli_num_rows($results);
                    if ( !is_logged_in() )
                    { ?>
                         <li>
-                            <a href="/register.php"><i class="fa fa-pencil fa-fw"></i> Register</a>
+                            <a href="/login/register.php"><i class="fa fa-pencil fa-fw"></i> Register</a>
                         </li>
                         <li>
                             <a href="/login/login.php"><i class="glyphicon glyphicon-log-in"></i> Login</a>
