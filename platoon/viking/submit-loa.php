@@ -95,22 +95,23 @@ if( isset($_POST['submit']) )
     $enddate = $endDateTime->format('Y-m-d');
     // echo $enddate;
 
-	$updatesql = "INSERT INTO user_loa SET user_id=$userid1, start_date='$startdate', end_date='$enddate'";
+	$updatesql = "INSERT INTO user_loa (user_id,start_date,end_date) VALUES('$userid1', '$startdate', '$enddate')
+    ON DUPLICATE KEY UPDATE user_id=$userid1, start_date='$startdate', end_date='$enddate'";
 	$results2 = mysqli_query($con, $updatesql);
 	if(!$results2 and $mysqliDebug) {
 	    echo "<p>There was an error in query: $results2</p>";
 	    echo $con->error;
 	}
-	if ( $results2 )
-	{
-		echo 'Success!';
-		$updateRoster = "UPDATE rosters SET is_loa=1 where ruser_id=$userid1";
-		$results3 = mysqli_query($con, $updateRoster);
-		if(!$results3 and $mysqliDebug) {
-		    echo "<p>There was an error in query: $results2</p>";
-		    echo $con->error;
-		}
-	}
+	// if ( $results2 )
+	// {
+	// 	echo 'Success!';
+	// 	$updateRoster = "UPDATE rosters SET is_loa=1 where ruser_id=$userid1";
+	// 	$results3 = mysqli_query($con, $updateRoster);
+	// 	if(!$results3 and $mysqliDebug) {
+	// 	    echo "<p>There was an error in query: $results2</p>";
+	// 	    echo $con->error;
+	// 	}
+	// }
 }
 ?>
 

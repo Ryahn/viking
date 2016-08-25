@@ -89,7 +89,7 @@ $awardres = mysqli_query($con, $recentAwardSql);
                 <h1 class="page-header">Unit News</h1>
             </div>
             <!-- /.col-lg-12 -->
-            <div class="col-md-6"><h2>Accouncements</h2></div>
+            <div class="col-md-6"><h2>Accouncements <?php if ( hasRank('SFC') || hasPermission('can_post') ) { echo '<button style="float:right;" type="button" class="btn btn-primary">Compose</button>'; } ?></h2> </div>
             <div class="col-md-3"><h2>Recent Promotions</h2></div>
             <div class="col-md-3"><h2>Recent Awards</h2></div>
         </div>

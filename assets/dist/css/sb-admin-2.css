@@ -436,6 +436,11 @@ a {
 .center {
     text-align: center;
 }
+.center-right-border {
+	text-align: center;
+	border-right: 1px rgba(255, 255, 255, 0.27) solid;
+	text-decoration: underline;
+}
 th.center {
     font-weight: bold;
     text-decoration: underline;

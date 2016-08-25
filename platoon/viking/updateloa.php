@@ -21,7 +21,8 @@ if ( $results && $uresults)
 }
 else
 {
-	echo $con->err;
+	echo $con->error;
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 }
 else
@@ -36,7 +37,8 @@ if ( $results && $rresults )
 }
 else
 {
-	echo $con->err;
+	echo $con->error;
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
 }	
 }
 }

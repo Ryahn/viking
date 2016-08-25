@@ -207,14 +207,14 @@ $results = mysqli_query($con, $navsql);
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="{{ urlFor('user.profile', {username: auth.username}) }}"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
-                        <li><a href="{{ urlFor('account.profile') }}"><i class="fa fa-gear fa-fw"></i> Update Profile</a>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Update Profile</a>
                         </li>
-                        <li><a href="{{ urlFor('password.change') }}"><i class="fa fa-key fa-fw"></i> Change Password</a>
+                        <li><a href="#"><i class="fa fa-key fa-fw"></i> Change Password</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="{{ urlFor('logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="/login/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->

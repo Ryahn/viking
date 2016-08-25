@@ -1,9 +1,9 @@
 <?php
-include('config/protection.php');
-include('templates/head.php');
-include('templates/nav.php');
-include('templates/sidebar.php');
-include('login/includes/pbkdf2.php');
+// include('config/protection.php');
+// include('templates/head.php');
+// include('templates/nav.php');
+// include('templates/sidebar.php');
+// include('login/includes/pbkdf2.php');
 
 
 if ( isset($_POST['submit'] ) )
