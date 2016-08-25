@@ -22,7 +22,7 @@ $blogsql = "SELECT * FROM blog_posts
 inner join blog_cat on blog_cat.id=blog_posts.catID
 inner join rosters on rosters.ruser_id=blog_posts.authorID
 WHERE catID=1 AND published=1
-ORDER BY publish_date ASC
+ORDER BY publish_date DESC
 LIMIT 3";
 $blogresults = mysqli_query($con, $blogsql);
 
@@ -89,7 +89,7 @@ $awardres = mysqli_query($con, $recentAwardSql);
                 <h1 class="page-header">Unit News</h1>
             </div>
             <!-- /.col-lg-12 -->
-            <div class="col-md-6"><h2>Accouncements <?php if ( hasRank('SFC') || hasPermission('can_post') ) { echo '<button style="float:right;" type="button" class="btn btn-primary">Compose</button>'; } ?></h2> </div>
+            <div class="col-md-6"><h2>Accouncements <?php if ( hasRank('SFC') || hasPermission('can_post') ) { echo '<a style="float:right;" type="button" class="btn btn-primary" href="compose.php">Compose</a>'; } ?></h2> </div>
             <div class="col-md-3"><h2>Recent Promotions</h2></div>
             <div class="col-md-3"><h2>Recent Awards</h2></div>
         </div>
@@ -131,7 +131,7 @@ $awardres = mysqli_query($con, $recentAwardSql);
                     <h3 class="panel-title"><?php echo $posts['title']; ?></h3>
                 </div>
                 <div class="panel-body">
-                    <?php echo postsLength($posts['body'],100); ?>
+                    <?php echo postsLength($posts['body'],150); ?>
                 </div>
                 <div class="panel-footer panel-footer-post">
                    <?php echo '<span class="label label-info">By:</span> <img height="18px" style="vertical-align:top;" src="' . $ranks['base64'] .'"/> ' . $posts['rname']; echo ' <span class="label label-warning">Posted:</span> ' . $postDate; if ( $modDate ) { echo ' <span class="label label-default">Modified:</span> ' . $modDate; }  echo ' <span class="label label-primary">Tags:</span> ' . $posts['cat_name']; ?>

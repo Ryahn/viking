@@ -253,14 +253,14 @@ while( $row = mysqli_fetch_assoc($results) )
        {
         if ( $approved )
         {
-            echo '<td class="roster-openplay"><div class="tooltip3">P
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
+            if ( hasRank('SFC') || hasPermission('can_update') ) { echo '<td class="roster-openplay"><div class="tooltip3">P
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>'; } else { echo '<td class="roster-openplay">P</td>'; }
         }
         else
         {
-        echo '<td class="roster-openplay unapproved"><div class="tooltip2">P
+        if ( hasRank('SFC') || hasPermission('can_update') ) { echo '<td class="roster-openplay unapproved"><div class="tooltip2">P
 <span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
-<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>'; } else { echo '<td class="roster-openplay unapproved">P</td>';}
 
 }
        }
@@ -270,14 +270,14 @@ while( $row = mysqli_fetch_assoc($results) )
        {
         if ( $approved )
         {
-            echo '<td class="roster-training"><div class="tooltip3">T
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
+            if ( hasRank('SFC') || hasPermission('can_update') ) { echo '<td class="roster-training"><div class="tooltip3">T
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>'; } else { echo '<td class="roster-training">T</td>'; }
         }
         else
         {
-        echo '<td class="roster-training unapproved"><div class="tooltip2">T
+        if ( hasRank('SFC') || hasPermission('can_update') ) { echo '<td class="roster-training unapproved"><div class="tooltip2">T
 <span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
-<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>'; } else { echo '<td class="roster-training unapproved">T</td>'; }
 }
        }
        //end
@@ -286,15 +286,15 @@ while( $row = mysqli_fetch_assoc($results) )
        {
         if ( $approved )
         {
-            echo '<td class="roster-loa"><div class="tooltip3">-
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
+           if ( hasRank('SFC') || hasPermission('can_update') ) {  echo '<td class="roster-loa"><div class="tooltip3">-
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>'; } else { echo '<td class="roster-loa">-</td>'; }
 
         }
         else
         {
-        echo '<td class="roster-loa unapproved"><div class="tooltip2">-
+       if ( hasRank('SFC') || hasPermission('can_update') ) {  echo '<td class="roster-loa unapproved"><div class="tooltip2">-
 <span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
-<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>'; } else { echo '<td class="roster-loa unapproved">-</td>'; }
 }
        }
        //end
@@ -303,14 +303,14 @@ while( $row = mysqli_fetch_assoc($results) )
        {
         if ( $approved )
         {
-            echo '<td class="roster-devday"><div class="tooltip3">/
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
+           if ( hasRank('SFC') || hasPermission('can_update') ) {  echo '<td class="roster-devday"><div class="tooltip3">/
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>'; } else { echo '<td class="roster-devday">/</td>'; }
         }
         else
         {
-        echo '<td class="roster-devday unapproved"><div class="tooltip2">/
+        if ( hasRank('SFC') || hasPermission('can_update') ) { echo '<td class="roster-devday unapproved"><div class="tooltip2">/
 <span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
-<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>'; } else { echo '<td class="roster-devday unapproved">/</td>'; }
 }
        }
        //end
@@ -325,14 +325,14 @@ while( $row = mysqli_fetch_assoc($results) )
        {
         if ( $approved )
         {
-            echo '<td class="roster-present"><div class="tooltip3">P
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
+           if ( hasRank('SFC') || hasPermission('can_update') ) {  echo '<td class="roster-present"><div class="tooltip3">P
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>'; } else { echo '<td class="roster-present">P</td>'; }
         }
         else
         {
-        echo '<td class="roster-present unapproved"><div class="tooltip2">P
+        if ( hasRank('SFC') || hasPermission('can_update') ) { echo '<td class="roster-present unapproved"><div class="tooltip2">P
 <span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
-<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>'; } else { echo '<td class="roster-present unapproved">P</td>'; }
 }
        }
        //end
@@ -341,14 +341,14 @@ while( $row = mysqli_fetch_assoc($results) )
        {
         if ( $approved )
         {
-            echo '<td class="roster-rasp"><div class="tooltip3">P
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
+          if ( hasRank('SFC') || hasPermission('can_update') ) {   echo '<td class="roster-rasp"><div class="tooltip3">P
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>'; } else { echo '<td class="roster-rasp">P</td>'; }
         }
         else
         {
-        echo '<td class="roster-rasp unapproved"><div class="tooltip2">P
+        if ( hasRank('SFC') || hasPermission('can_update') ) { echo '<td class="roster-rasp unapproved"><div class="tooltip2">P
 <span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
-<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>'; } else { echo '<td class="roster-rasp unapproved">P</td>'; }
 }
        }
        //end
@@ -357,14 +357,14 @@ while( $row = mysqli_fetch_assoc($results) )
        {
         if ( $approved )
         {
-            echo '<td class="roster-ranger"><div class="tooltip3">P
-<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>';
+           if ( hasRank('SFC') || hasPermission('can_update') ) {  echo '<td class="roster-ranger"><div class="tooltip3">P
+<span class="tooltiptext3"><a type="button" class="btn btn-info" href="edit.php?id=' . $pid . '">Edit</a></td>'; } else { echo '<td class="roster-ranger">P</td>'; }
         }
         else
         {
-        echo '<td class="roster-ranger unapproved"><div class="tooltip2">P
+        if ( hasRank('SFC') || hasPermission('can_update') ) { echo '<td class="roster-ranger unapproved"><div class="tooltip2">P
 <span class="tooltiptext2"><a type="button" class="btn btn-success" href="approve.php?id=' . $pid . '&deny=0">Approved</a><a type="button" class="btn btn-danger" style="margin-left: 4px;" href="approve.php?id=' . $pid . '&deny=1">Deny</a></span></div>
-<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>';
+<input type="hidden" name="pid'.$pii++ .'" value="'.$pid .'"/></td>'; } else { echo '<td class="roster-ranger unapproved">P</td>'; }
 }
        }
        //end
