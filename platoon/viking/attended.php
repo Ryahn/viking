@@ -1,7 +1,5 @@
 <?php
-
-include('../../login/includes/api.php');
-include('../../config/db.php');
+include('../../config/protection.php');
 
 date_default_timezone_set("America/Los_Angeles");
 
@@ -70,8 +68,8 @@ if ( mysqli_num_rows($results) > 0 )
           if ( checkStatus($type) == 6 )
           {
             $official = 6;
-           $nsql1 = "INSERT INTO attendances (platoons,type,created_on,user_id,month_day) 
-           VALUES ('" . $uplatoon . "','" . $official . "','" . $dateString . "','" . $uuid . "','" . $month1 ."')";
+           $nsql1 = "INSERT INTO attendances (platoons,type,created_on,user_id) 
+           VALUES ('" . $uplatoon . "','" . $official . "','" . $dateString . "','" . $uuid . "')";
            
            $results1 = mysqli_query($con, $nsql1);
                if(!$results1 and $mysqliDebug) {
@@ -136,8 +134,8 @@ if ( mysqli_num_rows($results) > 0 )
           if ( checkStatus($type) == 6 )
           {
             $official = 6;
-           $nsql1 = "INSERT INTO attendances (platoons,type,created_on,user_id,month_day) 
-           VALUES ('" . $uplatoon . "','" . $official . "','" . $dateString . "','" . $uuid . "','" . $month1 ."')";
+           $nsql1 = "INSERT INTO attendances (platoons,type,created_on,user_id) 
+           VALUES ('" . $uplatoon . "','" . $official . "','" . $dateString . "','" . $uuid . "')";
 
            $results1 = mysqli_query($con, $nsql1);
 
@@ -208,8 +206,8 @@ else
   if ( checkStatus($type) == 6 )
           {
             $official = 6;
-           $nsql1 = "INSERT INTO attendances (platoons,type,created_on,user_id,month_day) 
-           VALUES ('" . $uplatoon . "','" . $official . "','" . $dateString . "','" . $uuid . "','" . $month1 ."')";
+           $nsql1 = "INSERT INTO attendances (platoons,type,created_on,user_id) 
+           VALUES ('" . $uplatoon . "','" . $official . "','" . $dateString . "','" . $uuid . "')";
            $results1 = mysqli_query($con, $nsql1);
                if(!$results1 and $mysqliDebug) {
                    echo "<p>There was an error in query: $results1</p>";
