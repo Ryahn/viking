@@ -131,7 +131,7 @@ $awardres = mysqli_query($con, $recentAwardSql);
                     <h3 class="panel-title"><?php echo $posts['title']; ?></h3>
                 </div>
                 <div class="panel-body">
-                    <?php echo postsLength($posts['body'],160); ?>
+                    <?php echo postsLength($posts['body'],200); ?>
                 </div>
                 <div class="panel-footer panel-footer-post">
                    <?php echo '<span class="label label-info">By:</span> <img height="18px" style="vertical-align:top;" src="' . $ranks['base64'] .'"/> ' . $posts['rname']; echo ' <span class="label label-warning">Posted:</span> ' . $postDate; if ( $modDate ) { echo ' <span class="label label-default">Modified:</span> ' . $modDate; }  echo ' <span class="label label-primary">Tags:</span> ' . $posts['cat_name']; ?>
