@@ -74,7 +74,7 @@ if ( mysqli_num_rows($results) > 0 )
            
            $results1 = mysqli_query($con, $nsql1);
                if(!$results1 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results1</p>";
+                   echo "<p>There was an error in query:". $results1."</p>";
                    echo $con->error;
                }
                
@@ -86,7 +86,7 @@ if ( mysqli_num_rows($results) > 0 )
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $training . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "Training: Can attend";
@@ -98,7 +98,7 @@ if ( mysqli_num_rows($results) > 0 )
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $rasp . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "RASP: Can attend";
@@ -110,7 +110,7 @@ if ( mysqli_num_rows($results) > 0 )
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $ranger . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "Ranger: Can attend";
@@ -122,7 +122,7 @@ if ( mysqli_num_rows($results) > 0 )
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $devday . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "Dev Day: Can attend";
@@ -134,7 +134,7 @@ if ( mysqli_num_rows($results) > 0 )
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $openplay . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "Open Play: Can attend";
@@ -153,7 +153,7 @@ if ( mysqli_num_rows($results) > 0 )
            $results1 = mysqli_query($con, $nsql1);
 
                if(!$results1 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results1</p>";
+                   echo "<p>There was an error in query:". $results1."</p>";
                    echo $con->error;
                }
             echo "Offical OP: Can attend";
@@ -164,7 +164,7 @@ if ( mysqli_num_rows($results) > 0 )
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $training . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "Training: Can attend";
@@ -176,7 +176,7 @@ if ( mysqli_num_rows($results) > 0 )
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $rasp . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "RASP: Can attend";
@@ -188,7 +188,7 @@ if ( mysqli_num_rows($results) > 0 )
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $ranger . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "Ranger: Can attend";
@@ -200,7 +200,7 @@ if ( mysqli_num_rows($results) > 0 )
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $devday . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "Dev Day: Can attend";
@@ -212,7 +212,7 @@ if ( mysqli_num_rows($results) > 0 )
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $openplay . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "Open Play: Can attend";
@@ -235,7 +235,7 @@ else
            VALUES ('" . $uplatoon . "','" . $official . "','" . $dateString . "','" . $uuid . "')";
            $results1 = mysqli_query($con, $nsql1);
                if(!$results1 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results1</p>";
+                   echo "<p>There was an error in query:". $results1."</p>";
                    echo $con->error;
                }
             echo "Offical OP: Can attend";
@@ -246,7 +246,7 @@ else
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $training . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "Training: Can attend";
@@ -258,7 +258,7 @@ else
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $rasp . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "RASP: Can attend";
@@ -270,7 +270,7 @@ else
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $ranger . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "Ranger: Can attend";
@@ -282,10 +282,22 @@ else
             $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $devday . "','" . $dateString . "','" . $uuid . "')";
             $results2 = mysqli_query($con, $nsql2);
                if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query: $results2</p>";
+                   echo "<p>There was an error in query:". $results2."</p>";
                    echo $con->error;
                }
             echo "Dev Day: Can attend";
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+          }
+          elseif (checkStatus($type) == 1)
+          {
+            $openplay = 1;
+            $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $openplay . "','" . $dateString . "','" . $uuid . "')";
+            $results2 = mysqli_query($con, $nsql2);
+               if(!$results2 and $mysqliDebug) {
+                   echo "<p>There was an error in query:". $results2."</p>";
+                   echo $con->error;
+               }
+            echo "Open Play: Can attend";
             header('Location: ' . $_SERVER['HTTP_REFERER']);
           }
 }
