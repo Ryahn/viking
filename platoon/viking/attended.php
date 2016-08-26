@@ -2,6 +2,7 @@
 include('../../config/protection.php');
 
 date_default_timezone_set("America/Los_Angeles");
+$mysqliDebug =1;
 
 $uuid = $_POST['id1'];
 $uplatoon = $_POST['platoon1'];
@@ -45,8 +46,8 @@ $results = mysqli_query($con, $bsql);
 
 $updateRosterSql = "UPDATE rosters SET last_active='$dateString' WHERE ruser_id=$uuid";
 $rosterResults1 = mysqli_query($con, $updateRosterSql);
-if(!$results2 and $mysqliDebug) {
-                   echo "<p>There was an error in query:". $results2."</p>";
+if(!$rosterResults1 and $mysqliDebug) {
+                   echo "<p>There was an error in query:". $rosterResults1."</p>";
                    echo $con->error;
                }
 
@@ -127,6 +128,18 @@ if ( mysqli_num_rows($results) > 0 )
             echo "Dev Day: Can attend";
             header('Location: ' . $_SERVER['HTTP_REFERER']);
           }
+          elseif (checkStatus($type) == 1)
+          {
+            $openplay = 1;
+            $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $openplay . "','" . $dateString . "','" . $uuid . "')";
+            $results2 = mysqli_query($con, $nsql2);
+               if(!$results2 and $mysqliDebug) {
+                   echo "<p>There was an error in query: $results2</p>";
+                   echo $con->error;
+               }
+            echo "Open Play: Can attend";
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+          }
 
 
         } elseif ( $date > $laterDate )
@@ -191,6 +204,18 @@ if ( mysqli_num_rows($results) > 0 )
                    echo $con->error;
                }
             echo "Dev Day: Can attend";
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+          }
+          elseif (checkStatus($type) == 1)
+          {
+            $openplay = 1;
+            $nsql2 = "INSERT INTO attendances (platoons,type,created_on,user_id) VALUES ('" . $uplatoon . "','" . $openplay . "','" . $dateString . "','" . $uuid . "')";
+            $results2 = mysqli_query($con, $nsql2);
+               if(!$results2 and $mysqliDebug) {
+                   echo "<p>There was an error in query: $results2</p>";
+                   echo $con->error;
+               }
+            echo "Open Play: Can attend";
             header('Location: ' . $_SERVER['HTTP_REFERER']);
           }
         }
