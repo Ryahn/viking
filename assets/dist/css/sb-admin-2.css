@@ -994,3 +994,13 @@ p.fa.fa-times-circle.fa-lg {
 	background-color: rgba(19, 19, 19, 0.9);
 	border: 1px solid rgba(111, 111, 111, 0.57);
 }
+.attend-alert {
+	padding: 4px;
+    float: right;
+    margin-bottom: 7px;
+    margin-top: -6px;
+    color: white;
+    background-color: rgb(0, 170, 255);
+    border-color: rgb(0, 212, 255);
+    text-shadow: 1px 1px black;
+}

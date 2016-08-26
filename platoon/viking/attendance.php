@@ -66,7 +66,7 @@ $('#saveall').click(function(){
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Approved Attendance
+                            Approved Attendance <span class="alert alert-info attend-alert">Approve only when the OP is complete or at AAR.</span>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
