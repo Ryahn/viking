@@ -28,6 +28,17 @@ $month2 = date('F', $timestamp2);
 $month = date('m', $timestamp2);
 $year = date('Y', $timestamp2);
 
+function isItEmpty($item)
+{
+  if (empty($item) || $item < 0)
+  {
+    return 0;
+  }
+  else
+    return $item;
+}
+
+
 //select username ane id
 $sql = "SELECT * from rosters,ranks
 inner join user_ranks on user_ranks.rank_id=ranks.id
@@ -35,9 +46,10 @@ where rosters.ruser_id = user_ranks.user_id AND rosters.rplatoon='viking'
 GROUP BY rosters.rname 
 ORDER BY ranks.id,rosters.rname";
 
+
 $results = mysqli_query($con, $sql);
 if(!$results and $mysqliDebug) {
-    echo "<p>There was an error in query: $results</p>";
+    echo "<p>There was an error in query:". $results."</p>";
     echo $con->error;
 }
 ?>
@@ -97,6 +109,31 @@ $pii = 0;
 
 while( $row = mysqli_fetch_assoc($results) )
 {
+$attenduserid = $row['user_id'];
+$attendCountSql = "SELECT type,
+sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) as P,
+sum(case when type=2 then 1 else 0 end) as T,
+sum(case when type=5 then 1 else 0 end) as A,
+30 - (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end))  - sum(case when type=4 then 1 else 0 end) as total
+FROM attendances WHERE user_id = $attenduserid";
+$attendRes = mysqli_query($con, $attendCountSql);
+if(!$attendRes and $mysqliDebug) {
+    echo "<p>There was an error in query:". $attendRes ."</p>";
+    echo $con->error;
+}
+$attendcount = array();
+while ($row4 = mysqli_fetch_assoc($attendRes))
+{
+  $attendcount[] = $row4;
+}
+
+
+
+
+
+
+
+
   $inactive = new DateTime( $row['last_active'] );
     $inactiveDate = $inactive->format('Y-m-d');
     if ( $row['is_loa'] )
@@ -375,9 +412,12 @@ while( $row = mysqli_fetch_assoc($results) )
        }
     
     }
-    echo "<td>0</td>";
-    echo "<td>0</td>";
-    echo "<td>0</td>";
+    foreach ( $attendcount as $count )
+    {
+    echo "<td>". isItEmpty($count['P']) . "</td>";
+    echo "<td>". isItEmpty($count['total']) . "</td>";
+    echo "<td>". isItEmpty($count['T']) . "</td>";
+  }
     echo "</tr>";
 
 }
