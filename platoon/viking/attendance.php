@@ -429,7 +429,7 @@ while ($row4 = mysqli_fetch_assoc($attendRes))
     </tbody>
 </table>
 <?php
-if ( hasPermission('can_update') )
+if ( hasPermission('can_update') || hasRank('SFC') )
 {
     ?>
 <div class="col-md-2 attendance-approve-spacer"></div><div class="col-md-1 attendance-approve-all<?php echo $dateDay; ?>"><button type='submit' name='submit' class='btn btn-success btn-circle btn-xs' form="approveall"/><i class="fa fa-check"></i></button></div>
