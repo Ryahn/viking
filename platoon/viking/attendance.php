@@ -11,6 +11,8 @@ $mysqliDebug =1;
 $date = new DateTime();
 $begin = new DateTime( 'first day of this month' );
 $end = new DateTime( 'last day of this month' );
+$end1 = new DateTime( 'last day of this month' );
+$lastDay = $end1->format('d');
 $end = $end->modify( '+1 day' );
 $interval = new DateInterval('P1D');
 $daterange = new DatePeriod($begin, $interval ,$end);
@@ -76,6 +78,7 @@ $('#saveall').click(function(){
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
+                              
                               <div class="col-md-5 roster-spacer"></div><div class="col-md-5 roster-spacer-month"><?php echo $month2; ?></div><div class="col-md-2 table-total">Totals</div>
                               <form action='approve.php' method='post' role='form' id="approveall">
 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -109,7 +112,7 @@ sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) as P,
 sum(case when type=2 then 1 else 0 end) as T,
 sum(case when type=5 then 1 else 0 end) as A,
 30 - (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end))  - sum(case when type=4 then 1 else 0 end) as total,
-(sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end)) / 30 as active
+(sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end)) / $lastDay as active
 FROM attendances WHERE user_id = $attenduserid";
 $attendRes = mysqli_query($con, $attendCountSql);
 if(!$attendRes and $mysqliDebug) {
