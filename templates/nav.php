@@ -15,7 +15,7 @@ $results = mysqli_query($con, $navsql);
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/">VAS</a><br />
-                <h5><small id="brand-small">Virtual Attendence System</small>
+                <h5><small id="brand-small">Virtual Attendance System</small>
                 </h5>
             </div>
             <!-- /.navbar-header -->
