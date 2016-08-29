@@ -121,7 +121,7 @@ while ( $arow = mysqli_fetch_assoc($aresults) )
     										<table width="100%" class="table" id="dataTables-example">
 												<thead>
 													<tr>
-            											<th class="center">Rank/Name</th>
+            											<th class="award-th-center">Rank/Name</th>
             											<?php foreach ($awards as $award)
             													{
             														if ($award['category'] == 'medal')

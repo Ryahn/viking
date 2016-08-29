@@ -1,11 +1,11 @@
 .panel-award-heading {
     background-color:rgba(49, 49, 49, 0.6) !important;
 }
-.table th {
+.award-th-center {
     text-align: center;
     border-right: 1px rgba(66, 66, 66, 0.38) solid;
 }
-.table td {
+.award-td-center {
     text-align: center;
     border-right: 1px rgba(66, 66, 66, 0.38) solid;
 }

@@ -83,11 +83,11 @@ function awardCheck($awardid,$input)
 {
 	if (in_array($awardid, $input)) 
    {
-   echo '<td><a href="#" class="award-check"><i class="fa fa-check fa-lg"></i></a></td>';
+   echo '<td class="award-td-center"><a href="#" class="award-check"><i class="fa fa-check fa-lg"></i></a></td>';
    }
    else
    {
-   	echo '<td><a href="#" class="award-times"><i class="fa fa-times fa-lg"></i></a></td>';
+   	echo '<td class="award-td-center"><a href="#" class="award-times"><i class="fa fa-times fa-lg"></i></a></td>';
    }
 }
 
