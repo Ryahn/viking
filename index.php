@@ -4,18 +4,7 @@ include('templates/head.php');
 include('templates/nav.php');
 include('templates/sidebar.php');
 
-function postsLength($x, $length)
-{
-  if(strlen($x)<=$length)
-  {
-    echo $x;
-  }
-  else
-  {
-    $y=substr($x,0,$length) . '...';
-    echo $y;
-  }
-}
+
 
 
 $blogsql = "SELECT * FROM blog_posts

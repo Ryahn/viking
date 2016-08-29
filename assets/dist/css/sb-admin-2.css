@@ -3,6 +3,7 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+@import url("awards.css");
 
 body {
     background-color: #f8f8f8;
@@ -629,6 +630,8 @@ th.center {
 .tooltip4 {
     position: relative;
     display: inline-block;
+    margin-right: -20px;
+    margin-left: -15px;
 }
 
 /* Tooltip text */
@@ -687,6 +690,34 @@ p.fa.fa-times-circle.fa-lg {
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip3:hover .tooltiptext3 {
+    visibility: visible;
+}
+.tooltip4 {
+    position: relative;
+    display: inline-block;
+}
+/* Tooltip text */
+.tooltip4 .tooltiptext4 {
+    visibility: hidden;
+    width: 200px;
+    bottom: 100%;
+    left: -30px; 
+    margin-left: -32px; /* Use3half of the width (120/2 = 60), to center the tooltip */
+    background-color: black;
+    color: #fff;
+    padding: 5px;
+    overflow-wrap: break-word;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip4:hover .tooltiptext4 {
     visibility: visible;
 }
 .tooltip2 {
@@ -887,58 +918,7 @@ p.fa.fa-times-circle.fa-lg {
 	text-align: center;
 	color:lime;
 }
-#award-purple-heart {
-	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
-    background-repeat: no-repeat;
-    background-size: 15px;
-    background-position-x: 274px;
-    background-position-y: 2px;
-}
-#ground-defense {
-	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
-    background-repeat: no-repeat;
-    background-size: 15px;
-    background-position-x: 274px;
-    background-position-y: 2px;
-}
-#ground-defense2 {
-	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
-    background-repeat: no-repeat;
-    background-size: 15px;
-    background-position-x: 344px;
-}
-#pistol-ribbon2 {
-	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
-    background-repeat: no-repeat;
-    background-size: 15px;
-    background-position-x: 344px;
-}
-#distinguished2 {
-	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
-    background-repeat: no-repeat;
-    background-size: 15px;
-    background-position-x: 344px;
-}
-#award-acm {
-	background-image: url('../../../assets/images/awards/21st/army-achievement.png');
-    background-repeat: no-repeat;
-    background-size: 15px;
-    background-position-x: 274px;
-    background-position-y: 5px;
-}
-#award-ib {
-	background-image: url('../../../assets/images/awards/21st/ib.png');
-    background-repeat: no-repeat;
-    background-position-x: 195px;
-    background-position-y: 10px;
-}
-#award-dmr {
-	background-image: url('../../../assets/images/awards/21st/dmr-ribbon.png');
-    background-repeat: no-repeat;
-    background-size: 80px;
-    background-position-x: 215px;
-    background-position-y: 8px;
-}
+
 .awards-panel {
 	height: 90px;
 	overflow: auto;

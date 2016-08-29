@@ -1,0 +1,173 @@
+.panel-award-heading {
+    background-color:rgba(49, 49, 49, 0.6) !important;
+}
+.table th {
+    text-align: center;
+    border-right: 1px rgba(66, 66, 66, 0.38) solid;
+}
+.table td {
+    text-align: center;
+    border-right: 1px rgba(66, 66, 66, 0.38) solid;
+}
+
+.award-check {
+    color:lime;
+    text-align: center;
+}
+.award-times {
+    color:red;
+    text-align: center;
+}
+
+#award-purple-heart {
+	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: 274px;
+    background-position-y: 2px;
+}
+#ground-defense {
+	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: 274px;
+    background-position-y: 2px;
+}
+#ground-defense2 {
+	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: 344px;
+}
+#pistol-ribbon2 {
+	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: 344px;
+}
+#distinguished2 {
+	background-image: url('../../../assets/images/awards/21st/purple-heart.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: 344px;
+}
+#award-acm {
+	background-image: url('../../../assets/images/awards/21st/army-achievement.png');
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position-x: 274px;
+    background-position-y: 5px;
+}
+#award-ib {
+	background-image: url('../../../assets/images/awards/21st/ib.png');
+    background-repeat: no-repeat;
+    background-position-x: 195px;
+    background-position-y: 10px;
+}
+#award-dmr {
+	background-image: url('../../../assets/images/awards/21st/dmr-ribbon.png');
+    background-repeat: no-repeat;
+    background-size: 80px;
+    background-position-x: 215px;
+    background-position-y: 8px;
+}
+#award-armedforces3 {
+	background-image: url('../../../assets/images/awards/21st/armedforces.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding: 20px 0px 0px 18px;
+}
+#award-medalofvalor3 {
+    background-image: url('../../../assets/images/awards/21st/medalofvalor.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding: 20px 0px 0px 18px;
+}
+#award-2016-livestream3 {
+    background-image: url('../../../assets/images/awards/21st/2016-livestream.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    padding: 20px 0px 0px 30px;
+}
+#award-army-achievement3 {
+    background-image: url('../../../assets/images/awards/21st/army-achievement.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding: 20px 0px 0px 18px;
+}
+#award-army-commendation3 {
+    background-image: url('../../../assets/images/awards/21st/army-commendation.png');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    padding: 20px 0px 0px 18px;
+}
+
+#award-bronze3 {
+    background-image: url('../../../assets/images/awards/21st/bronze.png');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    padding: 20px 0px 0px 18px;
+}
+
+#award-dysnc3 {
+    background-image: url('../../../assets/images/awards/21st/dysnc.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    padding: 20px 0px 0px 30px;
+}
+
+#award-distinguished-cross3 {
+    background-image: url('../../../assets/images/awards/21st/distinguished-cross.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding: 20px 0px 0px 18px;
+}
+
+#award-distinguished3 {
+    background-image: url('../../../assets/images/awards/21st/distinguished.png');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    padding: 20px 0px 0px 18px;
+}
+
+#award-good-conduct3 {
+    background-image: url('../../../assets/images/awards/21st/good-conduct.png');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    padding: 20px 0px 0px 18px;
+}
+
+#award-meritorious3 {
+    background-image: url('../../../assets/images/awards/21st/meritorious.png');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    padding: 20px 0px 0px 18px;
+}
+
+#award-nationaldefense3 {
+    background-image: url('../../../assets/images/awards/21st/nationaldefense.png');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    padding: 20px 0px 0px 18px;
+}
+
+#award-purple-heart3 {
+    background-image: url('../../../assets/images/awards/21st/purple-heart.png');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    padding: 20px 0px 0px 18px;
+}
+
+#award-silver3 {
+    background-image: url('../../../assets/images/awards/21st/silver.png');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    padding: 20px 0px 0px 18px;
+}
+
+#award-volunteer3 {
+    background-image: url('../../../assets/images/awards/21st/volunteer.png');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    padding: 20px 0px 0px 18px;
+}

@@ -1,6 +1,7 @@
 <?php
 $base = $_SERVER['DOCUMENT_ROOT'];
 include($base .'/login/includes/api.php');
+include($base .'/config/functions.php');
 
 function hasPermission($perm1) {
     include('db.php');

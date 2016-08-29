@@ -8,33 +8,6 @@ $uuid = $_POST['id1'];
 $uplatoon = $_POST['platoon1'];
 $type = $_POST['type'];
 
-function checkStatus($item) 
-{
-  if ( $item == 'official' )
-  {
-    return 6;
-  }
-  elseif ( $item == 'open')
-  {
-    return 1;
-  }
-  elseif ( $item == 'rasp')
-  {
-    return 7;
-  }
-  elseif ( $item == 'training')
-  {
-    return 2;
-  }
-  elseif ( $item == 'ranger')
-  {
-    return 8;
-  }
-  elseif ( $item == 'dev')
-  {
-    return 4;
-  }
-}
 $dateFormat = "Y-m-d H:i:s";
 $date = new DateTime();
 $dateString = $date->format($dateFormat);

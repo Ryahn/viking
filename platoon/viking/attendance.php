@@ -8,6 +8,7 @@ date_default_timezone_set("America/Los_Angeles");
 $dateFormat = "Y-m-d H:i:s";
 $mysqliDebug =1;
 
+$date = new DateTime();
 $begin = new DateTime( 'first day of this month' );
 $end = new DateTime( 'last day of this month' );
 $end = $end->modify( '+1 day' );
@@ -18,7 +19,7 @@ $daterange2 = new DatePeriod($begin, $interval ,$end);
 $oneweek = new DateTime( '-1 week' );
 $twoweeks = strtotime('-2 week');
 
-$date = new DateTime();
+
 $date1 = new DateTime();
 $dateString = $date1->format($dateFormat);
 $dateDay = $date1->format('d');
@@ -28,15 +29,7 @@ $month2 = date('F', $timestamp2);
 $month = date('m', $timestamp2);
 $year = date('Y', $timestamp2);
 
-function isItEmpty($item)
-{
-  if (empty($item) || $item < 0)
-  {
-    return 0;
-  }
-  else
-    return $item;
-}
+
 
 
 //select username ane id
@@ -99,6 +92,7 @@ $('#saveall').click(function(){
             <th class="center">P</th>
            <th class="center">A</th>
            <th class="center">T</th>
+           <th class="center">Active</th>
 		</tr>
 	</thead>
 <tbody>
@@ -114,7 +108,8 @@ $attendCountSql = "SELECT type,
 sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) as P,
 sum(case when type=2 then 1 else 0 end) as T,
 sum(case when type=5 then 1 else 0 end) as A,
-30 - (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end))  - sum(case when type=4 then 1 else 0 end) as total
+30 - (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end))  - sum(case when type=4 then 1 else 0 end) as total,
+(sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end)) / 30 as active
 FROM attendances WHERE user_id = $attenduserid";
 $attendRes = mysqli_query($con, $attendCountSql);
 if(!$attendRes and $mysqliDebug) {
@@ -417,6 +412,7 @@ while ($row4 = mysqli_fetch_assoc($attendRes))
     echo "<td>". isItEmpty($count['P']) . "</td>";
     echo "<td>". isItEmpty($count['total']) . "</td>";
     echo "<td>". isItEmpty($count['T']) . "</td>";
+    echo "<td>". percentage($count['active']) . "</td>";
   }
     echo "</tr>";
 

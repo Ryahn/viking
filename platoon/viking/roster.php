@@ -306,7 +306,7 @@ else
                                 <tr style="border-top: 1px solid rgba(221, 221, 221, 0.14);">
                                 <td style="padding-top: 2px;padding-bottom:12px;" colspan="5"><?php echo $rrd['rname']; ?></td>
                                 <td style="float:right;padding-top: 2px;padding-bottom:12px;"><?php echo $rrdEndDate; ?></td>
-                                <td style="float:right;padding-top: 2px;padding-bottom:12px;padding-right: 62px;">30 Days</td>
+                                <td style="float:right;padding-top: 2px;padding-bottom:12px;padding-right: 62px;"><?php echo $rrd['rotation']; ?></td>
                               </tr>
                               <?php } ?>
                               
