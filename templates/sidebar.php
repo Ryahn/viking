@@ -81,7 +81,7 @@ $needApproval = mysqli_num_rows($results);
                             ?>
                         </li>
                         <li>
-                            <a href="<?php echo '/platoon/' . $uplatoon1 .'/submit-loa.php'; ?>"><i class="fa fa-edit fa-fw"></i> Submit Leave of Absense</a>
+                            <a href="<?php echo '/platoon/' . $uplatoon1 .'/submit-loa.php'; ?>"><i class="fa fa-edit fa-fw"></i> Submit Leave of Absence</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-trophy fa-fw"></i> Awards</a>
