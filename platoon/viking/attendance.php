@@ -30,6 +30,8 @@ $month2 = date('F', $timestamp2);
 //generating days of the month
 $month = date('m', $timestamp2);
 $year = date('Y', $timestamp2);
+$dateToday = $date->format('d');
+$daysRemaining = $lastDay - $dateToday;
 
 
 
@@ -111,7 +113,7 @@ $attenduserid = $row['user_id'];
 $attendCountSql = "SELECT type,
 sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) as P,
 sum(case when type=2 then 1 else 0 end) as T,
-sum(case when type=5 then 1 else 0 end) as A,
+sum(case when type=5 then 1 else 0 end) - $daysRemaining as A,
 $lastDay - (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end))  - sum(case when type=4 then 1 else 0 end) - sum(case when type=3 then 1 else 0 end) as total,
 (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end)) / ($lastDay - sum(case when type=4 then 1 else 0 end)) as active
 FROM attendances WHERE user_id = $attenduserid";
