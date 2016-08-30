@@ -417,7 +417,8 @@ while ($row4 = mysqli_fetch_assoc($attendRes))
     echo "<td>". isItEmpty($count['P']) . "</td>";
     echo "<td>". isItEmpty($count['total']) . "</td>";
     echo "<td>". isItEmpty($count['T']) . "</td>";
-    echo "<td>". percentage($count['active']) . "</td>";
+    //echo "<td>". percentage($count['active']) . "</td>";
+    echo "<td>". 'active' . "</td>";
   }
     echo "</tr>";
 
