@@ -30,9 +30,10 @@ $month2 = date('F', $timestamp2);
 //generating days of the month
 $month = date('m', $timestamp2);
 $year = date('Y', $timestamp2);
-$dayToday = new DateTime( 'now');
+$dayToday = new DateTime('now');
 $dayToday->format('d');
-$daysRemaining = ($lastDay - $dayToday);
+$daysRemaining = $dayToday->diff($lastDay);
+$daysRemaining = $daysRemaining->format('d');
 
 
 
@@ -418,7 +419,7 @@ while ($row4 = mysqli_fetch_assoc($attendRes))
     foreach ( $attendcount as $count )
     {
     echo "<td>". isItEmpty($count['P']) . "</td>";
-    echo "<td>". ($lastDay - $dayToday) . "</td>";
+    echo "<td>". $daysRemaining . "</td>";
     //echo "<td>". isItEmpty($count['total']) . "</td>";
     echo "<td>". isItEmpty($count['T']) . "</td>";
     echo "<td>". percentage($count['active']) . "</td>";
