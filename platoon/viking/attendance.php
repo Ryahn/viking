@@ -30,10 +30,8 @@ $month2 = date('F', $timestamp2);
 //generating days of the month
 $month = date('m', $timestamp2);
 $year = date('Y', $timestamp2);
-$dayToday = new DateTime('now');
-$dayToday->format('d');
-$daysRemaining = $dayToday->diff($lastDay);
-$daysRemaining->format('d');
+
+
 
 
 
