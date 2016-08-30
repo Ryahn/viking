@@ -31,7 +31,7 @@ $month2 = date('F', $timestamp2);
 $month = date('m', $timestamp2);
 $year = date('Y', $timestamp2);
 $dateToday = $date->format('d');
-$daysRemaining = $lastDay - $dateToday;
+$daysRemaining = ($lastDay - $dateToday);
 
 
 
