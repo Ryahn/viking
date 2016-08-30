@@ -155,7 +155,6 @@ while ($row4 = mysqli_fetch_assoc($attendRes))
   }
     echo "<td>" . date('m/d/y',strtotime($row['rpromoted_on'])) ."</td>";
     
-
     $userid1 = $row['ruser_id'];
     // $rows[] = $row;
     $attendsql = "SELECT attendances.id as attendid, created_on, is_approved, type from attendances
