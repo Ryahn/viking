@@ -33,7 +33,7 @@ $year = date('Y', $timestamp2);
 $dayToday = new DateTime('now');
 $dayToday->format('d');
 $daysRemaining = $dayToday->diff($lastDay);
-$daysRemaining = $daysRemaining->format('d');
+$daysRemaining->format('d');
 
 
 
