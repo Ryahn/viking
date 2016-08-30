@@ -111,7 +111,7 @@ $attendCountSql = "SELECT type,
 sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) as P,
 sum(case when type=2 then 1 else 0 end) as T,
 sum(case when type=5 then 1 else 0 end) as A,
-30 - (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end))  - sum(case when type=4 then 1 else 0 end) as total,
+31 - (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end))  - sum(case when type=4 then 1 else 0 end) as total,
 (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end)) / $lastDay as active
 FROM attendances WHERE user_id = $attenduserid";
 $attendRes = mysqli_query($con, $attendCountSql);
@@ -403,12 +403,13 @@ while ($row4 = mysqli_fetch_assoc($attendRes))
 }
        }
        //end
-       //If does not exist, will be Abesent
+       //If does not exist, will be Absent
        else
        {
         echo '<td class="absent">A</td>';
        }
     
+       //Calculates the attend percentage
     }
     foreach ( $attendcount as $count )
     {
