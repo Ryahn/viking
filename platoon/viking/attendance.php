@@ -112,7 +112,7 @@ $attendCountSql = "SELECT type,
 sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) as P,
 sum(case when type=2 then 1 else 0 end) as T,
 sum(case when type=5 then 1 else 0 end) as A,
-29 - (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end))  - sum(case when type=4 then 1 else 0 end) as total,
+$lastDay - (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end))  - sum(case when type=4 then 1 else 0 end) as total,
 (sum(case when type=1 or type=6 or type=7 or type=8 then 1 else 0 end) + sum(case when type=2 then 1 else 0 end)) / ($lastDay - sum(case when type=4 then 1 else 0 end)) as active
 FROM attendances WHERE user_id = $attenduserid";
 $attendRes = mysqli_query($con, $attendCountSql);
