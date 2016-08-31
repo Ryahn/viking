@@ -9,7 +9,7 @@ $date = new DateTime();
 $dateString = $date->format($dateFormat);
 $timestamp = strtotime($dateString);
 
-$oneweek = new DateTime( '-1 week' );
+$oneweek = new DateTime( '-2 week' );
 $twoweeks = strtotime('-2 week');
 
 $rsql = "SELECT * from rosters,ranks
