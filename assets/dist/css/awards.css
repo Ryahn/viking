@@ -171,3 +171,128 @@
     background-size: 18px;
     padding: 20px 0px 0px 18px;
 }
+
+.top-bar:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 20px;
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    z-index: 1;
+    top: -20px;
+    left: 50%;
+    margin-left: -4px;
+
+}
+.bottom-split-bar:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 352.1%;
+    height: 22px;   
+    border-top: 4px solid rgba(255, 255, 255, 0.6);
+    border-right: 4px solid rgba(255, 255, 255, 0.6);
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    margin: 0 auto;
+    top: 98px;
+    left: -126.9%
+
+}
+.bottom-bar1:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 12px;
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    z-index: 1;
+    top: 86px;
+    left: 50%;
+    margin-left: -4px;
+
+}
+
+.bottom-bar2:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 8px;
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    z-index: 1;
+    top: 90px;
+    left: 50%;
+    margin-left: -4px;
+
+}
+
+.bottom-split-bar1:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 235.1%;
+    height: 22px;   
+    border-top: 4px solid rgba(255, 255, 255, 0.6);
+    border-right: 4px solid rgba(255, 255, 255, 0.6);
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    margin: 0 auto;
+    top: 98px;
+    left: -92.9%
+
+}
+.bottom-split-bar2:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 151.1%;
+    height: 22px;   
+    border-top: 4px solid rgba(255, 255, 255, 0.6);
+    border-right: 4px solid rgba(255, 255, 255, 0.6);
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    margin: 0 auto;
+    top: 98px;
+    left: -71.9%
+
+}
+.top-bar1:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 13px;
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    z-index: 1;
+    top: -13px;
+    left: 50%;
+    margin-left: -4px;
+
+}
+.top-bar2:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 13px;
+    border-left: 4px solid rgba(255, 255, 255, 0.6);
+    z-index: 1;
+    top: -13px;
+    left: 50%;
+    margin-left: -4px;
+
+}
+/*
+.top-bar:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 81.1%;
+    height: 22px;   
+    border-top: 4px solid #fff;
+    border-right: 4px solid #fff;
+    border-left: 4px solid #fff;
+    margin: 0 auto;
+    top: 130px;
+    left: 9.1%
+
+}*/
