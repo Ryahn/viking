@@ -18,7 +18,7 @@ $interval = new DateInterval('P1D');
 $daterange = new DatePeriod($begin, $interval ,$end);
 $daterange2 = new DatePeriod($begin, $interval ,$end);
 
-$oneweek = new DateTime( '-1 week' );
+$oneweek = new DateTime( '-2 week' );
 $twoweeks = strtotime('-2 week');
 
 
@@ -141,7 +141,7 @@ while ($row4 = mysqli_fetch_assoc($attendRes))
     {
       echo "<tr class='tr-loa'><td><img height='25px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> " .$row['rname'] . " <span class='label label-default label-loa'>LOA</span></td>";
     }
-    elseif ( $twoweeks->format('Y-m-d') >= $inactiveDate )
+    elseif ( $oneweek->format('Y-m-d') >= $inactiveDate )
     {
       echo "<tr class='tr-awol'><td><img height='25px' src='" . $row['base64'] ."' alt='" . $row['name'] . "' /> " .$row['rname'] . " <span class='label label-danger'>AWOL</span></td>";
     }
