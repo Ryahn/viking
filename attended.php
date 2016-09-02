@@ -1,5 +1,5 @@
 <?php
-include('../../config/protection.php');
+include('config/protection.php');
 
 date_default_timezone_set("America/Los_Angeles");
 $mysqliDebug =1;
@@ -7,6 +7,7 @@ $mysqliDebug =1;
 $uuid = $_POST['id1'];
 $uplatoon = $_POST['platoon1'];
 $type = $_POST['type'];
+
 
 $dateFormat = "Y-m-d H:i:s";
 $date = new DateTime();
