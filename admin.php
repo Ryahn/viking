@@ -101,6 +101,39 @@ if ( hasPermission('is_admin') )
         	<!-- /.col-xs-2 -->
         </div>
         <!-- /.row -->
+
+        <div class="row">
+            <div class="col-md-3"></div>
+        <div class="col-xs-2" style="margin-right:-110px;">
+                <div class="well admin-well" style="padding-bottom: 20px;">
+                    <button type="button" class="btn btn-outline btn-primary" style="color:white;background-color:rgba(62, 105, 142, 0.6);">Manage</button>
+                    Unassigned Users
+                </div>
+            </div>
+            <!-- /.col-xs-2 -->
+            <div class="col-xs-2" style="margin-right:-110px;">
+                <div class="well admin-well">
+                    <button type="button" class="btn btn-outline btn-primary" style="color:white;background-color:rgba(62, 105, 142, 0.6);">Manage</button>
+                    Attendance Archives
+                </div>
+            </div>
+            <!-- /.col-xs-2 -->
+            <div class="col-xs-2" style="margin-right:-110px;">
+                <div class="well admin-well" style="padding-bottom: 40px;">
+                    <button type="button" class="btn btn-outline btn-primary" style="color:white;background-color:rgba(62, 105, 142, 0.6);">Manage</button>
+                    Platoons
+                </div>
+            </div>
+            <!-- /.col-xs-2 -->
+            <div class="col-xs-2" style="margin-right:-110px;">
+                <div class="well admin-well" style="padding-bottom: 40px;">
+                    <button type="button" class="btn btn-outline btn-primary" style="color:white;background-color:rgba(62, 105, 142, 0.6);">Manage</button>
+                    XML Settings
+                </div>
+            </div>
+            <!-- /.col-xs-2 -->
+        </div>
+        <!-- /.row -->
         <?php
     }
     else

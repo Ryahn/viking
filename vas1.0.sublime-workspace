@@ -4,6 +4,90 @@
 		"selected_items":
 		[
 			[
+				"awa",
+				"award1"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"att",
+				"attendance"
+			],
+			[
+				"at",
+				"attendcount"
+			],
+			[
+				"attendc",
+				"attendcount"
+			],
+			[
+				"open",
+				"openplay"
+			],
+			[
+				"ru",
+				"ruser_id"
+			],
+			[
+				"publi",
+				"publish_date	(index.php)"
+			],
+			[
+				"error",
+				"error_reporting"
+			],
+			[
+				"delete",
+				"delete_post"
+			],
+			[
+				"whi",
+				"whiskey"
+			],
+			[
+				"activate",
+				"activate_code1"
+			],
+			[
+				"registered",
+				"registered_on	(posthandler.php)"
+			],
+			[
+				"acti",
+				"activate_code1"
+			],
+			[
+				"blog",
+				"blog_posts	(index.php)"
+			],
+			[
+				"pu",
+				"publish_date"
+			],
+			[
+				"rank",
+				"rank_id	(roster.php)"
+			],
+			[
+				"has",
+				"hasPermission"
+			],
+			[
+				"page",
+				"pageres"
+			],
+			[
+				"end",
+				"end_date"
+			],
+			[
+				"rrdRe",
+				"rrdRemove"
+			],
+			[
 				"act",
 				"actual_link"
 			],
@@ -38,14 +122,6 @@
 			[
 				"head",
 				"header	<header>"
-			],
-			[
-				"user",
-				"userid3"
-			],
-			[
-				"ru",
-				"ruser_id"
 			],
 			[
 				"mysqli_fetch",
@@ -84,15 +160,7 @@
 				"pid22"
 			],
 			[
-				"open",
-				"openplay	(all.php)"
-			],
-			[
 				"atte",
-				"attendance"
-			],
-			[
-				"att",
 				"attendance"
 			],
 			[
@@ -220,18 +288,29 @@
 	"buffers":
 	[
 		{
-			"file": "platoon/viking/roster.php",
+			"file": "config/functions.php",
 			"settings":
 			{
-				"buffer_size": 12301,
+				"buffer_size": 1777,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "platoon/viking/editroster.php",
+			"contents": "<?php\ninclude('../../config/protection.php');\ninclude('../../templates/head.php');\ninclude('../../templates/nav.php');\ninclude('../../templates/sidebar.php');\n\n$userid = $_GET['id'];\n$date = new DateTime();\n$dateFormat = \"Y-m-d H:i:s\";\n$dateString = $date->format($dateFormat);\n\n// $actual_link1 = \"http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]\";\n// $links1 = explode('/', $actual_link1);\n// $link1 = $links1[5];\n// $page = \"SELECT under_maintenance,down_time FROM pages WHERE page='$link1'\";\n// $pageres = mysqli_query($con, $page);\n// $status = array();\n// while ( $row3 = mysqli_fetch_assoc($pageres) )\n// {\n// 	$status[] = $row3;\n// }\n// foreach($status as $status ) \n//       { \n//       	$downDate = $status['down_time'];\n//         $downtime = date('m/d/y H:i:s',strtotime($downDate));\n//       	if ( $status['under_maintenance'] && !hasPermission('is_admin') ) \n//       		{ \n      			?>\n<!-- <div id=\"wrapper\">\n	<div id=\"page-wrapper\">\n    	<div class=\"row\">\n	        <div class=\"col-lg-12\">\n	            <h1 class=\"page-header\">Awards</h1>\n	        </div> -->\n            <!-- /.col-lg-12 -->\n        <!-- </div> -->\n        <!-- /.row -->\n       <!--  <div class=\"row\">\n    		<div class=\"col-md-10\">\n    			<div class=\"col-md-3\">\n					<div class=\"panel panel-default\">\n						<div class=\"panel-heading\">\n							Under Maintenance						\n						</div>\n						<div class=\"panel-body awards-panel\">\n							Sorry, this page is under maintenance.	\n							<p>Please contact a Dev or SFC</p>			\n						</div>\n						<div class=\"panel-footer\" style=\"background-color: rgba(36, 100, 179, 0.55);color: #00a8d0;text-shadow: 2px 2px black;\">\n							<?php //echo $downtime; ?>					\n						</div>\n					</div>\n				</div>\n			</div>\n		</div>\n	</div>\n</div> -->\n\n<?php\n// $sql = \"SELECT awards.award_name FROM awards inner join user_awards on user_awards.award_id=awards.id where user_awards.user_id=1\";\n$sql = \"SELECT * FROM awards ORDER BY id ASC\";\n$results = mysqli_query($con, $sql);\n$awards = array();\nwhile ( $row = mysqli_fetch_assoc($results) )\n{\n	$awards[] = $row;\n}\n				\n// var_dump($awards);\n\n$asql = \"SELECT *, GROUP_CONCAT(award_id SEPARATOR ',') as awards\nFROM (user_awards, ranks)\ninner join rosters on rosters.ruser_id=user_awards.user_id AND rosters.rankid=ranks.id\ninner join awards on awards.id=user_awards.award_id\nGROUP BY rosters.rname, user_id\nORDER BY ranks.id,rosters.rname\nWHERE user_id = $userid\";\n$aresults = mysqli_query($con, $asql);\nif(!$aresults and $mysqliDebug) {\n    echo \"<p>There was an error in query:\". $aresults.\"</p>\";\n    echo $con->error;\n}\n\n$uawards = array();\nwhile ( $arow = mysqli_fetch_assoc($aresults) )\n{\n	$uawards[] = $arow;\n}\n// var_dump($uawards);\n?>\n<div id=\"wrapper\">\n	<div id=\"page-wrapper\">\n    	<div class=\"row\">\n	        <div class=\"col-lg-12\">\n	            <h1 class=\"page-header\">Awards</h1>\n	        </div>\n            <!-- /.col-lg-12 -->\n        </div>\n        <!-- /.row -->\n    			<div class=\"row\">\n                <div class=\"col-lg-12\">\n                    <div class=\"panel panel-default\">\n                        <div class=\"panel-heading\">\n                            Select an award <span class=\"alert alert-info attend-alert\">Only click the X or &#10004; once</span>\n                        </div>\n                        <!-- /.panel-heading -->\n                        <div class=\"panel-body\">\n                            <div class=\"dataTable_wrapper\">\n                            	<div class=\"panel-group\" id=\"accordion\">\n                            		<div class=\"panel panel-default\">\n                            			<div class=\"panel-heading panel-award-heading\">\n                                        	<h4 class=\"panel-title\">\n                                            	<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseOne\">Medals</a>\n                                        	</h4>\n                                    	</div>\n                            		<div id=\"collapseOne\" class=\"panel-collapse collapse\">\n                              			<form action='awarded.php' method='post' role='form' id=\"awards\">\n    										<table width=\"100%\" class=\"table\" id=\"dataTables-example\">\n												<thead>\n													<tr>\n            											<th class=\"award-th-center\">Rank/Name</th>\n            											<?php foreach ($awards as $award)\n            													{\n            														if ($award['category'] == 'medal')\n													            	{\n													            		echo '<th style=\"text-align:center;\"><div class=\"tooltip4\"><div id=\"award-'. $award['image_name'] . '3\">&nbsp;</div><span class=\"tooltiptext4\">'. $award['award_name'] .'</span></div></th>';\n													            	}\n													        	}\n													        	?>\n													</tr>\n												</thead>\n												<tbody>\n													<?php \n													foreach ($uawards as $users )\n													{\n														echo '<tr><td><img height=\"20px\" src=\"' . $users['base64'] . '\"/> '. $users['rname'] . '</td>';\n\n														\n            											\n														   $award1=explode(',',$users['awards']);\n														   $a1=26;\n														   $b1=40;\n														   for($i=$a1; $i<=$b1; $i++) {\n														   echo awardCheck($i,$award1);\n														}\n\n														   \n												echo '</tr>';\n												} \n												?>\n												</tbody>\n											</table>\n											<!-- Medals Table -->\n										</form>\n										<!-- /.form Awards -->\n									</div>\n									<!-- /#collapseOne -->\n								</div>\n								<!-- /.panel -->\n							</div>\n							<!-- /.panel-group | #accordion -->\n						</div>\n						<!-- /.dataTable -->\n					</div>\n					<!-- /.panel-body -->\n					<div class=\"panel-body\">\n                            <div class=\"dataTable_wrapper\">\n                            	<div class=\"panel-group\" id=\"accordion\">\n                            		<div class=\"panel panel-default\">\n                            			<div class=\"panel-heading panel-award-heading\">\n                                        	<h4 class=\"panel-title\">\n                                            	<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseTwo\">Ribbons</a>\n                                        	</h4>\n                                    	</div>\n                            		<div id=\"collapseTwo\" class=\"panel-collapse collapse\">\n                              			<form action='awarded.php' method='post' role='form' id=\"awards\">\n    										<table width=\"100%\" class=\"table table-striped table-bordered table-hover\" id=\"dataTables-example\">\n												<thead>\n													<tr>\n            											<th class=\"center\">Rank/Name</th>\n            											<?php foreach ($awards as $award)\n            													{\n            														if ($award['category'] == 'medal')\n													            	{\n													            		echo '<th style=\"text-align:center;\"><div class=\"tooltip4\"><div id=\"award-'. $award['image_name'] . '3\">&nbsp;</div><span class=\"tooltiptext4\">'. $award['award_name'] .'</span></div></th>';\n													            	}\n													        	}\n													        	?>\n            \n            \n													</tr>\n												</thead>\n											</table>\n											<!-- Medals Table -->\n										</form>\n										<!-- /.form Awards -->\n									</div>\n									<!-- /#collapseOne -->\n								</div>\n								<!-- /.panel -->\n							</div>\n							<!-- /.panel-group | #accordion -->\n						</div>\n						<!-- /.dataTable -->\n					</div>\n					<!-- /.panel-body -->\n					<div class=\"panel-body\">\n                            <div class=\"dataTable_wrapper\">\n                            	<div class=\"panel-group\" id=\"accordion\">\n                            		<div class=\"panel panel-default\">\n                            			<div class=\"panel-heading panel-award-heading\">\n                                        	<h4 class=\"panel-title\">\n                                            	<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseThree\">Badges</a>\n                                        	</h4>\n                                    	</div>\n                            		<div id=\"collapseThree\" class=\"panel-collapse collapse\">\n                              			<form action='awarded.php' method='post' role='form' id=\"awards\">\n    										<table width=\"100%\" class=\"table table-striped table-bordered table-hover\" id=\"dataTables-example\">\n												<thead>\n													<tr>\n            											<th class=\"center\">Rank/Name</th>\n            											<?php foreach ($awards as $award)\n            													{\n            														if ($award['category'] == 'medal')\n													            	{\n													            		echo '<th style=\"text-align:center;\"><div class=\"tooltip4\"><div id=\"award-'. $award['image_name'] . '3\">&nbsp;</div><span class=\"tooltiptext4\">'. $award['award_name'] .'</span></div></th>';\n													            	}\n													        	}\n													        	?>\n            \n            \n													</tr>\n												</thead>\n											</table>\n											<!-- Medals Table -->\n										</form>\n										<!-- /.form Awards -->\n									</div>\n									<!-- /#collapseOne -->\n								</div>\n								<!-- /.panel -->\n							</div>\n							<!-- /.panel-group | #accordion -->\n						</div>\n						<!-- /.dataTable -->\n					</div>\n					<!-- /.panel-body -->\n					<div class=\"panel-body\">\n                            <div class=\"dataTable_wrapper\">\n                            	<div class=\"panel-group\" id=\"accordion\">\n                            		<div class=\"panel panel-default\">\n                            			<div class=\"panel-heading panel-award-heading\">\n                                        	<h4 class=\"panel-title\">\n                                            	<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseFour\">Air Team Qualifications</a>\n                                        	</h4>\n                                    	</div>\n                            		<div id=\"collapseFour\" class=\"panel-collapse collapse\">\n                              			<form action='awarded.php' method='post' role='form' id=\"awards\">\n    										<table width=\"100%\" class=\"table table-striped table-bordered table-hover\" id=\"dataTables-example\">\n												<thead>\n													<tr>\n            											<th class=\"center\">Rank/Name</th>\n            											<?php foreach ($awards as $award)\n            													{\n            														if ($award['category'] == 'medal')\n													            	{\n													            		echo '<th style=\"text-align:center;\"><div class=\"tooltip4\"><div id=\"award-'. $award['image_name'] . '3\">&nbsp;</div><span class=\"tooltiptext4\">'. $award['award_name'] .'</span></div></th>';\n													            	}\n													        	}\n													        	?>\n            \n            \n													</tr>\n												</thead>\n											</table>\n											<!-- Medals Table -->\n										</form>\n										<!-- /.form Awards -->\n									</div>\n									<!-- /#collapseOne -->\n								</div>\n								<!-- /.panel -->\n							</div>\n							<!-- /.panel-group | #accordion -->\n						</div>\n						<!-- /.dataTable -->\n					</div>\n					<!-- /.panel-body -->\n					<div class=\"panel-body\">\n                            <div class=\"dataTable_wrapper\">\n                            	<div class=\"panel-group\" id=\"accordion\">\n                            		<div class=\"panel panel-default\">\n                            			<div class=\"panel-heading panel-award-heading\">\n                                        	<h4 class=\"panel-title\">\n                                            	<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseFive\">Air Team Medals</a>\n                                        	</h4>\n                                    	</div>\n                            		<div id=\"collapseFive\" class=\"panel-collapse collapse\">\n                              			<form action='awarded.php' method='post' role='form' id=\"awards\">\n    										<table width=\"100%\" class=\"table table-striped table-bordered table-hover\" id=\"dataTables-example\">\n												<thead>\n													<tr>\n            											<th class=\"center\">Rank/Name</th>\n            											<?php foreach ($awards as $award)\n            													{\n            														if ($award['category'] == 'medal')\n													            	{\n													            		echo '<th style=\"text-align:center;\"><div class=\"tooltip4\"><div id=\"award-'. $award['image_name'] . '3\">&nbsp;</div><span class=\"tooltiptext4\">'. $award['award_name'] .'</span></div></th>';\n													            	}\n													        	}\n													        	?>\n            \n            \n													</tr>\n												</thead>\n											</table>\n											<!-- Medals Table -->\n										</form>\n										<!-- /.form Awards -->\n									</div>\n									<!-- /#collapseOne -->\n								</div>\n								<!-- /.panel -->\n							</div>\n							<!-- /.panel-group | #accordion -->\n						</div>\n						<!-- /.dataTable -->\n					</div>\n					<!-- /.panel-body -->\n					<div class=\"panel-body\">\n                            <div class=\"dataTable_wrapper\">\n                            	<div class=\"panel-group\" id=\"accordion\">\n                            		<div class=\"panel panel-default\">\n                            			<div class=\"panel-heading panel-award-heading\">\n                                        	<h4 class=\"panel-title\">\n                                            	<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseSix\">Patches &amp; Tabs</a>\n                                        	</h4>\n                                    	</div>\n                            		<div id=\"collapseSix\" class=\"panel-collapse collapse\">\n                              			<form action='awarded.php' method='post' role='form' id=\"awards\">\n    										<table width=\"100%\" class=\"table table-striped table-bordered table-hover\" id=\"dataTables-example\">\n												<thead>\n													<tr>\n            											<th class=\"center\">Rank/Name</th>\n            											<?php foreach ($awards as $award)\n            													{\n            														if ($award['category'] == 'medal')\n													            	{\n													            		echo '<th style=\"text-align:center;\"><div class=\"tooltip4\"><div id=\"award-'. $award['image_name'] . '3\">&nbsp;</div><span class=\"tooltiptext4\">'. $award['award_name'] .'</span></div></th>';\n													            	}\n													        	}\n													        	?>\n            \n            \n													</tr>\n												</thead>\n											</table>\n											<!-- Medals Table -->\n										</form>\n										<!-- /.form Awards -->\n									</div>\n									<!-- /#collapseOne -->\n								</div>\n								<!-- /.panel -->\n							</div>\n							<!-- /.panel-group | #accordion -->\n						</div>\n						<!-- /.dataTable -->\n					</div>\n					<!-- /.panel-body -->\n					<div class=\"panel-body\">\n                            <div class=\"dataTable_wrapper\">\n                            	<div class=\"panel-group\" id=\"accordion\">\n                            		<div class=\"panel panel-default\">\n                            			<div class=\"panel-heading panel-award-heading\">\n                                        	<h4 class=\"panel-title\">\n                                            	<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseSeven\">Weapons Qualifications</a>\n                                        	</h4>\n                                    	</div>\n                            		<div id=\"collapseSeven\" class=\"panel-collapse collapse\">\n                              			<form action='awarded.php' method='post' role='form' id=\"awards\">\n    										<table width=\"100%\" class=\"table table-striped table-bordered table-hover\" id=\"dataTables-example\">\n												<thead>\n													<tr>\n            											<th class=\"center\">Rank/Name</th>\n            											<?php foreach ($awards as $award)\n            													{\n            														if ($award['category'] == 'medal')\n													            	{\n													            		echo '<th style=\"text-align:center;\"><div class=\"tooltip4\"><div id=\"award-'. $award['image_name'] . '3\">&nbsp;</div><span class=\"tooltiptext4\">'. $award['award_name'] .'</span></div></th>';\n													            	}\n													        	}\n													        	?>\n            \n            \n													</tr>\n												</thead>\n											</table>\n											<!-- Medals Table -->\n										</form>\n										<!-- /.form Awards -->\n									</div>\n									<!-- /#collapseOne -->\n								</div>\n								<!-- /.panel -->\n							</div>\n							<!-- /.panel-group | #accordion -->\n						</div>\n						<!-- /.dataTable -->\n					</div>\n					<!-- /.panel-body -->\n					<div class=\"panel-body\">\n                            <div class=\"dataTable_wrapper\">\n                            	<div class=\"panel-group\" id=\"accordion\">\n                            		<div class=\"panel panel-default\">\n                            			<div class=\"panel-heading panel-award-heading\">\n                                        	<h4 class=\"panel-title\">\n                                            	<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseEight\">Training Classes &amp; Qualifications</a>\n                                        	</h4>\n                                    	</div>\n                            		<div id=\"collapseEight\" class=\"panel-collapse collapse\">\n                              			<form action='awarded.php' method='post' role='form' id=\"awards\">\n    										<table width=\"100%\" class=\"table table-striped table-bordered table-hover\" id=\"dataTables-example\">\n												<thead>\n													<tr>\n            											<th class=\"center\">Rank/Name</th>\n            											<?php foreach ($awards as $award)\n            													{\n            														if ($award['category'] == 'medal')\n													            	{\n													            		echo '<th style=\"text-align:center;\"><div class=\"tooltip4\"><div id=\"award-'. $award['image_name'] . '3\">&nbsp;</div><span class=\"tooltiptext4\">'. $award['award_name'] .'</span></div></th>';\n													            	}\n													        	}\n													        	?>\n            \n            \n													</tr>\n												</thead>\n											</table>\n											<!-- Medals Table -->\n										</form>\n										<!-- /.form Awards -->\n									</div>\n									<!-- /#collapseOne -->\n								</div>\n								<!-- /.panel -->\n							</div>\n							<!-- /.panel-group | #accordion -->\n						</div>\n						<!-- /.dataTable -->\n					</div>\n					<!-- /.panel-body -->\n				</div>\n				<!-- /.panel -->\n			</div>\n			<!-- /.col-lg-12 -->\n		</div>\n		<!-- /.row -->\n	</div>\n	<!-- /#page-wrapper -->\n</div>\n<!-- /#wrapper -->\n<?php\n}\n}\n?>",
+			"file": "platoon/viking/awards.php",
+			"file_size": 19209,
+			"file_write_time": 131169683248836052,
 			"settings":
 			{
-				"buffer_size": 6487,
+				"buffer_size": 18819,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "platoon/viking/test.php",
+			"settings":
+			{
+				"buffer_size": 4778,
 				"line_ending": "Windows"
 			}
 		},
@@ -239,55 +318,23 @@
 			"file": "platoon/viking/attendance.php",
 			"settings":
 			{
-				"buffer_size": 15533,
+				"buffer_size": 20320,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "templates/sidebar.php",
+			"file": "assets/dist/css/awards.css",
 			"settings":
 			{
-				"buffer_size": 5719,
+				"buffer_size": 7554,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "platoon/viking/index.php",
+			"file": "platoon/viking/roster.php",
 			"settings":
 			{
-				"buffer_size": 3747,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "platoon/viking/awards.php",
-			"settings":
-			{
-				"buffer_size": 1650,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "assets/dist/css/sb-admin-2.css",
-			"settings":
-			{
-				"buffer_size": 645468,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "platoon/viking/updaterrd.php",
-			"settings":
-			{
-				"buffer_size": 3081,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "//ADMINS-MAC-PRO/admin/Desktop/minecraft/LaunchServer.sh",
-			"settings":
-			{
-				"buffer_size": 103,
+				"buffer_size": 16475,
 				"line_ending": "Windows"
 			}
 		}
@@ -295,9 +342,17 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 173.0,
 		"selected_items":
 		[
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
 			[
 				"html",
 				"Set Syntax: HTML"
@@ -309,10 +364,6 @@
 			[
 				"quick",
 				"Git: Quick Commit (repo)"
-			],
-			[
-				"php",
-				"Set Syntax: PHP"
 			],
 			[
 				"git pu",
@@ -371,7 +422,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 512.0
+		"width": 464.0
 	},
 	"console":
 	{
@@ -388,54 +439,102 @@
 	},
 	"file_history":
 	[
+		"/C/Users/ryanc/AppData/Roaming/Sublime Text 2/Packages/Git/Git.sublime-settings",
+		"/C/Users/ryanc/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/xampp/htdocs/viking/config/protection.php",
+		"/C/xampp/htdocs/viking/index.php",
+		"/C/xampp/htdocs/viking/attended.php",
+		"/C/xampp/htdocs/viking/platoon/viking/attended.php",
+		"/C/xampp/htdocs/viking/assets/dist/css/sb-admin-2.css",
+		"/C/xampp/htdocs/viking/assets/dist/css/awards.css",
+		"/C/xampp/htdocs/viking/compose.php",
+		"/C/xampp/htdocs/viking/templates/footer.php",
 		"/C/xampp/htdocs/viking/templates/head.php",
+		"/C/xampp/htdocs/viking/register.php",
+		"/C/xampp/htdocs/viking/platoon/viking/roster.php",
+		"/C/xampp/htdocs/viking/platoon/viking/attendance.php",
+		"/C/xampp/htdocs/viking/templates/nav.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp45104/var/www/html/platoon/viking/attended.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp24121/etc/phpmyadmin/config.inc.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp35293/var/lib/phpmyadmin/blowfish_secret.inc.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp36657/var/lib/phpmyadmin/config.inc.php",
+		"/C/xampp/phpMyAdmin/config.inc.php",
+		"/C/xampp/htdocs/viking/assets/ckeditor/bootstrap-ckeditor-fix.js",
+		"/C/xampp/htdocs/viking/assets/ckeditor/config.js",
+		"/C/xampp/htdocs/viking/assets/ckeditor/ckeditor.js",
+		"/C/xampp/htdocs/viking/templates/sidebar.php",
+		"/C/xampp/htdocs/viking/editperms.php",
+		"/C/xampp/htdocs/viking/admin.php",
+		"/C/xampp/htdocs/viking/permissions.php",
+		"/C/xampp/htdocs/viking/platoon/viking/submit-loa.php",
+		"/C/xampp/htdocs/viking/platoon/viking/updateloa.php",
+		"/C/xampp/htdocs/oldviking/app/config/production.php",
+		"/C/xampp/htdocs/oldviking/app/config/development.php",
+		"/C/xampp/htdocs/viking/viewpost.php",
+		"/C/xampp/htdocs/viking/login/register.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp29263/var/www/html/login/login.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp29789/var/www/html/login/settings.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp29711/var/www/html/login/social.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp28149/var/www/html/login/includes/functions.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp28998/var/www/html/login/includes/posthandler.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp26641/var/www/html/login/register.php",
+		"/C/xampp/htdocs/viking/pass.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp13909/var/www/html/login/config.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp31940/var/www/html/login/includes/pbkdf2.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp27473/var/www/html/login/head.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp17513/var/www/html/login/includes/api.php",
+		"/C/xampp/htdocs/viking/update-config.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp44787/var/www/html/login/config.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp57366/var/www/html/config/db.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp06400/var/www/html/config/db.new.php",
+		"/C/xampp/htdocs/viking/update.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp27227/var/www/html/update.php",
+		"/C/xampp/htdocs/viking/test.txt",
+		"/C/Users/ryanc/AppData/Local/Temp/scp54677/var/www/html/platoon/viking/attendance.php",
+		"/C/xampp/htdocs/viking/pull.sh",
+		"/C/xampp/htdocs/viking/test1.txt",
+		"/C/xampp/htdocs/viking/platoon/viking/approve.php",
+		"/C/xampp/htdocs/viking/platoon/nightmare/test.php",
+		"/C/xampp/htdocs/viking/platoon/viking/updaterrd.php",
+		"/C/xampp/htdocs/viking/platoon/viking/awards.php",
+		"/C/xampp/htdocs/viking/platoon/viking/index.php",
+		"/C/xampp/htdocs/viking/platoon/viking/editroster.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp59785/etc/nginx/sites-available/viking.conf",
+		"/C/Users/ryanc/AppData/Local/Temp/scp45238/var/www/html/config/db.php",
+		"/C/Users/ryanc/AppData/Local/Temp/scp43689/etc/nginx/sites-available/default",
+		"/C/Users/ryanc/AppData/Local/Temp/scp25936/etc/nginx/sites-available/forum.resonant-rise.com",
+		"/C/Users/ryanc/AppData/Local/Temp/scp46685/etc/php/7.0/fpm/php.ini",
+		"/G/timezone_2016f_posix_sql/timezone_posix.sql",
+		"//ADMINS-MAC-PRO/admin/Desktop/minecraft/LaunchServer.sh",
 		"/C/xampp/htdocs/viking/platoon/viking/sop.php",
 		"/G/torrents/downloads/BLOODRAYNE-DEViANCE/30726.nfo",
-		"/C/xampp/htdocs/viking/platoon/viking/index.php",
-		"/C/xampp/htdocs/viking/templates/sidebar.php",
-		"/C/xampp/htdocs/viking/platoon/viking/attendance.php",
-		"/C/xampp/htdocs/viking/platoon/viking/submit-loa.php",
 		"/C/xampp/htdocs/viking/platoon/whiskey/attendance.php",
-		"/C/xampp/htdocs/viking/platoon/viking/roster.php",
-		"/C/xampp/htdocs/viking/assets/dist/css/sb-admin-2.css",
-		"/C/xampp/htdocs/viking/platoon/viking/attended.php",
 		"/C/xampp/htdocs/viking/platoon/rrd/roster.php",
 		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/roster.php",
 		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/db.php",
 		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/config.php",
 		"/C/Users/ryanc/Documents/login_users.sql",
-		"/C/xampp/htdocs/viking/platoon/viking/updateloa.php",
 		"/C/xampp/htdocs/viking/platoon/guardian/attendance.php",
 		"/C/xampp/htdocs/viking/platoon/rrd/attendance.php",
 		"/C/xampp/htdocs/viking/platoon/nightmare/attendance.php",
 		"/C/xampp/htdocs/viking/platoon/viking/all.php",
-		"/C/xampp/htdocs/viking/platoon/viking/approve.php",
 		"/C/xampp/htdocs/viking/platoon/viking/save.php",
 		"/C/xampp/htdocs/symfony/config/app.php",
 		"/C/xampp/htdocs/symfony/.env",
 		"/C/xampp/htdocs/symfony/config/database.php",
 		"/C/xampp/htdocs/viking/platoon/viking/test1.php",
-		"/C/xampp/htdocs/viking/platoon/viking/awards.php",
-		"/C/xampp/htdocs/viking/permissions.php",
 		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
-		"/C/xampp/htdocs/viking/templates/nav.php",
-		"/C/xampp/htdocs/viking/config/protection.php",
 		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/test1.php",
-		"/C/Users/ryanc/AppData/Roaming/Sublime Text 2/Packages/Git/Git.sublime-settings",
 		"/C/Users/ryanc/AppData/Roaming/Sublime Text 2/Packages/User/Git.sublime-settings",
 		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/config 2.php",
 		"/C/Program Files/TeamSpeak 3 Client/styles/21st_viking.qss",
-		"/C/xampp/phpMyAdmin/config.inc.php",
 		"/C/xampp/htdocs/viking/config/db.new.php",
 		"/C/xampp/htdocs/viking/login/config.new.php",
 		"/C/xampp/htdocs/viking/.gitignore",
 		"/C/xampp/htdocs/viking/database.sql",
 		"/C/xampp/htdocs/viking/config/db.php",
-		"/C/xampp/htdocs/viking/templates/footer.php",
-		"/C/xampp/htdocs/viking/attended.php",
 		"/C/xampp/htdocs/viking/platoon/viking/test.php",
 		"/G/torrents/downloads/Sony Vegas Pro 13.0 build 310 (64 bit) (patch KHG) [ChingLiu]/ChingLiu.Install.Notes.nfo",
-		"/C/xampp/htdocs/viking/index.php",
 		"/C/xampp/htdocs/viking/app/pages/init.php",
 		"/C/xampp/htdocs/viking/public/index.php",
 		"/C/xampp/htdocs/viking/hello.php",
@@ -467,55 +566,7 @@
 		"/C/Users/ryanc/Downloads/startbootstrap-sb-admin-2-gh-pages/pages/login.html",
 		"/E/multimc/php-authentication/app/views/templates/partials/navigation.php",
 		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/all.php",
-		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/login.php",
-		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/navigation.php",
-		"/C/Users/ryanc/Documents/trainers/21st/nightmare/styles/21st_nightmare.qss",
-		"/C/Users/ryanc/Documents/trainers/21st/rrd/styles/21st_rrd.qss",
-		"/C/xampp/htdocs/viking/public/viking-jan-15.csv",
-		"/C/xampp/htdocs/viking/public/viking-feb-15.csv",
-		"/C/xampp/htdocs/viking/public/viking-mar-15.csv",
-		"/C/xampp/htdocs/viking/public/viking-apr-15.csv",
-		"/E/multimc/php-authentication/app/routes/auth/logout.php",
-		"/E/multimc/php-authentication/app/Codecourse/User/User.php",
-		"/E/multimc/php-authentication/app/filters.php",
-		"/E/multimc/php-authentication/app/routes/auth/login.php",
-		"/E/multimc/php-authentication/app/routes.php",
-		"/C/xampp/php/php.ini",
-		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/index.php",
-		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/mode.php",
-		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/Config.php",
-		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/production.php",
-		"/C/xampp/sendmail/sendmail.ini",
-		"/C/Program Files/TeamSpeak 3 Client/styles/21st.qss",
-		"/C/Users/ryanc/Documents/trainers/21st/viking/styles/21st_viking.qss",
-		"/C/Users/ryanc/Documents/trainers/21st/whiskey/styles/21st_whiskey.qss",
-		"/C/Users/ryanc/Documents/trainers/21st_v1.0.2.2_1462841332/package.ini",
-		"/C/Program Files/TeamSpeak 3 Client/styles/21st/images/bg/soldierbg.jpg",
-		"/G/mods/login/config.php",
-		"/C/Users/ryanc/AppData/Local/Temp/scp16215/Users/admin/Public/mods/index.php",
-		"/C/Users/ryanc/AppData/Local/Temp/scp49471/home/residez3/public_html/mods/servers/index.php",
-		"/C/Users/ryanc/AppData/Local/Temp/scp02670/home/residez3/public_html/mods/login/config.php",
-		"/C/Users/ryanc/AppData/Local/Temp/scp07509/home/residez3/public_html/mods/master.json",
-		"/C/Users/ryanc/AppData/Local/Temp/scp08899/home/residez3/public_html/mods/masterupdate.php",
-		"/C/Users/ryanc/Documents/1710.sql",
-		"/C/Users/ryanc/AppData/Local/Temp/scp46773/home/residez3/public_html/mods/db.php",
-		"/C/Users/ryanc/AppData/Local/Temp/scp41766/home/residez3/public_html/mods/masterupdate.php",
-		"/G/torrents/downloads/LIGHTNING.RETURNS.FINAL.FANTASY.XIII-CODEX [NO RAR]/codex.nfo",
-		"/G/mods/db.php",
-		"/C/Users/ryanc/AppData/Local/Temp/scp13541/home/residez3/public_html/mods/1.8.9/modupdated.php",
-		"/C/Users/ryanc/AppData/Local/Temp/scp12747/home/residez3/public_html/mods/1.8.9/mcfparser.php",
-		"/C/Users/ryanc/AppData/Local/Temp/scp06928/home/residez3/public_html/mods/master.json",
-		"/C/Users/ryanc/AppData/Local/Temp/scp06633/home/residez3/public_html/mods/error_log",
-		"/C/Users/ryanc/AppData/Local/Temp/scp20720/home/residez3/public_html/mods/login/includes/functions.php",
-		"/C/Users/ryanc/Documents/Rainmeter/Skins/illustro Pulsar 1.5/GPU2/GPU2.ini",
-		"/C/Users/ryanc/Documents/Rainmeter/Skins/illustro Pulsar 1.5/Folding/Folding.ini",
-		"/C/Users/ryanc/AppData/Local/Temp/scp10419/public_html/assets/js/variable.js",
-		"/C/Users/ryanc/AppData/Local/Temp/scp26504/home/customer/musicbot2/config.ini",
-		"/C/Users/ryanc/AppData/Local/Temp/scp46156/home/customer/luke/config.ini",
-		"/G/music/discord/MusicBot/README.md",
-		"/C/Users/ryanc/AppData/Local/Temp/scp03262/home/customer/discordmusic/config/permissions.ini",
-		"/C/Users/ryanc/Documents/Dark_Matter.theme.css",
-		"/C/Users/ryanc/Documents/Discord_Reborn.theme.css"
+		"/C/Users/ryanc/AppData/Local/Temp/fz3temp-1/login.php"
 	],
 	"find":
 	{
@@ -533,6 +584,91 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"background-color: rgba(0,0,0,.8);",
+			"#fff",
+			"ctrl+L",
+			"// use table colums ",
+			"\"<td>false</td>\"",
+			"<td>true</td>",
+			"(\"",
+			"elseif",
+			"awardid",
+			"<i class=\"fa fa-check fa-lg\"></i>",
+			"$$",
+			"echo '<td><i class=\"fa fa-check fa-lg\"></i></td>';",
+			"elseif",
+			"$$users",
+			"awardid",
+			";;",
+			"$medal =",
+			"awardtype",
+			"else\n														{\n															echo '<td><i class=\"fa fa-times fa-lg\"></i></td>';\n														}",
+			"echo '<td><i class=\"fa fa-check fa-lg\"></i></td>';",
+			"elseif",
+			"<div class=\"panel-group\" id=\"accordion\">\n                            		<div class=\"panel panel-default\">\n                            			<div class=\"panel-heading\">",
+			"count",
+			"here was an error in query:",
+			"results",
+			"\"<p>There was an error in query:",
+			"	",
+			",'\" . $month1 .\"'",
+			",month_day",
+			"blowfis",
+			", ",
+			"=",
+			";",
+			"ifEmpty",
+			"];",
+			"$_POST",
+			"Yes",
+			"3ic",
+			"pl",
+			"admin",
+			"pl",
+			"whiskey",
+			"rrd",
+			"<th>",
+			"center",
+			"<td>",
+			"td",
+			"../../",
+			"rid",
+			"count",
+			"recentResults",
+			"code",
+			"activation",
+			"pbkdf2",
+			"';",
+			"rRanks",
+			"awards",
+			"\"",
+			"#",
+			"editroster.php?id=\" . $row['rid'].\"",
+			"updaterrd.php?id='.$userid12.'&type=1",
+			"$pid = array();\n                    $pid[] = $arow['attendid'];",
+			"$pid = array();\n                    $pid = $arow['attendid'];",
+			"pid2",
+			"// $pid = array();\n                    // $pid[] = $arow['attendid'];",
+			"$pid = array();\n                    $pid[] = $arow['attendid'];",
+			"' . $pid2 . '\">Approved",
+			"' . $pid2 . '\">",
+			"('5'",
+			"('4'",
+			"('3'",
+			"('2',",
+			"('",
+			"(`id`,",
+			"VALUES (\n'1'",
+			"VALUES (\n'10'",
+			"VALUES (\n'9'",
+			"VALUES (\n'8'",
+			"VALUES (\n'7'",
+			"VALUES (\n'6'",
+			"VALUES (\n'5'",
+			"VALUES (\n'4'",
+			"VALUES (\n'3'",
+			"VALUES (\n'2'",
+			"VALUES (\n'1'",
 			"return",
 			"row2",
 			";\n",
@@ -575,92 +711,7 @@
 			"row",
 			"background-color",
 			"present",
-			"prow",
-			"end",
-			"month2",
-			"is_training",
-			"is_present",
-			"row",
-			"grabPresults",
-			"th",
-			"month",
-			"end",
-			"</li>",
-			"</li>  ",
-			"<li>",
-			"\n                      ",
-			"templates",
-			"r\">	",
-			"	</th>",
-			"	<",
-			"	",
-			"$training = 1;",
-			"results2",
-			"nsql",
-			"nsql1",
-			"nsql2",
-			"nsql3",
-			"results2",
-			"results3",
-			"results2",
-			"nsql2",
-			"nsql1",
-			"nsql",
-			"'",
-			"_GET",
-			"attend",
-			"<?php echo $base;?>/",
-			"<?php echo $base;?>",
-			"assets",
-			"C:\\xampp\\htdocs\\viking/",
-			"C:\\xampp\\htdocs\\viking",
-			"assets",
-			"\"",
-			"$date",
-			"date",
-			"opens",
-			")))",
-			",TRUE,FALSE",
-			"=if",
-			")",
-			"my-gmail-id@gmail.com",
-			"rrdev",
-			"21st_p",
-			"21st",
-			"1710",
-			"ts2",
-			"ts3",
-			"\n$",
-			");\n",
-			"All",
-			"ocation",
-			"regis",
-			"password",
-			"user",
-			"musicbot3",
-			";",
-			"eoc",
-			";",
-			"X=0",
-			";",
-			"30",
-			";",
-			"<td width=\".*\" class=\".*\">.*<font color=\".*\">(.*)",
-			".png",
-			";",
-			".*<",
-			".*<td",
-			".dll",
-			"Plugins\\\\",
-			"\\",
-			"GPU2",
-			"Core4",
-			"Core4U",
-			"dummy-host2.example.com",
-			"dummy-host2.example.com-error",
-			"##",
-			"                 x",
-			"[/img]"
+			"prow"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -678,23 +729,23 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "platoon/viking/roster.php",
+					"file": "config/functions.php",
 					"settings":
 					{
-						"buffer_size": 12301,
+						"buffer_size": 1777,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								159,
-								303
+								1777,
+								1716
 							]
 						],
 						"settings":
@@ -706,6 +757,7 @@
 								"README",
 								"FIXME"
 							],
+							"auto_name": "",
 							"bh_regions":
 							[
 								"bh_regex",
@@ -838,9 +890,7 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -850,18 +900,18 @@
 				},
 				{
 					"buffer": 1,
-					"file": "platoon/viking/editroster.php",
+					"file": "platoon/viking/awards.php",
 					"settings":
 					{
-						"buffer_size": 6487,
+						"buffer_size": 18819,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2357,
-								2357
+								182,
+								182
 							]
 						],
 						"settings":
@@ -1008,25 +1058,190 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1710.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "platoon/viking/attendance.php",
+					"file": "platoon/viking/test.php",
 					"settings":
 					{
-						"buffer_size": 15533,
+						"buffer_size": 4778,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12327,
-								12327
+								0,
+								4778
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"devel": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": "load-save",
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 359.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "platoon/viking/attendance.php",
+					"settings":
+					{
+						"buffer_size": 20320,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4440,
+								4440
 							]
 						],
 						"settings":
@@ -1175,192 +1390,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4242.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "templates/sidebar.php",
-					"settings":
-					{
-						"buffer_size": 5719,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5173,
-								5173
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"devel": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": "load-save",
-							"sublimelinter_delay": 2,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 966.0,
+						"translation.y": 1142.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "platoon/viking/index.php",
+					"file": "assets/dist/css/awards.css",
 					"settings":
 					{
-						"buffer_size": 3747,
+						"buffer_size": 7554,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1539,
-								1819
+								0,
+								7554
 							]
 						],
 						"settings":
@@ -1504,30 +1552,30 @@
 								"Ruby on Rails": "ruby"
 							},
 							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 672.0,
+						"translation.y": 3645.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "platoon/viking/awards.php",
+					"file": "platoon/viking/roster.php",
 					"settings":
 					{
-						"buffer_size": 1650,
+						"buffer_size": 16475,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								778,
-								1530
+								16043,
+								16043
 							]
 						],
 						"settings":
@@ -1672,502 +1720,8 @@
 							},
 							"sublimelinter_wrap_find": true,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "assets/dist/css/sb-admin-2.css",
-					"settings":
-					{
-						"buffer_size": 645468,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								644516,
-								644516
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"devel": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": "load-save",
-							"sublimelinter_delay": 2,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "platoon/viking/updaterrd.php",
-					"settings":
-					{
-						"buffer_size": 3081,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								735,
-								735
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"devel": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": "load-save",
-							"sublimelinter_delay": 2,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 42.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "//ADMINS-MAC-PRO/admin/Desktop/minecraft/LaunchServer.sh",
-					"settings":
-					{
-						"buffer_size": 103,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								22,
-								22
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"annotations":
-							[
-								"TODO",
-								"README",
-								"FIXME"
-							],
-							"bh_regions":
-							[
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close"
-							],
-							"csslint_options":
-							{
-								"adjoining-classes": "warning",
-								"box-model": true,
-								"box-sizing": "warning",
-								"compatible-vendor-prefixes": "warning",
-								"display-property-grouping": true,
-								"duplicate-background-images": "warning",
-								"duplicate-properties": true,
-								"empty-rules": true,
-								"errors": true,
-								"fallback-colors": "warning",
-								"floats": "warning",
-								"font-faces": "warning",
-								"font-sizes": "warning",
-								"gradients": "warning",
-								"ids": "warning",
-								"import": "warning",
-								"important": "warning",
-								"known-properties": true,
-								"outline-none": "warning",
-								"overqualified-elements": "warning",
-								"qualified-headings": "warning",
-								"regex-selectors": "warning",
-								"rules-count": "warning",
-								"shorthand": "warning",
-								"star-property-hack": "warning",
-								"text-indent": "warning",
-								"underscore-property-hack": "warning",
-								"unique-headings": "warning",
-								"universal-selector": "warning",
-								"vendor-prefix": true,
-								"zero-units": "warning"
-							},
-							"gjslint_ignore":
-							[
-								110
-							],
-							"gjslint_options":
-							[
-							],
-							"javascript_linter": "jshint",
-							"jshint_options":
-							{
-								"browser": true,
-								"devel": true,
-								"evil": true,
-								"regexdash": true,
-								"sub": true,
-								"trailing": true,
-								"wsh": true
-							},
-							"pep8": true,
-							"pep8_ignore":
-							[
-								"E501"
-							],
-							"perl_linter": "perlcritic",
-							"pyflakes_ignore":
-							[
-							],
-							"pyflakes_ignore_import_*": true,
-							"sublimelinter": "load-save",
-							"sublimelinter_delay": 2,
-							"sublimelinter_disable":
-							[
-							],
-							"sublimelinter_executable_map":
-							{
-							},
-							"sublimelinter_fill_outlines": false,
-							"sublimelinter_gutter_marks": true,
-							"sublimelinter_gutter_marks_theme": "simple",
-							"sublimelinter_mark_style": "none",
-							"sublimelinter_notes": false,
-							"sublimelinter_objj_check_ascii": false,
-							"sublimelinter_popup_errors_on_save": false,
-							"sublimelinter_syntax_map":
-							{
-								"C++": "c",
-								"Python Django": "python",
-								"Ruby on Rails": "ruby"
-							},
-							"sublimelinter_wrap_find": true,
-							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -2211,7 +1765,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 44.0
+		"height": 25.0
 	},
 	"output.git":
 	{
