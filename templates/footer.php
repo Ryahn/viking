@@ -20,6 +20,17 @@
     <script src="/assets/ckeditor/ckeditor.js"></script>
     <script src="/assets/ckeditor/bootstrap-ckeditor-fix.js"></script> -->
 
+    <script>
+$('.closeall').click(function(){
+  $('.panel-collapse.in')
+    .collapse('hide');
+});
+$('.openall').click(function(){
+  $('.panel-collapse:not(".in")')
+    .collapse('show');
+});
+</script>
+
   
 </body>
 

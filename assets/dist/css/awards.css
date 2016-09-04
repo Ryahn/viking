@@ -296,3 +296,50 @@
     left: 9.1%
 
 }*/
+
+.btn-info-award {
+    background-color: rgba(0, 166, 183, 0);
+    padding:1px 6px;
+    color: white;
+    border:1px solid transparent;
+}
+.btn-info-award a {
+    color: white;
+}
+.edit-hover a:hover:after {
+    content: "EDIT";
+    padding: 5px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    white-space: nowrap;
+    /*background-color: rgba(0, 166, 183, 0);*/
+    background-color: #257582;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-decoration: none;
+    margin:-16px;
+    }
+
+    .openall {
+        padding: 2px 5px;
+        background-color: rgba(49,179,255,0.72);
+        border: 1px solid transparent;
+        color: #fff;
+    }
+    .openall:hover {
+        color: #fff;
+        background-color: rgba(49, 179, 255, 0.8);
+        border: 1px solid transparent;
+    }
+    .closeall {
+        padding: 2px 5px;
+        background-color: rgba(255, 59, 0, 0.72);
+        border: 1px solid transparent;
+        color:#fff;
+    }
+    .closeall:hover {
+        color: #fff;
+        background-color: rgba(255, 59, 0, 0.8);
+        border: 1px solid transparent;
+    }

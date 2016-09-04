@@ -120,7 +120,7 @@ if(!$awardResaults and $mysqliDebug) {
 }
 $num_rows = mysqli_num_rows($awardResaults);
 ?>
-<td style="border-top: 0px;" class="center"><div class="tooltip4"><?php echo $num_rows; ?><span class="tooltiptext4"><?php while ( $row2 = mysqli_fetch_assoc($awardResaults))
+<td style="border-top: 0px;" class="center"><div class="tooltip4"><div class="edit-hover"><a type="button" class="btn btn-info btn-info-award" data-active="EDIT" href="useraward.php?id=<?php echo $userid12; ?>"><?php echo $num_rows; ?></a></div><span class="tooltiptext4"><?php while ( $row2 = mysqli_fetch_assoc($awardResaults))
 {
   $counter++;
 
