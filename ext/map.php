@@ -5,12 +5,17 @@
 <script>
 function load() {
 var map = L.map('map').setView([0, 0], 2);
-        L.tileLayer('assets/map/dariyah/{z}/{x}/{y}.png', {
-            minZoom: 1,
-            maxZoom: 8,
+        L.tileLayer('../assets/map/dariyah/{z}/{x}/{y}.png', {
+            minZoom: 2,
+            maxZoom: 7,
+            noWrap: true,
             tms: true
         }).addTo(map);
     }
+
+    map.on('click', function(e) {
+    alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+});
 
 </script>
 </head>
