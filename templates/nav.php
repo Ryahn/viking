@@ -3,6 +3,8 @@ $auid = userValue(null, "id");
 $platoon = userValue(null, "platoon");
 $navsql = "SELECT * FROM attendances WHERE user_id=$auid ORDER BY id DESC LIMIT 1 ";
 $results = mysqli_query($con, $navsql);
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+$link = explode('/', $actual_link);
 
 ?>
 <!-- Navigation -->
@@ -223,6 +225,11 @@ $results = mysqli_query($con, $navsql);
             </ul>
             <!-- /.navbar-top-links -->
 <?php
+if (array_search('index.php',$link) || array_search('ext',$link))
+{
+}
+else
+{
 if ( mysqli_num_rows($results) > 0 ) 
 {
     $dateFormat = "Y-m-d H:i:s";
@@ -311,4 +318,7 @@ else
                           </form>
                           <?php
 }
+}
+
+
 ?>

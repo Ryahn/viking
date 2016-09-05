@@ -60,7 +60,10 @@
     <script src="/assets/dist/js/sb-admin-2.js"></script>
     <script src="/assets/ckeditor/ckeditor.js"></script>
     <script src="/assets/ckeditor/bootstrap-ckeditor-fix.js"></script>
+
+    <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+<script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
    
 
 </head>
-    <body>
+    <body onload="load()">
