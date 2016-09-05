@@ -26,7 +26,6 @@ var map = L.map('map').setView([0, 0], 2);
 <?php
 $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 echo $actual_link;
-echo $_SERVER['HTTP_REFERER'];
 ?>
 </body>
 </html>
