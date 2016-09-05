@@ -7,6 +7,7 @@ include('../templates/head.php');
 <style>
 body {
 background-image: none;
+background-color:transparent;
 }
 </style>
 <script>
