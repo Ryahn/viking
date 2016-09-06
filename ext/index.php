@@ -42,8 +42,46 @@ var map = L.map('map').setView([0, 0], 2);
          <div class="tab-pane" id="roe">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
          Quisque mauris augue, molestie tincidunt condimentum vitae. </div>
          <div class="tab-pane" id="story">Test</div>
-         <div class="tab-pane" id="intel">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-         Quisque mauris augue, molestie tincidunt condimentum vitae. </div>
+         <div class="tab-pane" id="intel">
+         	<form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            	<div class="form-group">
+                    <label>Field 1</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="test" name="feild1">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Field 2</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="test" name="feild1">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Field 3</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="test" name="feild1">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Field 4</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="test" name="feild1">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Textarea</label>
+                    <textarea class="form-control text-rrd" rows="3" cols="5" name="reason"></textarea>
+                </div>
+                                        
+                                        <input type="submit" name="submit" class="btn btn-default" value="Submit"/>
+                                        <button type="reset" class="btn btn-default">Reset Button</button>
+
+
+         </div>
          <div class="tab-pane" id="redzone">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
          Quisque mauris augue, molestie tincidunt condimentum vitae. </div>
          <div class="tab-pane" id="archives">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 

@@ -59,6 +59,7 @@
   float: left;
   margin-right: 19px;
   border-right: 1px solid #ddd;
+  margin-bottom: 200px;
 }
 
 .tabs-left > .nav-tabs > li > a {
@@ -115,4 +116,9 @@
     text-decoration: none;
     background-color: rgba(123, 123, 123, 0.58) !important;
         color: #41b7ff;
+}
+
+.text-rrd {
+  width: 600px;
+  height: 120px;
 }
