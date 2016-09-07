@@ -1,7 +1,7 @@
 <?php
-include('../config/protection.php');
+
 include('../templates/head.php');
-// include('../templates/nav.php');
+
 
 ?>
 <style>
@@ -84,8 +84,7 @@ var map = L.map('map').setView([0, 0], 2);
          </div>
          <div class="tab-pane" id="redzone">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
          Quisque mauris augue, molestie tincidunt condimentum vitae. </div>
-         <div class="tab-pane" id="archives">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-         Quisque mauris augue, molestie tincidunt condimentum vitae. </div>
+         <div class="tab-pane" id="archives"><?php echo $_POST['enjinuid']; ?></div>
         </div>
         </div>
 
