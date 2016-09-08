@@ -45,7 +45,7 @@ $enjinname = $_GET['username'];
 	        <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-  		<div class="col-md-6">
+  		<div class="col-md-8">
         	<div class="panel panel-default">
             	<div class="panel-heading">
                 	Please fill out completely!
@@ -58,8 +58,11 @@ $enjinname = $_GET['username'];
                                 	<p class="form-control-static"><?php echo $enjinrank . " " . $enjinname; ?></p>
                                 </div>
                                 <div class="form-group">
+
                                 	<label>Arma Player ID</label>
-                                	<input type="text" class="form-control" name="playerid" maxlength="17" required />
+                                	
+                                	<input style="width:200px" type="text" class="form-control" name="playerid" maxlength="17" required />
+                               
                                 	<input type="hidden" value="<?php echo $uid; ?>" />
                                 </div>
 
@@ -84,7 +87,7 @@ if (isset($_POST['submit']))
 	}
 	else
 	{
-		echo '<div class="alert alert-danger">Player ID is not corrent. Must be 17 characters long. Your Player ID is: '. strlen($_POST['playerid']) . '</div>';
+		echo '<div style="margin-top:10px" class="alert alert-danger">Player ID is not corrent. Must be 17 characters long. Your Player ID is: '. strlen($_POST['playerid']) . '</div>';
 	}
 }
 ?>
