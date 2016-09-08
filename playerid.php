@@ -18,7 +18,7 @@ if (isset($_POST['submit']))
 	}
 	else
 	{
-		echo 'Player ID is not corrent. Must be 17 characters long.<p>Your Player ID is: '. strlen($_POST['playerid']) . '</p>';
+		echo '<span class="alert alert-danger">Player ID is not corrent. Must be 17 characters long.<p>Your Player ID is: '. strlen($_POST['playerid']) . '</p></span>';
 	}
 }
 ?>
