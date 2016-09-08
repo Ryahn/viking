@@ -39,6 +39,9 @@ if (isset($_POST['submit']))
     	background-color:transparent;
     	background-image:none;
     }
+    #page-wrapper {
+    	margin: 0 0 0 0;
+    }
     </style>
 </head>
 
@@ -51,7 +54,7 @@ if (isset($_POST['submit']))
 	        <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
-  		<div class="col-md-4">
+  		<div class="col-md-6">
         	<div class="panel panel-default">
             	<div class="panel-heading">
                 	Please fill out completely!
@@ -63,9 +66,12 @@ if (isset($_POST['submit']))
                                 <div class="form-group">
                                 	<p class="form-control-static"><?php echo $enjinrank . " " . $enjinname; ?></p>
                                 </div>
+                                <div class="form-group">
+                                	<label>Arma Player ID</label>
+                                	<input type="text" class="form-control" name="playerid" />
+                                	<input type="hidden" value="<?php echo $uid; ?>" />
+                                </div>
 
-                                
-                                        
                                 <input type="submit" name="submit" class="btn btn-default" value="Submit"/>
                                 <button type="reset" class="btn btn-default">Reset Button</button>
                             </form>
