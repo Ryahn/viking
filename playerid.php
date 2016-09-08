@@ -101,6 +101,10 @@ if (isset($_POST['submit']))
 		   echo $con->error;
 		}
 	}
+	elseif (!is_numeric($_POST['playerid1']))
+	{
+		echo '<div style="margin-top:10px" class="alert alert-danger">Player ID is not corrent. Must be numeric. Your Player ID is: '. $_POST['playerid1'] . '</div>';
+	}
 	else
 	{
 		echo '<div style="margin-top:10px" class="alert alert-danger">Player ID is not corrent. Must be 17 characters long. Your Player ID is: '. strlen($_POST['playerid1']) . '</div>';
