@@ -1,6 +1,8 @@
 <?php
 include('config/protection.php');
 $uid = $_GET['uid'];
+$enjinrank = $_GET['rank'];
+$enjinname = $_GET['username'];
 
 if (isset($_POST['submit']))
 {
@@ -58,7 +60,9 @@ if (isset($_POST['submit']))
                 	<div class="row">
                         <div class="col-md-10">
                             <form role="form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                                
+                                <div class="form-group">
+                                	<p class="form-control-static"><?php echo $enjinrank . " " . $enjinname; ?></p>
+                                </div>
 
                                 
                                         
