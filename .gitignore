@@ -7,3 +7,4 @@ db.php
 config.php
 /assets/map/
 update*.php
+*.json
