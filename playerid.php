@@ -77,7 +77,7 @@ $enjinname = $_GET['username'];
 
                                 	<label>Arma Player ID</label>
                                 	
-                                	<input style="width:200px" type="text" class="form-control" name="playerid" maxlength="17" required />
+                                	<input style="width:200px" type="text" class="form-control" name="playerid1" maxlength="17" required />
                                
                                 	<input type="hidden" name="enjinid" value="<?php echo $uid; ?>" />
                                 </div>
@@ -91,10 +91,10 @@ $enjinname = $_GET['username'];
                      <?php
 if (isset($_POST['submit']))
 {
-	if (strlen($_POST['playerid']) >= 17)
+	if (strlen($_POST['playerid1']) >= 17)
 	{
 	$sql = "INSERT INTO player_id (id, playerID)
-	VALUES ( '". $_POST['enjinid'] ."', '". $_POST['playerid'] ."' )";
+	VALUES ( '". $_POST['enjinid'] ."', '". $_POST['playerid1'] ."' )";
 	$results = mysqli_query($con, $sql);
 		if(!$results and $mysqliDebug) {
 		   echo "<p>There was an error in query:". $results."</p>";
@@ -103,7 +103,7 @@ if (isset($_POST['submit']))
 	}
 	else
 	{
-		echo '<div style="margin-top:10px" class="alert alert-danger">Player ID is not corrent. Must be 17 characters long. Your Player ID is: '. strlen($_POST['playerid']) . '</div>';
+		echo '<div style="margin-top:10px" class="alert alert-danger">Player ID is not corrent. Must be 17 characters long. Your Player ID is: '. strlen($_POST['playerid1']) . '</div>';
 	}
 }
 ?>
