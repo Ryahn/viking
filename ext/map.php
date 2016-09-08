@@ -23,10 +23,7 @@ var map = L.map('map').setView([0, 0], 2);
 <body onload="load()">
 
 <div id="map" style="width: 700px; height: 500px"></div> -->
-<?php
-$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-echo $actual_link;
-?>
+
 </body>
 </html>
 

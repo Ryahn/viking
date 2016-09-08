@@ -4,38 +4,38 @@ include('../../templates/head.php');
 include('../../templates/nav.php');
 include('../../templates/sidebar.php');
 
-
+$userid = $_GET['id'];
 $date = new DateTime();
 $dateFormat = "Y-m-d H:i:s";
 $dateString = $date->format($dateFormat);
 
-$actual_link1 = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-$links1 = explode('/', $actual_link1);
-$link1 = $links1[5];
-$page = "SELECT under_maintenance,down_time FROM pages WHERE page='$link1'";
-$pageres = mysqli_query($con, $page);
-$status = array();
-while ( $row3 = mysqli_fetch_assoc($pageres) )
-{
-	$status[] = $row3;
-}
-foreach($status as $status ) 
-      { 
-      	$downDate = $status['down_time'];
-        $downtime = date('m/d/y H:i:s',strtotime($downDate));
-      	if ( $status['under_maintenance'] && !hasPermission('is_admin') ) 
-      		{ 
+// $actual_link1 = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+// $links1 = explode('/', $actual_link1);
+// $link1 = $links1[5];
+// $page = "SELECT under_maintenance,down_time FROM pages WHERE page='$link1'";
+// $pageres = mysqli_query($con, $page);
+// $status = array();
+// while ( $row3 = mysqli_fetch_assoc($pageres) )
+// {
+// 	$status[] = $row3;
+// }
+// foreach($status as $status ) 
+//       { 
+//       	$downDate = $status['down_time'];
+//         $downtime = date('m/d/y H:i:s',strtotime($downDate));
+//       	if ( $status['under_maintenance'] && !hasPermission('is_admin') ) 
+//       		{ 
       			?>
-<div id="wrapper">
+<!-- <div id="wrapper">
 	<div id="page-wrapper">
     	<div class="row">
 	        <div class="col-lg-12">
 	            <h1 class="page-header">Awards</h1>
-	        </div>
+	        </div> -->
             <!-- /.col-lg-12 -->
-        </div>
+        <!-- </div> -->
         <!-- /.row -->
-        <div class="row">
+       <!--  <div class="row">
     		<div class="col-md-10">
     			<div class="col-md-3">
 					<div class="panel panel-default">
@@ -47,20 +47,16 @@ foreach($status as $status )
 							<p>Please contact a Dev or SFC</p>			
 						</div>
 						<div class="panel-footer" style="background-color: rgba(36, 100, 179, 0.55);color: #00a8d0;text-shadow: 2px 2px black;">
-							<?php echo $downtime; ?>					
+							<?php //echo $downtime; ?>					
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<?php
-      		} 
-      		else 
-      		{ 
-      		
+</div> -->
 
+<?php
 // $sql = "SELECT awards.award_name FROM awards inner join user_awards on user_awards.award_id=awards.id where user_awards.user_id=1";
 $sql = "SELECT * FROM awards ORDER BY id ASC";
 $results = mysqli_query($con, $sql);
@@ -77,7 +73,8 @@ FROM (user_awards, ranks)
 inner join rosters on rosters.ruser_id=user_awards.user_id AND rosters.rankid=ranks.id
 inner join awards on awards.id=user_awards.award_id
 GROUP BY rosters.rname, user_id
-ORDER BY ranks.id,rosters.rname";
+ORDER BY ranks.id,rosters.rname
+WHERE user_id = $userid";
 $aresults = mysqli_query($con, $asql);
 if(!$aresults and $mysqliDebug) {
     echo "<p>There was an error in query:". $aresults."</p>";
