@@ -91,7 +91,7 @@ $enjinname = $_GET['username'];
                      <?php
 if (isset($_POST['submit']))
 {
-	if (strlen($_POST['playerid1']) >= 17)
+	if (strlen($_POST['playerid1']) >= 17 && is_numeric($_POST['playerid1']))
 	{
 	$sql = "INSERT INTO player_id (id, playerID)
 	VALUES ( '". $_POST['enjinid'] ."', '". $_POST['playerid1'] ."' )";
