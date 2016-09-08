@@ -33,6 +33,22 @@ $enjinname = $_GET['username'];
     #page-wrapper {
     	margin: 0 0 0 0;
     }
+    #topmenu {
+    	height: 60px;
+    	width: 100px;
+    }
+    #profile-tab {
+    	height: 100px;
+    	width: 185px;
+    }
+    #profile {
+    	height: 165px;
+    	width: 325px;
+    }
+    #unit {
+    	height: 160px;
+    	width: 386px;
+    }
     </style>
 </head>
 
@@ -102,7 +118,29 @@ if (isset($_POST['submit']))
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse">
                         <div class="panel-body">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        	Viking has a Squad XML which allows all Viking members to display the Viking patch on their right shoulder. In order to obtain the patch, you must follow these steps:
+							<p><strong>Step 1:</strong> Open Arma 3, place your mouse pointer on icon in the top right of the main menu (left of the exit button)<br />
+								<img id="topmenu" src="http://i.imgur.com/LZomPqN.png" /></p>
+
+							<p><strong>Step 2:</strong> Click on your profile name to get to the profile editor.<br />
+								<img id="profile-tab" src="http://i.imgur.com/8Uvh0mT.png" />
+
+							<p><strong>Step 3:</strong> Click on the UNIT tab in the profile editor<br />
+								<img id="profile" src="http://i.imgur.com/K1cKAPw.png" />
+
+							<p><strong>Step 4:</strong> Click EDIT, then highlight the Player ID, copy and
+							paste (using CTRL+C and CTRL+V) it and send it to a SNCO. 
+							<br />Then, copy and paste the 
+							Squad’s URL that the SNCO gives you into the Squad XML section.<br />
+								<img id="unit" src="http://i.imgur.com/yhT4LHY.png" /></p>
+
+							<p><strong>Step 5:</strong> Hit Apply. Congratulations! You are now representing 2nd platoon!</p>
+
+							<div class="alert alert-info">*NOTE: You will know that the XML is working when you log into the server and your name 
+automatically changes to have a [2nd] tag after it. Or just log into the server and see if you 
+have our patch on your right shoulder.</div>
+
+
                         </div>
                     </div>
                 </div>
