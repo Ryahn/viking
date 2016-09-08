@@ -4,23 +4,7 @@ $uid = $_GET['uid'];
 $enjinrank = $_GET['rank'];
 $enjinname = $_GET['username'];
 
-if (isset($_POST['submit']))
-{
-	if (strlen($_POST['playerid']) >= 17)
-	{
-	$sql = "INSERT INTO player_id (id, playerID)
-	VALUES ( '". $_POST['enjinid'] ."', '". $_POST['playerid'] ."' )";
-	$results = mysqli_query($con, $sql);
-		if(!$results and $mysqliDebug) {
-		   echo "<p>There was an error in query:". $results."</p>";
-		   echo $con->error;
-		}
-	}
-	else
-	{
-		echo '<span class="alert alert-danger">Player ID is not corrent. Must be 17 characters long.<p>Your Player ID is: '. strlen($_POST['playerid']) . '</p></span>';
-	}
-}
+
 ?>
 <!doctype html>
 
@@ -83,7 +67,27 @@ if (isset($_POST['submit']))
                                 <button type="reset" class="btn btn-default">Reset Button</button>
                             </form>
                         </div>
+                       
                     </div>
+                     <?php
+if (isset($_POST['submit']))
+{
+	if (strlen($_POST['playerid']) >= 17)
+	{
+	$sql = "INSERT INTO player_id (id, playerID)
+	VALUES ( '". $_POST['enjinid'] ."', '". $_POST['playerid'] ."' )";
+	$results = mysqli_query($con, $sql);
+		if(!$results and $mysqliDebug) {
+		   echo "<p>There was an error in query:". $results."</p>";
+		   echo $con->error;
+		}
+	}
+	else
+	{
+		echo '<div class="alert alert-danger">Player ID is not corrent. Must be 17 characters long. Your Player ID is: '. strlen($_POST['playerid']) . '</div>';
+	}
+}
+?>
                 </div>
             </div>
             <div class="panel-group" id="accordion">
@@ -101,6 +105,9 @@ if (isset($_POST['submit']))
                 </div>
             </div>
         </div>
+
+
+
     </div>
 </body>
 </html>
