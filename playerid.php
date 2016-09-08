@@ -97,7 +97,7 @@ if (isset($_POST['submit']))
 	VALUES ( '". $_POST['enjinid'] ."', '". $_POST['playerid1'] ."' )";
 	$results = mysqli_query($con, $sql);
 		if(!$results and $mysqliDebug) {
-		   echo "<p>There was an error in query:". $results."</p>";
+		   echo '<div style="margin-top:10px" class="alert alert-danger">There was an error in query:". $results."</div>';
 		   echo $con->error;
 		}
 	}
