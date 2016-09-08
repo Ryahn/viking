@@ -79,7 +79,7 @@ $enjinname = $_GET['username'];
                                 	
                                 	<input style="width:200px" type="text" class="form-control" name="playerid" maxlength="17" required />
                                
-                                	<input type="hidden" value="<?php echo $uid; ?>" />
+                                	<input type="hidden" name="enjinid" value="<?php echo $uid; ?>" />
                                 </div>
 
                                 <input type="submit" name="submit" class="btn btn-default" value="Submit"/>
