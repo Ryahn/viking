@@ -100,6 +100,10 @@ if (isset($_POST['submit']))
 		   echo '<div style="margin-top:10px" class="alert alert-danger">There was an error in query:". $results."</div>';
 		   echo $con->error;
 		}
+		else
+		{
+			echo '<div style="margin-top:10px" class="alert alert-success">Successfully submitted!</div>';
+		}
 	}
 	elseif (!is_numeric($_POST['playerid1']))
 	{

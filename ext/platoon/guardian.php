@@ -2,7 +2,7 @@
 
 function GetPlayerID($id)
 {
-	include('../config/db.php');
+	include('../../config/db.php');
 	$mysqliDebug = 1;
 	$sql = "SELECT * FROM player_id WHERE id=$id";
 	$results = mysqli_query($con, $sql);
@@ -17,7 +17,7 @@ function GetPlayerID($id)
 }
 
 
-$result = file_get_contents('21st.json');
+$result = file_get_contents('../21st.json');
 $json = json_decode($result,true);
 
 
@@ -38,17 +38,17 @@ $Whiskey = $json['tags']['1065786']['users'];
 
 $xml = new SimpleXMLElement('<xml/>');
 $squad = $xml->addChild('squad');
-$squad->addAttribute('nick', '2nd');
-$squad->addChild('name', '2nd Platoon "Viking"');
+$squad->addAttribute('nick', '3rd');
+$squad->addChild('name', '3rd Platoon "Guardian"');
 $squad->addChild('email','21stusarmyrangers@gmail.com');
-$squad->addChild('web','http://21starmyrangers.enjin.com/viking');
+$squad->addChild('web','http://21starmyrangers.enjin.com/guardian');
 $squad->addChild('picture','624141a59e2fa0dfe0225e4a9531cc31.paa');
-$squad->addChild('title','2nd Platoon "Viking" / 21st Ranger Regiment');
+$squad->addChild('title','3rd Platoon "Guardian" / 21st Ranger Regiment');
 $first = true;
-foreach ( $TOC as $userId )
+foreach ( $Guardian as $userId )
 {
 	
-		foreach ( $TOC as $userId1 )
+		foreach ( $GLead as $userId1 )
 		{
 			if ( $first ) 
 	{
@@ -440,14 +440,14 @@ foreach ( $TOC as $userId )
 }
 
 
-// if (file_exists('toc.xml'))
-// {
-// 	unlink('toc.xml');
-// 	$xml->asXML('toc.xml');
-// }
-// else
-// {
-// 	$xml->asXML('toc.xml');
-// }
-// Header('Content-type: text/xml');
+if (file_exists('guardian.xml'))
+{
+	unlink('guardian.xml');
+	$xml->asXML('guardian.xml');
+}
+else
+{
+	$xml->asXML('guardian.xml');
+}
+Header('Content-type: text/xml');
 print($xml->asXML());

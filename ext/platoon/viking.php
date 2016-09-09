@@ -2,7 +2,7 @@
 
 function GetPlayerID($id)
 {
-	include('../config/db.php');
+	include('../../config/db.php');
 	$mysqliDebug = 1;
 	$sql = "SELECT * FROM player_id WHERE id=$id";
 	$results = mysqli_query($con, $sql);
@@ -17,7 +17,7 @@ function GetPlayerID($id)
 }
 
 
-$result = file_get_contents('21st.json');
+$result = file_get_contents('../21st.json');
 $json = json_decode($result,true);
 
 
@@ -45,10 +45,10 @@ $squad->addChild('web','http://21starmyrangers.enjin.com/viking');
 $squad->addChild('picture','624141a59e2fa0dfe0225e4a9531cc31.paa');
 $squad->addChild('title','2nd Platoon "Viking" / 21st Ranger Regiment');
 $first = true;
-foreach ( $TOC as $userId )
+foreach ( $Viking as $userId )
 {
 	
-		foreach ( $TOC as $userId1 )
+		foreach ( $VLead as $userId1 )
 		{
 			if ( $first ) 
 	{
@@ -440,14 +440,14 @@ foreach ( $TOC as $userId )
 }
 
 
-// if (file_exists('toc.xml'))
-// {
-// 	unlink('toc.xml');
-// 	$xml->asXML('toc.xml');
-// }
-// else
-// {
-// 	$xml->asXML('toc.xml');
-// }
-// Header('Content-type: text/xml');
+if (file_exists('viking.xml'))
+{
+	unlink('viking.xml');
+	$xml->asXML('viking.xml');
+}
+else
+{
+	$xml->asXML('viking.xml');
+}
+Header('Content-type: text/xml');
 print($xml->asXML());
